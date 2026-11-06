@@ -1,0 +1,16 @@
+{
+  "name": "lj-digital-systems-landing",
+  "version": "1.0.0",
+  "description": "Offizielle High-Trust Tech Landing Page für LJ Digital Systems (Website-Relaunch & 3-Stufen KI-Agenten)",
+  "scripts": {
+    "dev": "npx --yes serve -l 3000 .",
+    "start": "npx --yes serve -l 3000 ."
+  },
+  "keywords": [
+    "LJ Digital Systems",
+    "KI-Agenten",
+    "Website-Relaunch",
+    "Prozessautomatisierung"
+  ],
+  "private": true
+}

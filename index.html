@@ -1,0 +1,2116 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LJ Digital Systems | Moderne Websites & Autonome KI-Agenten für Unternehmen</title>
+  <meta name="description" content="LJ Digital Systems modernisiert Ihren Webauftritt und integriert intelligente KI-Agenten (Stufe 1 bis 3) mit sicherem Zugriff auf Firmenspeicher und Netzwerk." />
+
+  <!-- OpenGraph / WhatsApp / LinkedIn Link Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LJ Digital Systems | Moderne Websites & Autonome KI-Agenten" />
+  <meta property="og:description" content="Website-Relaunch & vernetzte KI-Agenten (Stufe 1 bis 3), die auf Ihren Firmenspeicher und Ihr Netzwerk zugreifen und Ihr Tagesgeschäft aktiv entlasten." />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Custom Inline SVG Favicon (LJ Badge) -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0%25' y1='0%25' x2='100%25' y2='100%25'%3E%3Cstop offset='0%25' stop-color='%232563eb'/%3E%3Cstop offset='100%25' stop-color='%234f46e5'/%3E%3C/linearGradient%3E%3C/defs%3E%3Crect width='64' height='64' rx='16' fill='url(%23g)'/%3E%3Ctext x='50%25' y='54%25' dominant-baseline='middle' text-anchor='middle' fill='white' font-family='sans-serif' font-weight='800' font-size='28'%3ELJ%3C/text%3E%3C/svg%3E"
+  />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              dark: '#070b14',
+              navy: '#0f172a',
+              blue: '#2563eb',
+              indigo: '#4f46e5',
+              cyan: '#06b6d4'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <!-- Custom Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-blue-600 selection:text-white">
+
+  <!-- ========================================================================
+       STICKY HEADER / NAVIGATION (High-Trust Dark Glass)
+       ======================================================================== -->
+  <header class="fixed top-0 left-0 right-0 z-50 glass-dark border-b border-white/10">
+    <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3.5 sm:px-6 lg:px-8">
+      <!-- Brand Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="flex h-10 w-10 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 via-indigo-600 to-cyan-500 text-white font-extrabold text-lg shadow-lg shadow-blue-600/30 group-hover:scale-105 transition">
+          LJ
+        </div>
+        <div class="flex flex-col">
+          <span class="text-base font-extrabold tracking-tight text-white leading-none">LJ Digital Systems</span>
+          <span class="text-[11px] font-medium text-sky-400 tracking-wide mt-0.5">Web • KI-Agenten • Automation</span>
+        </div>
+      </a>
+
+      <!-- Desktop Navigation -->
+      <nav class="hidden md:flex items-center gap-6 text-sm font-medium text-slate-300">
+        <a href="#leistungen" class="hover:text-white transition">Leistungen &amp; Web</a>
+        <a href="#ki-stufen" class="hover:text-white transition">3-Stufen KI-Agenten</a>
+        <a href="#live-simulation" class="hover:text-white transition flex items-center gap-1.5">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
+          <span>Live-Simulation</span>
+        </a>
+        <a href="#warum-lj" class="hover:text-white transition">Warum LJ?</a>
+        <a href="#ablauf" class="hover:text-white transition">Ablauf</a>
+        <a href="#faq" class="hover:text-white transition">FAQ</a>
+      </nav>
+
+      <!-- Header CTA -->
+      <div class="hidden md:flex items-center gap-3">
+        <a
+          href="#kontakt"
+          class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-2.5 text-xs sm:text-sm font-semibold text-white shadow-lg shadow-blue-600/25 hover:from-blue-500 hover:to-indigo-500 transition"
+        >
+          <span>Potenzialanalyse starten</span>
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+          </svg>
+        </a>
+      </div>
+
+      <!-- Mobile Menu Button -->
+      <button
+        type="button"
+        onclick="toggleMobileMenu()"
+        class="md:hidden inline-flex items-center justify-center rounded-lg p-2 text-slate-300 hover:bg-slate-800 hover:text-white"
+        aria-label="Menü öffnen"
+      >
+        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+          <path stroke-linecap="round" stroke-linejoin="round" d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </div>
+
+    <!-- Mobile Navigation Drawer -->
+    <div id="mobile-nav-menu" class="hidden md:hidden border-t border-slate-800 bg-slate-950/95 px-4 pt-3 pb-5 space-y-2">
+      <a href="#leistungen" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800">Leistungen</a>
+      <a href="#ki-stufen" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800">3-Stufen KI-Agenten</a>
+      <a href="#live-simulation" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-medium text-sky-400 hover:bg-slate-800">Live-Simulation erleben</a>
+      <a href="#ablauf" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800">Ablauf</a>
+      <a href="#faq" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-medium text-slate-200 hover:bg-slate-800">Häufige Fragen</a>
+      <div class="pt-2">
+        <a
+          href="#kontakt"
+          onclick="toggleMobileMenu()"
+          class="flex w-full items-center justify-center rounded-xl bg-blue-600 px-4 py-2.5 text-sm font-semibold text-white shadow"
+        >
+          Kostenlose Potenzialanalyse
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- ========================================================================
+       1. HERO SECTION (Dark High-Trust Tech)
+       ======================================================================== -->
+  <section class="relative bg-tech-grid-dark pt-28 pb-20 lg:pt-36 lg:pb-28 text-white overflow-hidden">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-10 items-center">
+        
+        <!-- Left Column: Copy & Value Proposition -->
+        <div class="lg:col-span-7 space-y-6">
+          <div class="inline-flex items-center gap-2.5 rounded-full bg-blue-500/10 border border-sky-400/25 px-3.5 py-1.5 text-xs font-semibold text-sky-300">
+            <span class="h-2 w-2 rounded-full bg-sky-400 pulse-node"></span>
+            <span>Digitale Systeme für wachsende Unternehmen</span>
+          </div>
+
+          <h1 class="text-3xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight leading-[1.12]">
+            Moderne Websites &amp; <span class="text-gradient-tech">KI-Agenten</span>, die Ihr Tagesgeschäft aktiv erledigen.
+          </h1>
+
+          <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl">
+            Wir verwandeln veraltete Websites in verkaufsstarke Kundenmagneten und integrieren intelligente KI-Agenten – vom 24/7 Anfrage-Assistenten bis zum vernetzten Unternehmens-Agenten mit sicherem Zugriff auf Ihren Firmenspeicher und Ihr gesamtes Netzwerk.
+          </p>
+
+          <!-- Key Benefit Pills -->
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-1">
+            <div class="flex items-center gap-2.5 rounded-xl bg-white/[0.04] border border-white/10 px-3.5 py-2.5">
+              <svg class="h-5 w-5 text-sky-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+              <span class="text-xs font-semibold text-slate-200">Website-Relaunch &amp; Modernisierung</span>
+            </div>
+            <div class="flex items-center gap-2.5 rounded-xl bg-white/[0.04] border border-white/10 px-3.5 py-2.5">
+              <svg class="h-5 w-5 text-indigo-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M5 12a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v4a2 2 0 01-2 2M5 12a2 2 0 00-2 2v4a2 2 0 002 2h14a2 2 0 002-2v-4a2 2 0 00-2-2" />
+              </svg>
+              <span class="text-xs font-semibold text-slate-200">Zugriff auf Speicher &amp; Firmennetzwerk</span>
+            </div>
+            <div class="flex items-center gap-2.5 rounded-xl bg-white/[0.04] border border-white/10 px-3.5 py-2.5">
+              <svg class="h-5 w-5 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+              <span class="text-xs font-semibold text-slate-200">3 Agenten-Stufen + Sonderwünsche</span>
+            </div>
+          </div>
+
+          <!-- CTA Buttons -->
+          <div class="flex flex-col sm:flex-row items-stretch sm:items-center gap-4 pt-3">
+            <a
+              href="#kontakt"
+              class="inline-flex items-center justify-center gap-2.5 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 px-6 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-blue-600/30 hover:brightness-110 transition"
+            >
+              <span>Kostenlose Potenzialanalyse buchen</span>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+              </svg>
+            </a>
+            <a
+              href="#ki-stufen"
+              class="inline-flex items-center justify-center gap-2 rounded-xl bg-slate-800/80 border border-slate-700 px-6 py-4 text-sm sm:text-base font-semibold text-slate-200 hover:bg-slate-800 hover:text-white transition"
+            >
+              <span>Die 3 Agenten-Stufen ansehen</span>
+            </a>
+          </div>
+
+          <p class="text-xs text-slate-400 flex items-center gap-2">
+            <svg class="h-4 w-4 text-emerald-400 shrink-0" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+            </svg>
+            Unverbindliche Erstberatung • Maßgeschneidert für Ihren Betrieb • DSGVO-konforme Architektur
+          </p>
+        </div>
+
+        <!-- Right Column: Visual Interactive Architecture Preview Card -->
+        <div class="lg:col-span-5">
+          <div class="glass-dark rounded-2xl p-6 border border-white/15 shadow-2xl relative">
+            <div class="flex items-center justify-between border-b border-slate-800 pb-4 mb-5">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-rose-500/80"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-400/80"></span>
+                <span class="h-3 w-3 rounded-full bg-emerald-400/80"></span>
+                <span class="ml-2 text-xs font-mono-code text-slate-400">LJ-System-Core v3.0</span>
+              </div>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-emerald-500/15 border border-emerald-500/30 px-2.5 py-0.5 text-[11px] font-semibold text-emerald-300">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 pulse-node"></span>
+                Online &amp; Vernetzt
+              </span>
+            </div>
+
+            <!-- Visual System Flow -->
+            <div class="space-y-3.5">
+              <!-- Layer 1: Modern Website -->
+              <div class="rounded-xl bg-slate-900/90 border border-slate-800 p-3.5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-blue-500/20 text-sky-400">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9H3m9 9a9 9 0 01-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9 3-9" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-white">Modernisierte Unternehmens-Website</div>
+                    <div class="text-[11px] text-slate-400">24/7 Kundenempfang &amp; Anfrage-Qualifizierung</div>
+                  </div>
+                </div>
+                <span class="text-[11px] font-mono-code text-sky-400 bg-sky-500/10 px-2 py-0.5 rounded">Stufe 1</span>
+              </div>
+
+              <!-- Connector Arrow -->
+              <div class="flex justify-center">
+                <div class="h-4 w-0.5 bg-gradient-to-b from-sky-500 to-indigo-500"></div>
+              </div>
+
+              <!-- Layer 2: Storage & Office Agent -->
+              <div class="rounded-xl bg-slate-900/90 border border-indigo-500/40 p-3.5 flex items-center justify-between">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-indigo-500/20 text-indigo-400">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M4 7v10c0 2.21 3.582 4 8 4s8-1.79 8-4V7M4 7c0 2.21 3.582 4 8 4s8-1.79 8-4M4 7c0-2.21 3.582-4 8-4s8 1.79 8 4" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-white">Firmenspeicher &amp; Büro-Automatisierung</div>
+                    <div class="text-[11px] text-slate-400">Dokumente, Preislisten, Angebote &amp; Kalender</div>
+                  </div>
+                </div>
+                <span class="text-[11px] font-mono-code text-indigo-300 bg-indigo-500/15 px-2 py-0.5 rounded">Stufe 2</span>
+              </div>
+
+              <!-- Connector Arrow -->
+              <div class="flex justify-center">
+                <div class="h-4 w-0.5 bg-gradient-to-b from-indigo-500 to-emerald-400"></div>
+              </div>
+
+              <!-- Layer 3: Full Company Network -->
+              <div class="rounded-xl bg-gradient-to-r from-blue-950/80 to-indigo-950/80 border border-sky-400/40 p-3.5 flex items-center justify-between shadow-lg">
+                <div class="flex items-center gap-3">
+                  <div class="flex h-10 w-10 items-center justify-center rounded-lg bg-emerald-500/20 text-emerald-400">
+                    <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                      <path stroke-linecap="round" stroke-linejoin="round" d="M9 3v2m6-2v2M9 19v2m6-2v2M5 9H3m2 6H3m18-6h-2m2 6h-2M7 19h10a2 2 0 002-2V7a2 2 0 00-2-2H7a2 2 0 00-2 2v10a2 2 0 002 2zM9 9h6v6H9V9z" />
+                    </svg>
+                  </div>
+                  <div>
+                    <div class="text-xs font-bold text-white">Autonomer Voll-Netzwerk-Agent</div>
+                    <div class="text-[11px] text-slate-300">Zugriff auf gesamtes Netz, CRM/ERP &amp; Workflows</div>
+                  </div>
+                </div>
+                <span class="text-[11px] font-mono-code text-emerald-300 bg-emerald-500/20 px-2 py-0.5 rounded">Stufe 3</span>
+              </div>
+            </div>
+
+            <!-- Bottom Status Bar inside Hero Card -->
+            <div class="mt-5 pt-4 border-t border-slate-800/80 flex items-center justify-between text-xs text-slate-400">
+              <span>+ Individuelle KI-Spezialwünsche</span>
+              <a href="#live-simulation" class="text-sky-400 hover:text-sky-300 font-semibold inline-flex items-center gap-1">
+                <span>Live testen</span>
+                <span>→</span>
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       1B. IMPACT & KENNZAHLEN-LEISTE (High-Trust Metrics Bar)
+       ======================================================================== -->
+  <section class="bg-slate-900 border-y border-slate-800 py-10 text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-6 lg:gap-8 text-center lg:text-left">
+        
+        <div class="flex flex-col lg:flex-row items-center gap-3.5">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-sky-500/15 border border-sky-400/30 text-sky-400 font-extrabold text-lg">
+            24/7
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-white">Rund um die Uhr erreichbar</div>
+            <div class="text-xs text-slate-400">Keine verlorene Kundenanfrage mehr nach Feierabend</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-3.5">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-indigo-500/15 border border-indigo-400/30 text-indigo-400 font-extrabold text-lg">
+            -80%
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-white">Weniger Routine-Büroarbeit</div>
+            <div class="text-xs text-slate-400">Automatische Vorqualifizierung, Angebote &amp; Aktenzugriff</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-3.5">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-emerald-500/15 border border-emerald-400/30 text-emerald-400 font-extrabold text-lg">
+            100%
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-white">DSGVO &amp; Daten-Kontrolle</div>
+            <div class="text-xs text-slate-400">Geschützter Zugriff auf Firmenspeicher &amp; klare Freigaben</div>
+          </div>
+        </div>
+
+        <div class="flex flex-col lg:flex-row items-center gap-3.5">
+          <div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-2xl bg-blue-500/15 border border-blue-400/30 text-blue-400 font-extrabold text-lg">
+            1:1
+          </div>
+          <div>
+            <div class="text-base sm:text-lg font-extrabold text-white">Maßgeschneiderte Integration</div>
+            <div class="text-xs text-slate-400">Passt sich nahtlos an Ihre bestehenden Programme an</div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2. CORE SERVICES OVERVIEW & 3 WEBSITE FOCUS CARDS (Clean Light Section)
+       ======================================================================== -->
+  <section id="leistungen" class="py-20 lg:py-28 bg-tech-grid-light border-b border-slate-200/80">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+          Unsere Kernkompetenzen
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Alles aus einer Hand: <span class="text-gradient-dark">Starker Webauftritt &amp; intelligente Automatisierung</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Viele kleine und mittelständische Betriebe verlieren täglich wertvolle Zeit durch veraltete Websites, ständige Telefonunterbrechungen und manuelle Büroarbeit. Wir lösen genau das mit einem durchdachten Gesamtsystem.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+        
+        <!-- Service 1: Website Overhaul -->
+        <div class="card-light-hover rounded-2xl bg-white p-8 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-blue-600 text-white shadow-md shadow-blue-600/20">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M9.75 17L9 20l-1 1h8l-1-1-.75-3M3 13h18M5 17h14a2 2 0 002-2V5a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Website-Überarbeitung &amp; Relaunch
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Wir überarbeiten Ihre bestehende Website von Grund auf oder entwickeln Ihren neuen digitalen Auftritt – modern, extrem schnell und so aufgebaut, dass aus Besuchern qualifizierte Kundenanfragen werden.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+                <span>Komplette Modernisierung von Design &amp; Technik</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+                <span>Perfekte Darstellung auf Smartphone, Tablet &amp; PC</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-blue-600"></span>
+                <span>Digitale Anfrage-Strecken statt unklarer Kontaktmails</span>
+              </li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="scrollToContactWithTopic('Website-Überarbeitung & Modernisierung')"
+            class="w-full rounded-xl bg-slate-100 hover:bg-blue-600 hover:text-white text-slate-800 font-semibold py-3 px-4 text-sm transition flex items-center justify-center gap-2"
+          >
+            <span>Website-Überarbeitung anfragen</span>
+            <span>→</span>
+          </button>
+        </div>
+
+        <!-- Service 2: AI Agents & Chatbots -->
+        <div class="card-light-hover rounded-2xl bg-slate-900 text-white p-8 border border-slate-800 shadow-xl flex flex-col justify-between relative overflow-hidden">
+          <div class="absolute top-0 right-0 bg-gradient-to-l from-blue-600 to-indigo-600 text-[11px] font-bold uppercase tracking-wider px-3.5 py-1 rounded-bl-xl">
+            Kernstück
+          </div>
+          <div>
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-gradient-to-br from-sky-400 to-blue-600 text-white shadow-md shadow-sky-500/20">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-white mb-3">
+              Vernetzte KI-Agenten &amp; Chatbots
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Keine einfachen Standard-Bots: Unsere KI-Agenten greifen je nach gewählter Ausbaustufe direkt auf Ihren Firmenspeicher und Ihr gesamtes Netzwerk zu und erledigen echte Arbeit selbstständig.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-200 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                <span>24/7 Kundenbetreuung &amp; Anfrage-Vorqualifizierung</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                <span>Direkter Zugriff auf Firmendokumente, Akten &amp; Preise</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-sky-400"></span>
+                <span>3 klare Leistungsstufen – flexibel erweiterbar</span>
+              </li>
+            </ul>
+          </div>
+          <a
+            href="#ki-stufen"
+            class="w-full rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-semibold py-3 px-4 text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30"
+          >
+            <span>Zu den 3 Agenten-Stufen</span>
+            <span>↓</span>
+          </a>
+        </div>
+
+        <!-- Service 3: Process Automation & Custom Solutions -->
+        <div class="card-light-hover rounded-2xl bg-white p-8 border border-slate-200/90 shadow-sm flex flex-col justify-between">
+          <div>
+            <div class="mb-6 inline-flex h-12 w-12 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-md shadow-indigo-600/20">
+              <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M11 4a2 2 0 114 0v1a1 1 0 001 1h3a1 1 0 011 1v3a1 1 0 01-1 1h-1a2 2 0 100 4h1a1 1 0 011 1v3a1 1 0 01-1 1h-3a1 1 0 01-1-1v-1a2 2 0 10-4 0v1a1 1 0 01-1 1H7a1 1 0 01-1-1v-3a1 1 0 00-1-1H4a2 2 0 110-4h1a1 1 0 001-1V7a1 1 0 011-1h3a1 1 0 001-1V4z" />
+              </svg>
+            </div>
+            <h3 class="text-xl font-bold text-slate-900 mb-3">
+              Systemintegration &amp; KI-Sonderwünsche
+            </h3>
+            <p class="text-sm text-slate-600 leading-relaxed mb-6">
+              Jeder Betrieb arbeitet anders. Wir verbinden Ihre bestehenden Programme (E-Mail, Kalender, Cloud-Speicher, CRM oder Branchensoftware) und entwickeln individuelle KI-Lösungen für Spezialaufgaben.
+            </p>
+            <ul class="space-y-2.5 text-sm text-slate-700 mb-8">
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+                <span>Nahtlose Verbindung Ihrer bestehenden Systeme</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+                <span>Automatisierte Angebote, Berichte &amp; E-Mail-Flows</span>
+              </li>
+              <li class="flex items-center gap-2">
+                <span class="h-1.5 w-1.5 rounded-full bg-indigo-600"></span>
+                <span>Maßgeschneiderte KI-Workflows auf Kundenwunsch</span>
+              </li>
+            </ul>
+          </div>
+          <button
+            type="button"
+            onclick="scrollToContactWithTopic('Individueller KI-Sonderwunsch / Custom Solution')"
+            class="w-full rounded-xl bg-slate-100 hover:bg-indigo-600 hover:text-white text-slate-800 font-semibold py-3 px-4 text-sm transition flex items-center justify-center gap-2"
+          >
+            <span>Spezialwunsch besprechen</span>
+            <span>→</span>
+          </button>
+        </div>
+
+      </div>
+
+      <!-- Dedicated Sub-Section: 3 Klare Fokus-Karten für Website-Überarbeitungen -->
+      <div class="mt-20 pt-16 border-t border-slate-200/90">
+        <div class="flex flex-col lg:flex-row lg:items-end justify-between mb-10 gap-4">
+          <div>
+            <span class="inline-block rounded-full bg-sky-100 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-800 mb-2">
+              Fokus: Website-Überarbeitung &amp; Relaunch
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-slate-900">
+              Worauf es bei einer modernen Unternehmens-Website heute ankommt
+            </h3>
+          </div>
+          <p class="text-sm text-slate-600 max-w-md">
+            Ihre Website ist oft der erste Kontaktpunkt für neue Kunden. Wir sorgen mit 3 klaren Bausteinen dafür, dass sie sofort überzeugt und aktiv für Sie arbeitet:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <!-- Website Focus Card 1 -->
+          <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-blue-50 text-blue-600 font-extrabold text-sm border border-blue-200">
+                01
+              </span>
+              <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">Erster Eindruck</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">
+              Modernes Design &amp; Vertrauen
+            </h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Schluss mit veralteten Layouts aus dem letzten Jahrzehnt: Wir gestalten einen klaren, hochwertigen Auftritt, der Ihre Qualität sofort sichtbar macht und bei potenziellen Kunden vom ersten Augenblick an Vertrauen aufbaut.
+            </p>
+          </div>
+
+          <!-- Website Focus Card 2 -->
+          <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-indigo-50 text-indigo-600 font-extrabold text-sm border border-indigo-200">
+                02
+              </span>
+              <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-full">Technik &amp; Mobil</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">
+              Mobile Optimierung &amp; Speed
+            </h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Über 70 % aller Besucher öffnen Websites heute auf dem Smartphone. Wir optimieren jede Seite für blitzschnelle Ladezeiten, kinderleichte mobile Bedienung und eine saubere technische Struktur für Suchmaschinen.
+            </p>
+          </div>
+
+          <!-- Website Focus Card 3 -->
+          <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-flex h-10 w-10 items-center justify-center rounded-xl bg-emerald-50 text-emerald-600 font-extrabold text-sm border border-emerald-200">
+                03
+              </span>
+              <span class="text-xs font-semibold text-emerald-700 bg-emerald-50 px-2.5 py-1 rounded-full">Mehr Abschlüsse</span>
+            </div>
+            <h4 class="text-lg font-bold text-slate-900 mb-2">
+              Automatische Kundenanfrage-Strecke
+            </h4>
+            <p class="text-sm text-slate-600 leading-relaxed">
+              Statt unklarer Standard-Nachrichten führt Ihre neue Website Interessenten durch eine smarte Anfrage-Strecke (auf Wunsch direkt kombiniert mit unserem KI-Agenten), sodass Sie sofort alle Eckdaten für ein Angebot erhalten.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- INTERACTIVE WEBSITE BEFORE / AFTER SHOWCASE -->
+        <div class="mt-12 rounded-3xl bg-white border border-slate-200/90 p-6 sm:p-8 lg:p-10 shadow-lg reveal-on-scroll">
+          <div class="flex flex-col md:flex-row md:items-center justify-between gap-4 pb-6 border-b border-slate-200">
+            <div>
+              <span class="text-xs font-bold uppercase tracking-wider text-blue-600">Anschaulicher Direkt-Vergleich</span>
+              <h4 class="text-xl sm:text-2xl font-extrabold text-slate-900 mt-1">
+                Der Unterschied zwischen einer alten Website und einem LJ-System
+              </h4>
+            </div>
+            <!-- Switcher Buttons -->
+            <div class="inline-flex rounded-2xl bg-slate-100 p-1.5 border border-slate-200 self-start md:self-auto">
+              <button
+                id="btn-showcase-before"
+                type="button"
+                onclick="switchWebsiteShowcase('before')"
+                class="px-4 py-2 rounded-xl text-xs sm:text-sm font-semibold text-slate-600 hover:text-slate-900 transition"
+              >
+                ✕ Vorher: Veraltete Website
+              </button>
+              <button
+                id="btn-showcase-after"
+                type="button"
+                onclick="switchWebsiteShowcase('after')"
+                class="px-4 py-2 rounded-xl text-xs sm:text-sm font-bold bg-blue-600 text-white shadow-md shadow-blue-600/25 transition"
+              >
+                ✓ Nachher: Modernes LJ-System
+              </button>
+            </div>
+          </div>
+
+          <!-- BEFORE PANEL (Hidden by default) -->
+          <div id="showcase-before-panel" class="hidden pt-6 animate-fade-slide">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <!-- Visual Mockup of an Outdated Website -->
+              <div class="lg:col-span-7 rounded-2xl border-2 border-rose-200 bg-slate-100 p-5 shadow-inner">
+                <div class="flex items-center justify-between border-b border-slate-300 pb-3 mb-4">
+                  <div class="flex items-center gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-400"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-400"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-slate-400"></span>
+                    <span class="ml-2 text-[11px] font-mono-code text-rose-600 bg-rose-100 px-2 py-0.5 rounded">⚠ Nicht mobil optimiert • Ladezeit 5,8s</span>
+                  </div>
+                </div>
+                <div class="bg-white border border-slate-300 p-5 rounded-lg space-y-4 opacity-85">
+                  <div class="flex justify-between items-center border-b pb-2">
+                    <div class="font-serif text-base font-bold text-slate-500">Willkommen auf unserer Homepage</div>
+                    <div class="text-[10px] text-slate-400">Start | Über uns | Impressum</div>
+                  </div>
+                  <div class="bg-slate-200 h-24 rounded flex items-center justify-center text-xs text-slate-500 text-center px-4">
+                    [Unscharfes Standard-Bild &amp; langer Textblock ohne klare Struktur]
+                  </div>
+                  <div class="text-xs text-slate-500 leading-relaxed">
+                    „Herzlich willkommen bei unserer Firma. Rufen Sie uns gerne zu unseren Bürozeiten Mo–Fr zwischen 08:00 und 16:00 Uhr an oder schreiben Sie uns eine E-Mail...“
+                  </div>
+                  <div class="rounded bg-rose-50 border border-rose-200 p-3 text-xs text-rose-800">
+                    <strong>Das passiert im Alltag:</strong> Der Kunde schaut um 19:30 Uhr auf dem Smartphone vorbei, findet keine klare Antwort, will keine lange Mail tippen – und klickt weiter zum Wettbewerber.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pain Points Summary -->
+              <div class="lg:col-span-5 space-y-4">
+                <span class="inline-block rounded-lg bg-rose-100 px-3 py-1 text-xs font-bold text-rose-700">
+                  Typische Schwachstellen alter Seiten
+                </span>
+                <h5 class="text-xl font-extrabold text-slate-900">
+                  Warum klassische Websites heute Kunden kosten
+                </h5>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-rose-500 font-bold mt-0.5">✕</span>
+                    <span><strong>Keine Vorqualifizierung:</strong> Sie bekommen unvollständige Anfragen („Was kostet das ungefähr?“) und müssen jedem Detail hinterhertelefonieren.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-rose-500 font-bold mt-0.5">✕</span>
+                    <span><strong>Nach Feierabend tot:</strong> Wer abends oder am Wochenende sucht, erhält keine direkte Rückmeldung.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-rose-500 font-bold mt-0.5">✕</span>
+                    <span><strong>Schwer bedienbar auf dem Handy:</strong> Kleine Schrift, langsame Ladezeiten und versteckte Kontaktmöglichkeiten.</span>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <!-- AFTER PANEL (Visible by default) -->
+          <div id="showcase-after-panel" class="pt-6 animate-fade-slide">
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+              <!-- Visual Mockup of a Modern LJ Digital System Website -->
+              <div class="lg:col-span-7 rounded-2xl border-2 border-blue-500/40 bg-slate-950 p-5 text-white shadow-xl">
+                <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+                  <div class="flex items-center gap-1.5">
+                    <span class="h-2.5 w-2.5 rounded-full bg-rose-500"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-amber-400"></span>
+                    <span class="h-2.5 w-2.5 rounded-full bg-emerald-400"></span>
+                    <span class="ml-2 text-[11px] font-mono-code text-emerald-300 bg-emerald-500/15 px-2 py-0.5 rounded">✓ High-Speed • Mobil perfekt • KI-gekoppelt</span>
+                  </div>
+                </div>
+                <div class="bg-slate-900 border border-slate-800 p-5 rounded-xl space-y-4">
+                  <div class="flex items-center justify-between">
+                    <div class="text-xs font-bold uppercase tracking-wider text-sky-400">Ihr neuer digitaler Auftritt</div>
+                    <span class="text-[11px] bg-blue-600/30 border border-blue-400/40 text-sky-200 px-2.5 py-0.5 rounded-full">24/7 Aktiv</span>
+                  </div>
+                  <div class="text-lg font-extrabold text-white leading-snug">
+                    Klare Positionierung, starkes Vertrauen &amp; interaktive 60-Sekunden-Anfrage
+                  </div>
+                  <div class="grid grid-cols-3 gap-2 text-center">
+                    <div class="rounded-lg bg-slate-800/90 p-2.5 border border-slate-700">
+                      <div class="text-xs font-bold text-sky-400">1. Auswahl</div>
+                      <div class="text-[10px] text-slate-400">Kunde klickt Anliegen</div>
+                    </div>
+                    <div class="rounded-lg bg-slate-800/90 p-2.5 border border-slate-700">
+                      <div class="text-xs font-bold text-indigo-400">2. KI-Check</div>
+                      <div class="text-[10px] text-slate-400">Eckdaten &amp; Fotos erfasst</div>
+                    </div>
+                    <div class="rounded-lg bg-slate-800/90 p-2.5 border border-slate-700">
+                      <div class="text-xs font-bold text-emerald-400">3. Fertig</div>
+                      <div class="text-[10px] text-slate-400">Liegt bereit im Büro</div>
+                    </div>
+                  </div>
+                  <div class="rounded-lg bg-emerald-950/60 border border-emerald-500/30 p-3 text-xs text-emerald-200">
+                    <strong>Ergebnis im Alltag:</strong> Sie öffnen morgens Ihr System und sehen vollständig vorqualifizierte Kundenanfragen inklusive aller Projektdaten.
+                  </div>
+                </div>
+              </div>
+
+              <!-- Benefits Summary -->
+              <div class="lg:col-span-5 space-y-4">
+                <span class="inline-block rounded-lg bg-blue-100 px-3 py-1 text-xs font-bold text-blue-700">
+                  Das LJ-System-Ergebnis
+                </span>
+                <h5 class="text-xl font-extrabold text-slate-900">
+                  Ihre Website arbeitet wie Ihr bester Vertriebs- &amp; Büro-Mitarbeiter
+                </h5>
+                <ul class="space-y-3 text-sm text-slate-600">
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                    <span><strong>Sofortige Seriosität:</strong> Modernes Design, das zeigt, dass Ihr Betrieb auf dem neuesten Stand ist.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                    <span><strong>Vollständige Projektdaten:</strong> Kunden tragen ihr Anliegen Schritt für Schritt ein – kein mühsames Nachfragen mehr.</span>
+                  </li>
+                  <li class="flex items-start gap-2.5">
+                    <span class="text-emerald-600 font-bold mt-0.5">✓</span>
+                    <span><strong>Nahtlos erweiterbar:</strong> Jederzeit direkt mit unseren KI-Agenten (Stufe 1 bis 3) koppelbar.</span>
+                  </li>
+                </ul>
+                <div class="pt-2">
+                  <button
+                    type="button"
+                    onclick="scrollToContactWithTopic('Website-Überarbeitung & Modernisierung')"
+                    class="inline-flex items-center gap-2 rounded-xl bg-blue-600 hover:bg-blue-500 px-5 py-3 text-xs sm:text-sm font-bold text-white shadow-md transition"
+                  >
+                    <span>Jetzt kostenlosen Website-Check anfordern</span>
+                    <span>→</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       2B. AUTHENTISCHE PRAXIS-ANWENDUNGSFÄLLE ("Alltags-Realität vs. LJ-Lösung")
+       ======================================================================== -->
+  <section class="py-20 lg:py-24 bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16 reveal-on-scroll">
+        <span class="inline-block rounded-full bg-indigo-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-indigo-700 mb-3">
+          Aus der echten Praxis
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          3 typische Zeitfresser im Betriebsalltag – <span class="text-gradient-dark">und wie unser System sie löst</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Wir entwickeln keine abstrakte Technik zum Selbstzweck, sondern lösen genau die Engpässe, die kleine und mittelständische Unternehmen jeden Tag Zeit und Nerven kosten.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 reveal-on-scroll">
+        
+        <!-- Use Case 1 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 border border-slate-200/90 p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-lg bg-slate-200/80 px-3 py-1 text-xs font-bold text-slate-700">
+              Alltagssituation 01 • Kundenanfragen
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">
+              „Das Telefon klingelt ständig, während man mitten in der Arbeit steckt“
+            </h3>
+            <div class="rounded-xl bg-rose-50 border border-rose-200/80 p-3.5 text-xs text-rose-900 leading-relaxed">
+              <strong>Ohne System:</strong> Anrufe gehen ins Leere, Zettel mit Rückrufbitte bleiben liegen oder man verbringt abends eine Stunde damit, fehlende Basis-Informationen beim Kunden abzufragen.
+            </div>
+            <div class="rounded-xl bg-emerald-50 border border-emerald-200/90 p-3.5 text-xs text-emerald-950 leading-relaxed">
+              <strong>Mit LJ Digital Systems (Stufe 1):</strong> Ihre neue Website und der Smart-Frontdesk-Agent nehmen jede Anfrage 24/7 sofort an, fragen alle wichtigen Eckdaten strukturiert ab und übergeben Ihnen fertige, kaufbereite Kontakte.
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Zeitersparnis: ~4–6 Std. / Woche</span>
+            <a href="#live-simulation" onclick="selectSimulatorTier('tier1', 0)" class="hover:underline">In Simulation ansehen →</a>
+          </div>
+        </div>
+
+        <!-- Use Case 2 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 border border-slate-200/90 p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-lg bg-blue-100 px-3 py-1 text-xs font-bold text-blue-800">
+              Alltagssituation 02 • Büro &amp; Angebote
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">
+              „Abends noch stundenlang Dokumente suchen und Angebote zusammenstellen“
+            </h3>
+            <div class="rounded-xl bg-rose-50 border border-rose-200/80 p-3.5 text-xs text-rose-900 leading-relaxed">
+              <strong>Ohne System:</strong> Alte Kundenakten, Preislisten, Aufmaße und PDF-Vorlagen müssen mühsam in verschiedenen Ordnern gesucht und manuell zusammenkopiert werden.
+            </div>
+            <div class="rounded-xl bg-emerald-50 border border-emerald-200/90 p-3.5 text-xs text-emerald-950 leading-relaxed">
+              <strong>Mit LJ Digital Systems (Stufe 2):</strong> Sie geben dem Büro-Agenten eine kurze Anweisung. Er durchsucht Ihren Firmenspeicher in Sekunden, zieht die aktuelle Preisliste heran und legt Ihnen den fertigen Angebotsentwurf vor.
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Zeitersparnis: ~8–15 Std. / Woche</span>
+            <a href="#live-simulation" onclick="selectSimulatorTier('tier2', 0)" class="hover:underline">In Simulation ansehen →</a>
+          </div>
+        </div>
+
+        <!-- Use Case 3 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 border border-slate-200/90 p-7 flex flex-col justify-between">
+          <div class="space-y-4">
+            <div class="inline-flex items-center gap-2 rounded-lg bg-emerald-100 px-3 py-1 text-xs font-bold text-emerald-800">
+              Alltagssituation 03 • Gesamter Betrieb
+            </div>
+            <h3 class="text-xl font-bold text-slate-900">
+              „Daten müssen doppelt und dreifach zwischen Programmen übertragen werden“
+            </h3>
+            <div class="rounded-xl bg-rose-50 border border-rose-200/80 p-3.5 text-xs text-rose-900 leading-relaxed">
+              <strong>Ohne System:</strong> Ein Auftrag kommt rein – danach müssen Ordner angelegt, Termine im Kalender geblockt, Materiallisten geprüft und später Rechnungsdaten abgetippt werden.
+            </div>
+            <div class="rounded-xl bg-emerald-50 border border-emerald-200/90 p-3.5 text-xs text-emerald-950 leading-relaxed">
+              <strong>Mit LJ Digital Systems (Stufe 3):</strong> Der vollintegrierte Netzwerk-Agent verbindet Ihren Speicher, Kalender, E-Mail und Branchensoftware und führt den gesamten Ablauf nach Auftragsbestätigung selbstständig aus.
+            </div>
+          </div>
+          <div class="mt-6 pt-4 border-t border-slate-200 flex items-center justify-between text-xs font-semibold text-blue-600">
+            <span>Zeitersparnis: ~15–25+ Std. / Woche</span>
+            <a href="#live-simulation" onclick="selectSimulatorTier('tier3', 0)" class="hover:underline">In Simulation ansehen →</a>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       3. THE 3-STAGE AI AGENT ARCHITECTURE + CUSTOM (Dark High-Trust Section)
+       ======================================================================== -->
+  <section id="ki-stufen" class="py-20 lg:py-28 bg-tech-grid-dark text-white">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <!-- Section Heading -->
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-flex items-center gap-2 rounded-full bg-sky-500/15 border border-sky-400/30 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-300 mb-3">
+          Skalierbare KI-Architektur
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Unsere <span class="text-gradient-tech">3 Stufen von KI-Agenten</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-300 leading-relaxed">
+          Starten Sie genau mit dem Umfang, der heute zu Ihrem Unternehmen passt – vom intelligenten Website-Assistenten bis zum vollintegrierten Agenten, der auf Ihren Firmenspeicher und Ihr gesamtes Netzwerk zugreift.
+        </p>
+      </div>
+
+      <!-- 3 Tier Cards Grid -->
+      <div class="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch">
+        
+        <!-- STUFE 1: STARTER -->
+        <div class="glass-dark glass-dark-hover rounded-2xl p-8 flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-block rounded-lg bg-slate-800 px-3 py-1 text-xs font-mono-code font-semibold text-sky-400 border border-slate-700">
+                STUFE 1 • STARTER
+              </span>
+              <span class="text-xs text-slate-400 font-medium">Kundenkontakt &amp; Leads</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-2">
+              Smart Frontdesk Agent
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Ihr digitaler Mitarbeiter auf der Website: Nimmt Kundenanfragen rund um die Uhr entgegen, beantwortet Fragen sofort und erfasst alle wichtigen Projektdaten strukturiert.
+            </p>
+
+            <!-- System Access Scope -->
+            <div class="rounded-xl bg-slate-900/90 border border-slate-800 p-3.5 mb-6">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">System-Anbindung:</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-md bg-sky-500/15 border border-sky-500/30 px-2 py-0.5 text-xs text-sky-300">Website-Chat</span>
+                <span class="rounded-md bg-sky-500/15 border border-sky-500/30 px-2 py-0.5 text-xs text-sky-300">FAQ-Wissensbasis</span>
+                <span class="rounded-md bg-sky-500/15 border border-sky-500/30 px-2 py-0.5 text-xs text-sky-300">E-Mail-Weiterleitung</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-200 mb-8">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>24/7 Sofort-Antworten</strong> auf Kundenfragen (auch abends &amp; am Wochenende)</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Automatische Vorqualifizierung:</strong> Fragt Umfang, Ort, Wunschtermin &amp; Details ab</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Übersichtliche Übergabe</strong> fertiger Kundenanfragen an Ihr Team</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80">
+            <div class="text-xs text-slate-400 mb-3">Individuelle Einrichtung nach Unternehmensgröße</div>
+            <button
+              type="button"
+              onclick="scrollToContactWithTopic('KI-Agent Stufe 1 (Smart Frontdesk)')"
+              class="w-full rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 text-white font-semibold py-3.5 px-4 text-sm transition flex items-center justify-center gap-2"
+            >
+              <span>Stufe 1 in Potenzialanalyse prüfen</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STUFE 2: PRO (HIGHLIGHTED) -->
+        <div class="glass-dark glass-dark-hover rounded-2xl p-8 flex flex-col justify-between border-2 border-sky-400/70 shadow-2xl shadow-blue-950/60 relative lg:-translate-y-2">
+          <div class="absolute -top-3.5 left-1/2 -translate-x-1/2 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-1 text-[11px] font-extrabold uppercase tracking-wider text-white shadow-lg">
+            Beliebteste Wahl für KMU
+          </div>
+
+          <div>
+            <div class="flex items-center justify-between mb-4 mt-1">
+              <span class="inline-block rounded-lg bg-blue-500/20 px-3 py-1 text-xs font-mono-code font-semibold text-sky-300 border border-sky-400/40">
+                STUFE 2 • PRO
+              </span>
+              <span class="text-xs text-sky-300 font-medium">Speicher &amp; Büro-Entlastung</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-2">
+              Wissens- &amp; Büro-Agent
+            </h3>
+            <p class="text-sm text-slate-200 leading-relaxed mb-6">
+              Greift sicher auf Ihren internen Firmenspeicher, Preislisten, Vorlagen und Dokumente zu. Bereitet Angebote vor, beantwortet komplexe Fachfragen und plant Termine.
+            </p>
+
+            <!-- System Access Scope -->
+            <div class="rounded-xl bg-blue-950/50 border border-sky-500/30 p-3.5 mb-6">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-sky-300 mb-1.5">System-Anbindung:</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-md bg-sky-500/20 border border-sky-400/40 px-2 py-0.5 text-xs text-white">Alles aus Stufe 1</span>
+                <span class="rounded-md bg-indigo-500/25 border border-indigo-400/40 px-2 py-0.5 text-xs text-indigo-200">+ Interner Firmenspeicher</span>
+                <span class="rounded-md bg-indigo-500/25 border border-indigo-400/40 px-2 py-0.5 text-xs text-indigo-200">+ E-Mail &amp; Kalender</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-100 mb-8">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Direkter Zugriff auf Ihren Firmenspeicher:</strong> Findet Dokumente, Kundenakten, PDFs &amp; Preislisten sofort</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Angebotserstellung &amp; Kalkulations-Vorbereitung</strong> nach Ihren internen Vorgaben</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Automatische Terminbuchung</strong> &amp; Vorbereitung von E-Mail-Antworten</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-sky-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Interner Mitarbeiter-Assistent:</strong> Ihr Team kann dem Agenten per Chat oder Sprache Aufgaben geben</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800">
+            <div class="text-xs text-sky-300 mb-3">Spart durchschnittlich 8–15 Stunden Büroarbeit pro Woche</div>
+            <button
+              type="button"
+              onclick="scrollToContactWithTopic('KI-Agent Stufe 2 (Wissens- & Büro-Agent)')"
+              class="w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30"
+            >
+              <span>Stufe 2 unverbindlich anfragen</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- STUFE 3: FULL NETWORK AUTONOMOUS -->
+        <div class="glass-dark glass-dark-hover rounded-2xl p-8 flex flex-col justify-between border border-slate-800">
+          <div>
+            <div class="flex items-center justify-between mb-4">
+              <span class="inline-block rounded-lg bg-emerald-500/15 px-3 py-1 text-xs font-mono-code font-semibold text-emerald-300 border border-emerald-500/30">
+                STUFE 3 • AUTONOMOUS
+              </span>
+              <span class="text-xs text-slate-400 font-medium">Voll-Integration</span>
+            </div>
+
+            <h3 class="text-2xl font-extrabold text-white mb-2">
+              Vollintegrierter Netzwerk-Agent
+            </h3>
+            <p class="text-sm text-slate-300 leading-relaxed mb-6">
+              Vernetzt mit dem gesamten Firmennetzwerk, Speicher, CRM/ERP und Schnittstellen. Dieser Agent denkt systemübergreifend mit und erledigt komplette Arbeitsabläufe autonom.
+            </p>
+
+            <!-- System Access Scope -->
+            <div class="rounded-xl bg-slate-900/90 border border-slate-800 p-3.5 mb-6">
+              <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-1.5">System-Anbindung:</div>
+              <div class="flex flex-wrap gap-1.5">
+                <span class="rounded-md bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 text-xs text-emerald-300">Gesamtes Firmennetzwerk</span>
+                <span class="rounded-md bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 text-xs text-emerald-300">Firmenspeicher &amp; Cloud</span>
+                <span class="rounded-md bg-emerald-500/15 border border-emerald-500/30 px-2 py-0.5 text-xs text-emerald-300">CRM / ERP / APIs</span>
+              </div>
+            </div>
+
+            <ul class="space-y-3 text-sm text-slate-200 mb-8">
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Systemübergreifendes Handeln:</strong> Verbindet Speicher, E-Mail, Kalender, Kundenkartei &amp; Fachprogramme</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Autonome End-to-End Workflows:</strong> Vom Auftragseingang über Projektordner-Anlage bis zur Rechnungs-Vorbereitung</span>
+              </li>
+              <li class="flex items-start gap-2.5">
+                <svg class="h-5 w-5 text-emerald-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                  <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+                <span><strong>Maßgeschneiderte Berechtigungen:</strong> Volle Sicherheit &amp; auf Wunsch 1-Klick-Freigabe durch die Geschäftsführung</span>
+              </li>
+            </ul>
+          </div>
+
+          <div class="pt-4 border-t border-slate-800/80">
+            <div class="text-xs text-slate-400 mb-3">Maximale Automatisierung für den gesamten Betrieb</div>
+            <button
+              type="button"
+              onclick="scrollToContactWithTopic('KI-Agent Stufe 3 (Vollintegrierter Netzwerk-Agent)')"
+              class="w-full rounded-xl bg-slate-800 hover:bg-emerald-600 border border-slate-700 hover:border-emerald-500 text-white font-semibold py-3.5 px-4 text-sm transition flex items-center justify-center gap-2"
+            >
+              <span>Stufe 3 Architektur anfragen</span>
+              <span>→</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Custom Special Requests Banner ("Offen für spezielle Kundenwünsche") -->
+      <div class="mt-10 rounded-2xl bg-gradient-to-r from-slate-900 via-blue-950/70 to-slate-900 border border-sky-500/30 p-6 sm:p-8 flex flex-col lg:flex-row items-start lg:items-center justify-between gap-6">
+        <div class="space-y-2 max-w-2xl">
+          <div class="inline-flex items-center gap-2 text-xs font-bold uppercase tracking-wider text-sky-400">
+            <span>★ Individuelle KI-Speziallösungen (Custom)</span>
+          </div>
+          <h3 class="text-xl sm:text-2xl font-bold text-white">
+            Sie haben einen speziellen Wunsch im KI-Bereich oder besondere Betriebsabläufe?
+          </h3>
+          <p class="text-sm text-slate-300 leading-relaxed">
+            Unsere 3 Stufen sind das Fundament – aber wir halten uns bewusst offen für Ihre individuellen Anforderungen: Ob KI-Telefonassistenten, automatische Foto- &amp; Dokumentenauswertung, eigene Kalkulations-Tools oder spezielle Branchensoftware-Schnittstellen.
+          </p>
+        </div>
+        <div class="shrink-0 w-full lg:w-auto">
+          <button
+            type="button"
+            onclick="scrollToContactWithTopic('Individueller KI-Sonderwunsch / Custom Solution')"
+            class="w-full lg:w-auto inline-flex items-center justify-center gap-2 rounded-xl bg-white text-slate-900 hover:bg-sky-50 px-6 py-3.5 text-sm font-bold shadow-lg transition"
+          >
+            <span>Eigenen KI-Wunsch besprechen</span>
+            <span>→</span>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4. INTERACTIVE LIVE SIMULATION LAB ("Show, Don't Tell")
+       ======================================================================== -->
+  <section id="live-simulation" class="py-20 lg:py-28 bg-slate-950 text-white border-t border-slate-800/80">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-12">
+        <span class="inline-flex items-center gap-2 rounded-full bg-emerald-500/15 border border-emerald-400/30 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-emerald-300 mb-3">
+          <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
+          Interaktive Live-Demo
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
+          Erleben Sie live, wie unsere Agenten arbeiten
+        </h2>
+        <p class="mt-3 text-sm sm:text-base text-slate-400">
+          Klicken Sie durch die Stufen 1 bis 3 (oder Custom) und sehen Sie in Echtzeit, auf welche Systeme der Agent zugreift und wie er Aufgaben im Hintergrund erledigt.
+        </p>
+      </div>
+
+      <!-- Tier Selector Tabs -->
+      <div class="grid grid-cols-2 lg:grid-cols-4 gap-3 mb-8">
+        <button
+          type="button"
+          data-sim-tab="tier1"
+          onclick="selectSimulatorTier('tier1', 0)"
+          class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-left transition hover:border-slate-700"
+        >
+          <div class="text-[11px] font-mono-code font-semibold text-sky-400">STUFE 1</div>
+          <div class="text-sm font-bold mt-0.5">Smart Frontdesk</div>
+          <div class="text-xs text-slate-400 mt-0.5">Website &amp; Lead-Qualifizierung</div>
+        </button>
+
+        <button
+          type="button"
+          data-sim-tab="tier2"
+          onclick="selectSimulatorTier('tier2', 0)"
+          class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-left transition hover:border-slate-700 tier-tab-active text-white"
+        >
+          <div class="text-[11px] font-mono-code font-semibold text-sky-400">STUFE 2 • EMPFOHLEN</div>
+          <div class="text-sm font-bold mt-0.5">Wissens- &amp; Büro-Agent</div>
+          <div class="text-xs text-slate-400 mt-0.5">+ Firmenspeicher &amp; Dokumente</div>
+        </button>
+
+        <button
+          type="button"
+          data-sim-tab="tier3"
+          onclick="selectSimulatorTier('tier3', 0)"
+          class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-left transition hover:border-slate-700"
+        >
+          <div class="text-[11px] font-mono-code font-semibold text-emerald-400">STUFE 3</div>
+          <div class="text-sm font-bold mt-0.5">Voll-Netzwerk-Agent</div>
+          <div class="text-xs text-slate-400 mt-0.5">+ Gesamtes Firmennetz &amp; CRM</div>
+        </button>
+
+        <button
+          type="button"
+          data-sim-tab="custom"
+          onclick="selectSimulatorTier('custom', 0)"
+          class="rounded-xl border border-slate-800 bg-slate-900/70 p-4 text-left transition hover:border-slate-700"
+        >
+          <div class="text-[11px] font-mono-code font-semibold text-indigo-400">CUSTOM</div>
+          <div class="text-sm font-bold mt-0.5">KI-Speziallösungen</div>
+          <div class="text-xs text-slate-400 mt-0.5">Sprache, Fotos &amp; Sonder-Flows</div>
+        </button>
+      </div>
+
+      <!-- Main Interactive Simulator Console -->
+      <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-6 lg:p-8 shadow-2xl">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+          
+          <!-- Left Column (5 cols): Active Tier Details & Connected Company Network Nodes -->
+          <div class="lg:col-span-5 space-y-6">
+            <div>
+              <span id="sim-tier-badge" class="inline-block rounded-md bg-sky-500/20 px-2.5 py-1 text-xs font-mono-code font-semibold text-sky-300 mb-2">
+                STUFE 2 • PRO
+              </span>
+              <h3 id="sim-tier-title" class="text-2xl font-extrabold text-white">
+                Interner Wissens- &amp; Büro-Agent
+              </h3>
+              <p id="sim-tier-subtitle" class="mt-2 text-sm text-slate-300 leading-relaxed">
+                Greift geschützt auf Ihren Firmenspeicher, Dokumente, Preislisten und Kalender zu.
+              </p>
+            </div>
+
+            <!-- Visual Network Node Status Grid -->
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-3">
+                Aktive System-Verbindungen in dieser Stufe:
+              </div>
+              <div class="grid grid-cols-2 gap-3">
+                <!-- Node 1: Website -->
+                <div id="node-web" class="rounded-xl border p-3 transition-all">
+                  <div class="text-xs font-bold text-white">Website &amp; Chat</div>
+                  <div id="node-web-status" class="mt-1 flex items-center gap-1.5 text-[11px]"></div>
+                </div>
+                <!-- Node 2: Storage -->
+                <div id="node-storage" class="rounded-xl border p-3 transition-all">
+                  <div class="text-xs font-bold text-white">Firmenspeicher / Akten</div>
+                  <div id="node-storage-status" class="mt-1 flex items-center gap-1.5 text-[11px]"></div>
+                </div>
+                <!-- Node 3: Mail & Calendar -->
+                <div id="node-mail" class="rounded-xl border p-3 transition-all">
+                  <div class="text-xs font-bold text-white">E-Mail &amp; Kalender</div>
+                  <div id="node-mail-status" class="mt-1 flex items-center gap-1.5 text-[11px]"></div>
+                </div>
+                <!-- Node 4: Full Company Network -->
+                <div id="node-network" class="rounded-xl border p-3 transition-all">
+                  <div class="text-xs font-bold text-white">Firmennetz &amp; CRM/ERP</div>
+                  <div id="node-network-status" class="mt-1 flex items-center gap-1.5 text-[11px]"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Capabilities List -->
+            <div>
+              <div class="text-xs font-semibold uppercase tracking-wider text-slate-400 mb-2.5">
+                Was der Agent hier selbstständig übernimmt:
+              </div>
+              <ul id="sim-capabilities-list" class="space-y-2"></ul>
+            </div>
+
+            <div class="pt-2">
+              <button
+                id="sim-tier-cta"
+                type="button"
+                onclick="scrollToContactWithTopic('KI-Agent Stufe 2 (Wissens- & Büro-Agent)')"
+                class="w-full rounded-xl bg-blue-600 hover:bg-blue-500 text-white font-bold py-3 px-4 text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/25"
+              >
+                <span>Genau diese Stufe für mein Unternehmen anfragen</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- Right Column (7 cols): Live Scenario Simulation & System Execution Log -->
+          <div class="lg:col-span-7 space-y-4">
+            
+            <!-- Scenario Switcher Header -->
+            <div class="flex flex-wrap items-center justify-between gap-2 rounded-xl bg-slate-950/80 border border-slate-800 px-4 py-3">
+              <span class="text-xs font-semibold text-slate-400">Praxis-Beispiel auswählen:</span>
+              <div id="sim-scenario-buttons" class="flex flex-wrap gap-2"></div>
+            </div>
+
+            <!-- Simulated Live Conversation Box -->
+            <div class="rounded-xl bg-slate-950 border border-slate-800 p-4 sm:p-5">
+              <div class="flex items-center justify-between border-b border-slate-800/80 pb-3 mb-4">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
+                  <span class="text-xs font-semibold text-slate-300">Live-Ablauf-Simulation</span>
+                </div>
+                <span class="text-[11px] font-mono-code text-slate-500">Reaktionszeit: &lt; 1.2s</span>
+              </div>
+
+              <div id="sim-chat-stream" class="min-h-[250px] flex flex-col justify-center"></div>
+            </div>
+
+            <!-- Live Backend / Network Execution Terminal -->
+            <div class="rounded-xl bg-black/80 border border-slate-800 p-4">
+              <div class="flex items-center justify-between mb-2">
+                <span class="text-[11px] font-mono-code uppercase tracking-wider text-sky-400">
+                  Hintergrund-Protokoll (Speicher- &amp; Netzwerk-Aktionen)
+                </span>
+                <span class="text-[11px] font-mono-code text-emerald-400">● ENCRYPTED ACCESS</span>
+              </div>
+              <div id="sim-terminal-logs" class="space-y-1"></div>
+            </div>
+
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           4A-2. INTERACTIVE TIME-SAVINGS & ROI CALCULATOR
+           ==================================================================== -->
+      <div id="zeitrechner" class="mt-16 rounded-3xl glass-dark border border-sky-500/30 p-6 sm:p-10 shadow-2xl reveal-on-scroll">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+          
+          <!-- Left: Sliders -->
+          <div class="lg:col-span-7 space-y-6">
+            <div>
+              <span class="inline-block rounded-full bg-sky-500/15 border border-sky-400/30 px-3 py-1 text-xs font-bold uppercase tracking-wider text-sky-300 mb-2">
+                Interaktiver Entlastungs-Rechner
+              </span>
+              <h3 class="text-2xl sm:text-3xl font-extrabold text-white">
+                Berechnen Sie, wie viel Arbeitszeit Ihr Betrieb jeden Monat einspart
+              </h3>
+              <p class="text-sm text-slate-300 mt-2">
+                Stellen Sie mit den beiden Reglern kurz Ihren aktuellen Aufwand im Alltag ein:
+              </p>
+            </div>
+
+            <!-- Slider 1 -->
+            <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <label for="roi-inquiries" class="text-xs sm:text-sm font-bold text-slate-200">
+                  1. Kundenanfragen, Anrufe &amp; E-Mails pro Woche:
+                </label>
+                <span id="roi-inquiries-val" class="rounded-lg bg-blue-500/20 border border-sky-400/40 px-3 py-1 text-xs sm:text-sm font-extrabold text-sky-300 font-mono-code">
+                  25 Anfragen / Woche
+                </span>
+              </div>
+              <input
+                id="roi-inquiries"
+                type="range"
+                min="5"
+                max="100"
+                step="5"
+                value="25"
+                oninput="updateRoiCalculator()"
+                class="lj-slider"
+              />
+              <div class="flex justify-between text-[11px] text-slate-500">
+                <span>5 pro Woche</span>
+                <span>50 pro Woche</span>
+                <span>100+ pro Woche</span>
+              </div>
+            </div>
+
+            <!-- Slider 2 -->
+            <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-5 space-y-3">
+              <div class="flex items-center justify-between">
+                <label for="roi-office-hours" class="text-xs sm:text-sm font-bold text-slate-200">
+                  2. Büroarbeit pro Woche (Angebote, Akten suchen, Termine):
+                </label>
+                <span id="roi-office-hours-val" class="rounded-lg bg-indigo-500/20 border border-indigo-400/40 px-3 py-1 text-xs sm:text-sm font-extrabold text-indigo-300 font-mono-code">
+                  12 Std. / Woche
+                </span>
+              </div>
+              <input
+                id="roi-office-hours"
+                type="range"
+                min="2"
+                max="40"
+                step="2"
+                value="12"
+                oninput="updateRoiCalculator()"
+                class="lj-slider"
+              />
+              <div class="flex justify-between text-[11px] text-slate-500">
+                <span>2 Std. / Woche</span>
+                <span>20 Std. / Woche</span>
+                <span>40 Std. / Woche</span>
+              </div>
+            </div>
+          </div>
+
+          <!-- Right: Live Calculation Output Card -->
+          <div class="lg:col-span-5">
+            <div class="rounded-2xl bg-gradient-to-br from-blue-950/90 via-slate-900 to-indigo-950/90 border border-sky-400/40 p-6 sm:p-7 space-y-5 shadow-xl">
+              <div class="text-xs font-bold uppercase tracking-wider text-sky-400">
+                Ihr geschätztes Einsparpotenzial:
+              </div>
+
+              <div class="grid grid-cols-2 gap-4">
+                <div class="rounded-xl bg-slate-950/80 border border-slate-800 p-4">
+                  <div class="text-xs text-slate-400">Gesparte Zeit / Monat</div>
+                  <div id="roi-result-hours" class="text-2xl sm:text-3xl font-extrabold text-emerald-400 mt-1">
+                    ca. 48 Std.
+                  </div>
+                </div>
+                <div class="rounded-xl bg-slate-950/80 border border-slate-800 p-4">
+                  <div class="text-xs text-slate-400">Gewonnene Zeit / Jahr</div>
+                  <div id="roi-result-days" class="text-2xl sm:text-3xl font-extrabold text-sky-400 mt-1">
+                    72 Arbeitstage
+                  </div>
+                </div>
+              </div>
+
+              <div class="rounded-xl bg-slate-950/90 border border-slate-800 p-4 space-y-1.5">
+                <div id="roi-rec-badge" class="text-[11px] font-mono-code font-bold text-sky-400">
+                  EMPFEHLUNG: STUFE 2 (PRO)
+                </div>
+                <div id="roi-rec-title" class="text-sm font-bold text-white">
+                  Interner Wissens- &amp; Büro-Agent mit Speicherzugriff
+                </div>
+                <p id="roi-rec-desc" class="text-xs text-slate-300 leading-relaxed">
+                  Der größte Hebel für Ihren Betrieb: Der Agent greift auf Ihren Firmenspeicher &amp; Preislisten zu, bereitet Angebote vor und nimmt Ihnen den Großteil der Büroarbeit ab.
+                </p>
+              </div>
+
+              <button
+                type="button"
+                onclick="transferRoiToContact()"
+                class="w-full rounded-xl bg-gradient-to-r from-blue-600 to-indigo-600 hover:from-blue-500 hover:to-indigo-500 text-white font-bold py-3.5 px-4 text-xs sm:text-sm transition flex items-center justify-center gap-2 shadow-lg shadow-blue-600/30"
+              >
+                <span>Ergebnis in Potenzialanalyse übernehmen</span>
+                <span>→</span>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- ====================================================================
+           4A-3. SECURITY & DATA CONTROL ARCHITECTURE (Trust Block)
+           ==================================================================== -->
+      <div class="mt-12 rounded-3xl bg-slate-900/90 border border-slate-800 p-6 sm:p-10 reveal-on-scroll">
+        <div class="flex flex-col lg:flex-row lg:items-center justify-between gap-6 mb-8 pb-6 border-b border-slate-800">
+          <div>
+            <span class="inline-flex items-center gap-1.5 text-xs font-bold uppercase tracking-wider text-emerald-400">
+              <span>🔒 Sicherheits- &amp; Berechtigungs-Architektur</span>
+            </span>
+            <h3 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
+              Wie Ihre Firmendaten und Ihr Netzwerk zu 100 % unter Ihrer Kontrolle bleiben
+            </h3>
+          </div>
+          <span class="inline-flex items-center gap-2 self-start lg:self-auto rounded-xl bg-emerald-500/10 border border-emerald-500/30 px-4 py-2 text-xs font-semibold text-emerald-300">
+            DSGVO-konform • Rollenbasierte Freigabe
+          </span>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          <div class="rounded-2xl bg-slate-950/80 border border-slate-800/90 p-6">
+            <div class="text-xs font-mono-code font-bold text-sky-400 mb-2">SCHUTZ-EBENE 01</div>
+            <h4 class="text-base font-bold text-white mb-2">Exakte Ordner- &amp; Lese-Rechte</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Der KI-Agent sieht niemals „einfach alles“. Wir definieren gemeinsam exakt, auf welche Ordner im Firmenspeicher (z. B. Preislisten, Vorlagen, Projektakten) er zugreifen darf – vertrauliche Chef-Ordner bleiben komplett gesperrt.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-slate-950/80 border border-slate-800/90 p-6">
+            <div class="text-xs font-mono-code font-bold text-indigo-400 mb-2">SCHUTZ-EBENE 02</div>
+            <h4 class="text-base font-bold text-white mb-2">1-Klick-Freigabe durch Sie</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Bei geschäftskritischen Schritten (wie dem Versand eines fertigen Angebots oder einer Bestellung) bereitet der Agent alles zu 99 % vor und legt es Ihnen zur 1-Klick-Freigabe vor. Sie behalten jederzeit das letzte Wort.
+            </p>
+          </div>
+
+          <div class="rounded-2xl bg-slate-950/80 border border-slate-800/90 p-6">
+            <div class="text-xs font-mono-code font-bold text-emerald-400 mb-2">SCHUTZ-EBENE 03</div>
+            <h4 class="text-base font-bold text-white mb-2">Kein öffentliches KI-Training</h4>
+            <p class="text-xs sm:text-sm text-slate-300 leading-relaxed">
+              Ihre Kalkulationen, Kundendaten und internen Dokumente bleiben Ihr geschütztes Betriebsgeheimnis. Es werden keinerlei Firmendaten genutzt, um öffentliche KI-Modelle zu trainieren.
+            </p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       4B. WARUM LJ DIGITAL SYSTEMS? (4 Partner-Versprechen)
+       ======================================================================== -->
+  <section id="warum-lj" class="py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+          Ihr Digital- &amp; Systempartner
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Warum Unternehmen auf <span class="text-gradient-dark">LJ Digital Systems</span> setzen
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Wir sind keine anonyme Massen-Agentur, die Ihnen komplizierte Theorie verkauft – wir bauen praxisnahe digitale Systeme, die im echten Arbeitsalltag sofort funktionieren.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Promise 1 -->
+        <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-blue-600 text-white shadow-sm">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Direkter Ansprechpartner
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Bei uns landen Sie in keiner Warteschleife. Sie sprechen direkt mit den Entwicklern und System-Architekten, die Ihre Website und Ihre KI-Agenten persönlich aufbauen.
+          </p>
+        </div>
+
+        <!-- Promise 2 -->
+        <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-indigo-600 text-white shadow-sm">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            100 % maßgeschneidert
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Keine starren Standard-Schablonen: Wir passen unsere KI-Agenten exakt an Ihre Ordnerstruktur, Ihren Firmenspeicher und Ihre bestehenden Arbeitsabläufe an.
+          </p>
+        </div>
+
+        <!-- Promise 3 -->
+        <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-sky-600 text-white shadow-sm">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Verständliche Einweisung
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Das beste System nützt nur, wenn Ihr Team es gerne einsetzt. Wir richten alles schlüsselfertig ein und erklären Ihnen jeden Schritt klar, einfach und auf Augenhöhe.
+          </p>
+        </div>
+
+        <!-- Promise 4 -->
+        <div class="card-light-hover rounded-2xl bg-white p-7 border border-slate-200/90 shadow-sm">
+          <div class="mb-4 inline-flex h-11 w-11 items-center justify-center rounded-xl bg-emerald-600 text-white shadow-sm">
+            <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+            </svg>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Langfristiger Support
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Auch nach dem Go-Live lassen wir Sie nicht allein. Wir begleiten Ihr Unternehmen dauerhaft, halten die Technik aktuell und setzen neue KI-Wünsche jederzeit um.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       5. 4-STEP PROCESS SECTION (Clean Light Section)
+       ======================================================================== -->
+  <section id="ablauf" class="py-20 lg:py-28 bg-white border-b border-slate-200">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-16">
+        <span class="inline-block rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+          Einfach &amp; Ohne Betriebsausfall
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          In 4 klaren Schritten zu Ihrem digitalen System
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-600">
+          Sie müssen sich nicht mit komplizierter Technik beschäftigen. Wir übernehmen die komplette Einrichtung im Hintergrund, während Ihr Tagesgeschäft ungestört weiterläuft.
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        
+        <!-- Step 1 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 p-6 border border-slate-200/90 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-extrabold text-sm shadow">
+              01
+            </span>
+            <span class="text-xs font-semibold text-blue-600 bg-blue-50 px-2.5 py-1 rounded-full">15–20 Min.</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Kostenlose Potenzialanalyse
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Wir schauen uns gemeinsam an, wo in Ihrem Betrieb aktuell die meiste Zeit verloren geht und ob eine Website-Überarbeitung, Stufe 1, 2 oder 3 den größten Hebel bietet.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 p-6 border border-slate-200/90 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-extrabold text-sm shadow">
+              02
+            </span>
+            <span class="text-xs font-semibold text-slate-600 bg-slate-200/70 px-2.5 py-1 rounded-full">Maßgeschneidert</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Konzept &amp; Sicherheits-Architektur
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Wir legen exakt fest, wie Ihre neue Website aussieht und auf welche Ordner im Firmenspeicher oder welche Programme der KI-Agent zugreifen darf.
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 p-6 border border-slate-200/90 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-extrabold text-sm shadow">
+              03
+            </span>
+            <span class="text-xs font-semibold text-emerald-700 bg-emerald-100 px-2.5 py-1 rounded-full">Ohne Ausfallzeit</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Nahtlose Integration &amp; Testlauf
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Wir bauen die Website und trainieren Ihren KI-Agenten mit Ihren echten Firmendaten. Vor dem Start testen wir alle Abläufe gründlich gemeinsam durch.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="card-light-hover rounded-2xl bg-slate-50 p-6 border border-slate-200/90 relative">
+          <div class="flex items-center justify-between mb-4">
+            <span class="flex h-10 w-10 items-center justify-center rounded-xl bg-blue-600 text-white font-extrabold text-sm shadow">
+              04
+            </span>
+            <span class="text-xs font-semibold text-indigo-700 bg-indigo-100 px-2.5 py-1 rounded-full">Langfristig</span>
+          </div>
+          <h3 class="text-lg font-bold text-slate-900 mb-2">
+            Go-Live &amp; Laufende Betreuung
+          </h3>
+          <p class="text-sm text-slate-600 leading-relaxed">
+            Ab Tag 1 nimmt Ihnen das System Arbeit ab. Wir bleiben als Ihr technischer Partner an Ihrer Seite und erweitern den Agenten jederzeit bei neuen Wünschen.
+          </p>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       6. FAQ SECTION (Clean Light Section)
+       ======================================================================== -->
+  <section id="faq" class="py-20 lg:py-24 bg-slate-50 border-b border-slate-200">
+    <div class="mx-auto max-w-4xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center mb-12">
+        <span class="inline-block rounded-full bg-blue-100 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-blue-700 mb-3">
+          Klare Antworten
+        </span>
+        <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight text-slate-900">
+          Häufig gestellte Fragen
+        </h2>
+        <p class="mt-3 text-base text-slate-600">
+          Wichtige Fragen zu Sicherheit, Ablauf, Website-Überarbeitungen und unseren 3 KI-Agenten-Stufen.
+        </p>
+      </div>
+
+      <div class="space-y-4">
+        
+        <!-- FAQ 1 -->
+        <div class="rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleFaq(this)"
+            class="flex w-full items-center justify-between px-6 py-5 text-left font-bold text-slate-900 hover:bg-slate-50 transition"
+          >
+            <span>Wie sicher ist es, wenn ein KI-Agent (Stufe 2 oder 3) auf unseren Firmenspeicher und das Netzwerk zugreift?</span>
+            <svg data-faq-icon class="h-5 w-5 text-slate-500 transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Datensicherheit hat bei uns höchste Priorität. Der Agent erhält niemals unkontrollierten Zugriff, sondern arbeitet mit streng definierten Berechtigungen: Sie bestimmen genau, welche Ordner, Preislisten oder Programme er lesen darf. Zudem können wichtige Schritte (wie das endgültige Absenden eines Angebots) so eingestellt werden, dass Sie diese mit einem einzigen Klick freigeben. Ihre Geschäftsdaten werden nicht zum Training öffentlicher KI-Modelle verwendet.
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleFaq(this)"
+            class="flex w-full items-center justify-between px-6 py-5 text-left font-bold text-slate-900 hover:bg-slate-50 transition"
+          >
+            <span>Können wir erst mit Stufe 1 oder einer Website-Überarbeitung starten und später auf Stufe 2 oder 3 erweitern?</span>
+            <svg data-faq-icon class="h-5 w-5 text-slate-500 transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Ja, genau dafür ist unser 3-Stufen-System entwickelt worden! Viele Kunden starten mit einer modernen Website-Überarbeitung inklusive Stufe-1-Agent (oder direkt mit Stufe 2 für die Büro-Entlastung) und bauen das System später schrittweise zum vollvernetzten Stufe-3-Agenten aus.
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleFaq(this)"
+            class="flex w-full items-center justify-between px-6 py-5 text-left font-bold text-slate-900 hover:bg-slate-50 transition"
+          >
+            <span>Was kostet eine Zusammenarbeit mit LJ Digital Systems?</span>
+            <svg data-faq-icon class="h-5 w-5 text-slate-500 transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Da der Umfang stark davon abhängt, welche Systeme in Ihrem Betrieb bereits genutzt werden und welche Aufgaben der Agent übernehmen soll, arbeiten wir nicht mit starren Schablonenpreisen. Im kostenlosen 15-Minuten-Erstgespräch klären wir Ihren Bedarf und erstellen Ihnen ein transparentes Festpreis-Angebot, das sich durch die eingesparte Arbeitszeit oft schon nach wenigen Wochen amortisiert.
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="rounded-2xl bg-white border border-slate-200/90 shadow-sm overflow-hidden">
+          <button
+            type="button"
+            onclick="toggleFaq(this)"
+            class="flex w-full items-center justify-between px-6 py-5 text-left font-bold text-slate-900 hover:bg-slate-50 transition"
+          >
+            <span>Wir haben eine ganz spezielle Idee im KI-Bereich – setzt ihr auch Sonderwünsche um?</span>
+            <svg data-faq-icon class="h-5 w-5 text-slate-500 transition-transform duration-200 shrink-0 ml-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M19 9l-7 7-7-7" />
+            </svg>
+          </button>
+          <div class="hidden px-6 pb-5 text-sm text-slate-600 leading-relaxed border-t border-slate-100 pt-3">
+            Absolut. Neben unseren 3 Standard-Stufen entwickeln wir sehr gerne individuelle KI-Lösungen – egal ob Sprach-Agenten am Telefon, automatische Auswertung von Fotos/Dokumenten oder Anbindungen an branchenspezifische Software. Wählen Sie im Kontaktformular einfach „Individueller KI-Sonderwunsch“ aus.
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       7. UNIFIED CONVERSION & CONTACT SECTION ("Alle 3 Wege vereint")
+       ======================================================================== -->
+  <section id="kontakt" class="py-20 lg:py-28 bg-tech-grid-dark text-white">
+    <div class="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8">
+      
+      <div class="text-center max-w-3xl mx-auto mb-14">
+        <span class="inline-flex items-center gap-2 rounded-full bg-blue-500/15 border border-sky-400/30 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-sky-300 mb-3">
+          Unverbindlich &amp; Direkt
+        </span>
+        <h2 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold tracking-tight">
+          Starten Sie Ihre <span class="text-gradient-tech">kostenlose Potenzialanalyse</span>
+        </h2>
+        <p class="mt-4 text-base sm:text-lg text-slate-300">
+          Wählen Sie in Sekunden aus, wofür Sie sich interessieren, sichern Sie sich Ihr Wunsch-Zeitfenster für ein kurzes Erstgespräch oder senden Sie uns direkt Ihre Nachricht.
+        </p>
+      </div>
+
+      <div class="glass-dark rounded-3xl border border-white/15 p-6 sm:p-10 shadow-2xl">
+        <form onsubmit="handleContactSubmit(event)" class="space-y-8">
+          
+          <!-- PART 1: Interactive Topic Pre-Selection -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+              1. Wofür interessieren Sie sich? (Mehrfachauswahl möglich)
+            </label>
+            <div class="flex flex-wrap gap-2.5">
+              <button
+                type="button"
+                data-topic-chip="Website-Überarbeitung & Modernisierung"
+                onclick="toggleTopicChip('Website-Überarbeitung & Modernisierung', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 transition"
+              >
+                🌐 Website-Überarbeitung &amp; Relaunch
+              </button>
+
+              <button
+                type="button"
+                data-topic-chip="KI-Agent Stufe 1 (Smart Frontdesk)"
+                onclick="toggleTopicChip('KI-Agent Stufe 1 (Smart Frontdesk)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 transition"
+              >
+                🤖 KI-Agent Stufe 1 (Smart Frontdesk)
+              </button>
+
+              <button
+                type="button"
+                data-topic-chip="KI-Agent Stufe 2 (Wissens- & Büro-Agent)"
+                onclick="toggleTopicChip('KI-Agent Stufe 2 (Wissens- & Büro-Agent)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 transition topic-chip-active"
+              >
+                📂 KI-Agent Stufe 2 (Speicher &amp; Büro-Agent)
+              </button>
+
+              <button
+                type="button"
+                data-topic-chip="KI-Agent Stufe 3 (Vollintegrierter Netzwerk-Agent)"
+                onclick="toggleTopicChip('KI-Agent Stufe 3 (Vollintegrierter Netzwerk-Agent)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 transition"
+              >
+                ⚡ KI-Agent Stufe 3 (Komplettes Firmennetz)
+              </button>
+
+              <button
+                type="button"
+                data-topic-chip="Individueller KI-Sonderwunsch / Custom Solution"
+                onclick="toggleTopicChip('Individueller KI-Sonderwunsch / Custom Solution', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/90 px-4 py-2.5 text-xs sm:text-sm font-semibold text-slate-200 hover:border-slate-500 transition"
+              >
+                ✨ Spezieller KI-Wunsch / Beratung
+              </button>
+            </div>
+          </div>
+
+          <!-- PART 2: Integrated Quick Call / Appointment Slot Picker -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+              2. Wann passt Ihnen ein kurzes 15-Minuten-Erstgespräch am besten?
+            </label>
+            <div class="grid grid-cols-2 sm:grid-cols-4 gap-2.5">
+              <button
+                type="button"
+                data-slot-chip
+                onclick="selectTimeSlot('Vormittags (09:00 – 12:00 Uhr)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2.5 text-xs font-medium text-slate-300 hover:border-slate-500 transition text-left"
+              >
+                <div class="font-bold text-white">☀️ Vormittags</div>
+                <div class="text-[11px] text-slate-400">09:00 – 12:00 Uhr</div>
+              </button>
+
+              <button
+                type="button"
+                data-slot-chip
+                onclick="selectTimeSlot('Nachmittags (13:00 – 17:00 Uhr)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2.5 text-xs font-medium text-slate-300 hover:border-slate-500 transition text-left"
+              >
+                <div class="font-bold text-white">🌤️ Nachmittags</div>
+                <div class="text-[11px] text-slate-400">13:00 – 17:00 Uhr</div>
+              </button>
+
+              <button
+                type="button"
+                data-slot-chip
+                onclick="selectTimeSlot('Spätnachmittag / Abend (17:00 – 19:30 Uhr)', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2.5 text-xs font-medium text-slate-300 hover:border-slate-500 transition text-left"
+              >
+                <div class="font-bold text-white">🌙 Abends (nach Büro)</div>
+                <div class="text-[11px] text-slate-400">17:00 – 19:30 Uhr</div>
+              </button>
+
+              <button
+                type="button"
+                data-slot-chip
+                onclick="selectTimeSlot('Flexibel / Erstmal per E-Mail', this)"
+                class="rounded-xl border border-slate-700 bg-slate-900/80 px-3.5 py-2.5 text-xs font-medium text-slate-300 hover:border-slate-500 transition text-left slot-chip-active"
+              >
+                <div class="font-bold text-white">📅 Flexibel</div>
+                <div class="text-[11px] text-slate-400">Nach Vereinbarung</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- PART 3: Contact Details & Message -->
+          <div>
+            <label class="block text-xs font-bold uppercase tracking-wider text-sky-400 mb-3">
+              3. Ihre Kontaktdaten
+            </label>
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div>
+                <label for="contact-name" class="block text-xs font-medium text-slate-300 mb-1.5">Ihr Name *</label>
+                <input
+                  id="contact-name"
+                  type="text"
+                  required
+                  placeholder="Max Mustermann"
+                  class="w-full rounded-xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label for="contact-company" class="block text-xs font-medium text-slate-300 mb-1.5">Unternehmen / Branche (optional)</label>
+                <input
+                  id="contact-company"
+                  type="text"
+                  placeholder="z.B. Mustermann GmbH"
+                  class="w-full rounded-xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label for="contact-email" class="block text-xs font-medium text-slate-300 mb-1.5">E-Mail-Adresse *</label>
+                <input
+                  id="contact-email"
+                  type="email"
+                  required
+                  placeholder="ihre@email.de"
+                  class="w-full rounded-xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+                />
+              </div>
+              <div>
+                <label for="contact-phone" class="block text-xs font-medium text-slate-300 mb-1.5">Telefonnummer für Rückruf (empfohlen)</label>
+                <input
+                  id="contact-phone"
+                  type="tel"
+                  placeholder="+49 ..."
+                  class="w-full rounded-xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+                />
+              </div>
+            </div>
+
+            <div class="mt-4">
+              <label for="contact-message" class="block text-xs font-medium text-slate-300 mb-1.5">
+                Kurze Beschreibung Ihrer aktuellen Situation oder Ihres Wunsches (optional)
+              </label>
+              <textarea
+                id="contact-message"
+                rows="3"
+                placeholder="z.B.: Unsere aktuelle Website ist veraltet und wir möchten prüfen, wie ein KI-Agent unser Büro bei Kundenanfragen und Angeboten entlasten kann..."
+                class="w-full rounded-xl bg-slate-900/90 border border-slate-700 px-4 py-3 text-sm text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+              ></textarea>
+            </div>
+
+            <!-- DSGVO Consent Checkbox -->
+            <div class="mt-4 flex items-start gap-3">
+              <input
+                id="contact-privacy"
+                type="checkbox"
+                required
+                class="mt-1 h-4 w-4 rounded border-slate-600 bg-slate-900 text-blue-600 focus:ring-blue-500"
+              />
+              <label for="contact-privacy" class="text-xs text-slate-300 leading-relaxed">
+                Ich stimme zu, dass meine Angaben zur Kontaktaufnahme und für die kostenlose Potenzialanalyse gemäß der
+                <button type="button" onclick="openLegalModal('datenschutz')" class="text-sky-400 underline hover:text-sky-300">
+                  Datenschutzerklärung
+                </button>
+                verarbeitet werden. *
+              </label>
+            </div>
+          </div>
+
+          <!-- Live Config Bar & Submit Button -->
+          <div class="rounded-2xl bg-slate-900/90 border border-slate-800 p-4 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+            <div class="text-xs text-slate-300">
+              <span class="text-slate-500 block font-medium mb-0.5">Ihre aktuelle Auswahl:</span>
+              <span id="selected-config-summary" class="font-semibold text-sky-300"></span>
+            </div>
+
+            <button
+              id="contact-submit-btn"
+              type="submit"
+              class="w-full sm:w-auto shrink-0 inline-flex items-center justify-center gap-2 rounded-xl bg-gradient-to-r from-blue-600 via-indigo-600 to-blue-600 px-7 py-4 text-sm sm:text-base font-bold text-white shadow-xl shadow-blue-600/30 hover:brightness-110 transition disabled:opacity-60"
+            >
+              <span id="contact-submit-btn-text">Potenzialanalyse jetzt anfordern</span>
+              <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M14 5l7 7m0 0l-7 7m7-7H3" />
+              </svg>
+            </button>
+          </div>
+
+          <!-- Direct Contact Info Bar -->
+          <div class="flex flex-wrap items-center justify-between gap-4 pt-2 text-xs text-slate-400">
+            <div class="flex items-center gap-2">
+              <span>Direkt per E-Mail erreichbar:</span>
+              <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 hover:underline font-semibold">
+                lj.systems.de@gmail.com
+              </a>
+            </div>
+            <div>🔒 100% kostenlos &amp; unverbindlich • Direkter Versand an unser System</div>
+          </div>
+        </form>
+
+        <!-- Confirmation / Fallback Box after Submit -->
+        <div id="contact-feedback-box" class="hidden mt-8 rounded-2xl bg-emerald-950/60 border border-emerald-500/40 p-6 animate-fade-slide">
+          <div class="flex items-start justify-between gap-4 mb-3">
+            <div>
+              <h4 id="contact-feedback-title" class="text-base font-bold text-emerald-300 flex items-center gap-2">
+                <span>✓ Vielen Dank! Ihre Anfrage wurde direkt an LJ Digital Systems gesendet.</span>
+              </h4>
+              <p id="contact-feedback-desc" class="text-xs text-slate-300 mt-1">
+                Wir haben Ihre Angaben unter <strong>lj.systems.de@gmail.com</strong> erhalten. Unten sehen Sie Ihre Zusammenfassung (inkl. Backup-Optionen):
+              </p>
+            </div>
+          </div>
+          <pre id="contact-summary-preview" class="rounded-xl bg-slate-950/90 border border-slate-800 p-4 text-xs text-slate-300 font-mono-code whitespace-pre-wrap overflow-x-auto mb-4"></pre>
+          <div class="flex flex-wrap gap-3">
+            <a
+              id="contact-direct-mailto"
+              href="mailto:lj.systems.de@gmail.com"
+              class="inline-flex items-center gap-2 rounded-xl bg-emerald-600 hover:bg-emerald-500 px-4 py-2.5 text-xs font-bold text-white transition"
+            >
+              <span>E-Mail-Programm erneut öffnen</span>
+            </a>
+            <button
+              type="button"
+              onclick="copyRequestText()"
+              class="inline-flex items-center gap-2 rounded-xl bg-slate-800 hover:bg-slate-700 border border-slate-700 px-4 py-2.5 text-xs font-semibold text-slate-200 transition"
+            >
+              <span id="copy-btn-label">Anfragetext in Zwischenablage kopieren</span>
+            </button>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================================================
+       8. FOOTER
+       ======================================================================== -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-900">
+    <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
+      <div class="grid grid-cols-1 md:grid-cols-4 gap-8 pb-10 border-b border-slate-900">
+        
+        <div class="md:col-span-2 space-y-3">
+          <div class="flex items-center gap-3">
+            <div class="flex h-9 w-9 items-center justify-center rounded-xl bg-gradient-to-br from-blue-600 to-indigo-600 text-white font-extrabold text-base">
+              LJ
+            </div>
+            <span class="text-lg font-extrabold text-white">LJ Digital Systems</span>
+          </div>
+          <p class="text-xs sm:text-sm text-slate-400 max-w-md leading-relaxed">
+            Ihr Partner für verkaufsstarke Website-Überarbeitungen, intelligente Prozessautomatisierung und vernetzte KI-Agenten (Stufe 1 bis 3) mit Zugriff auf Firmenspeicher und Unternehmensnetzwerk.
+          </p>
+          <div class="pt-1 text-xs text-slate-300">
+            E-Mail: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 hover:underline">lj.systems.de@gmail.com</a>
+          </div>
+        </div>
+
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-white mb-3">Lösungen</div>
+          <ul class="space-y-2 text-xs sm:text-sm">
+            <li><a href="#leistungen" class="hover:text-white transition">Website-Überarbeitung</a></li>
+            <li><a href="#ki-stufen" class="hover:text-white transition">KI-Agent Stufe 1 (Frontdesk)</a></li>
+            <li><a href="#ki-stufen" class="hover:text-white transition">KI-Agent Stufe 2 (Speicher &amp; Büro)</a></li>
+            <li><a href="#ki-stufen" class="hover:text-white transition">KI-Agent Stufe 3 (Netzwerk)</a></li>
+            <li><a href="#ki-stufen" class="hover:text-white transition">Individuelle KI-Speziallösungen</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <div class="text-xs font-bold uppercase tracking-wider text-white mb-3">Navigation &amp; Rechtliches</div>
+          <ul class="space-y-2 text-xs sm:text-sm">
+            <li><a href="#live-simulation" class="hover:text-white transition">Live-Simulation</a></li>
+            <li><a href="#ablauf" class="hover:text-white transition">Ablauf der Zusammenarbeit</a></li>
+            <li><a href="#faq" class="hover:text-white transition">Häufige Fragen (FAQ)</a></li>
+            <li><button type="button" onclick="openLegalModal('impressum')" class="hover:text-white transition">Impressum</button></li>
+            <li><button type="button" onclick="openLegalModal('datenschutz')" class="hover:text-white transition">Datenschutz</button></li>
+          </ul>
+        </div>
+
+      </div>
+
+      <div class="pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs text-slate-500">
+        <div>© 2026 LJ Digital Systems. Alle Rechte vorbehalten.</div>
+        <div>Entwickelt für maximale Effizienz &amp; digitale Exzellenz.</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ========================================================================
+       9. FLOATING INTERACTIVE LJ AI ASSISTANT WIDGET (Bottom-Right)
+       ======================================================================== -->
+  <div class="fixed bottom-5 right-5 z-50 flex flex-col items-end">
+    
+    <!-- Chat Panel -->
+    <div
+      id="lj-chat-widget-panel"
+      class="hidden mb-3 w-[340px] sm:w-[380px] rounded-2xl glass-dark border border-sky-500/30 shadow-2xl overflow-hidden animate-fade-slide"
+    >
+      <!-- Header -->
+      <div class="bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3.5 flex items-center justify-between text-white">
+        <div class="flex items-center gap-2.5">
+          <div class="flex h-8 w-8 items-center justify-center rounded-lg bg-white/15 font-extrabold text-xs">
+            LJ
+          </div>
+          <div>
+            <div class="text-xs font-bold leading-none">LJ KI-Berater (Live-Demo)</div>
+            <div class="text-[10px] text-sky-200 mt-0.5 flex items-center gap-1">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
+              <span>Antwortet sofort zu Stufen 1–3 &amp; Web</span>
+            </div>
+          </div>
+        </div>
+        <button
+          type="button"
+          onclick="toggleChatWidget()"
+          class="rounded-lg p-1 text-white/80 hover:bg-white/10 hover:text-white"
+          aria-label="Chat schließen"
+        >
+          <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+      </div>
+
+      <!-- Messages Stream -->
+      <div id="lj-chat-messages" class="h-72 overflow-y-auto p-4 space-y-3 bg-slate-950/90 custom-scrollbar">
+        <div class="flex flex-col items-start">
+          <div class="rounded-2xl rounded-tl-none bg-slate-800 border border-slate-700/80 px-3.5 py-2.5 text-xs sm:text-sm text-slate-200 max-w-[92%]">
+            <div class="text-[10px] font-semibold uppercase tracking-wider text-sky-400 mb-1">LJ Digital Assistant</div>
+            Hallo! 👋 Ich bin der interaktive Demo-Assistent von <strong>LJ Digital Systems</strong>. Wie kann ich Ihnen helfen?
+          </div>
+        </div>
+      </div>
+
+      <!-- Quick Question Chips -->
+      <div class="px-3 py-2 bg-slate-900 border-t border-slate-800 flex flex-wrap gap-1.5">
+        <button
+          type="button"
+          onclick="askQuickBotQuestion('Was ist der Unterschied zwischen Stufe 1, 2 und 3?')"
+          class="rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2.5 py-1 text-[11px] text-sky-300 transition"
+        >
+          Unterschied Stufe 1–3?
+        </button>
+        <button
+          type="button"
+          onclick="askQuickBotQuestion('Wie läuft eine Website-Überarbeitung ab?')"
+          class="rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2.5 py-1 text-[11px] text-sky-300 transition"
+        >
+          Website-Relaunch
+        </button>
+        <button
+          type="button"
+          onclick="askQuickBotQuestion('Ist der Zugriff auf unseren Firmenspeicher sicher?')"
+          class="rounded-lg bg-slate-800 hover:bg-slate-700 border border-slate-700 px-2.5 py-1 text-[11px] text-sky-300 transition"
+        >
+          Datensicherheit
+        </button>
+      </div>
+
+      <!-- Input Form -->
+      <form onsubmit="handleChatWidgetSubmit(event)" class="p-3 bg-slate-950 border-t border-slate-800 flex items-center gap-2">
+        <input
+          id="lj-chat-input"
+          type="text"
+          placeholder="Frage zu KI-Agenten oder Website stellen..."
+          class="w-full rounded-xl bg-slate-900 border border-slate-700 px-3 py-2 text-xs text-white placeholder-slate-500 focus:border-sky-400 focus:outline-none"
+        />
+        <button
+          type="submit"
+          class="shrink-0 rounded-xl bg-blue-600 hover:bg-blue-500 p-2 text-white transition"
+          aria-label="Senden"
+        >
+          <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M5 12h14M12 5l7 7-7 7" />
+          </svg>
+        </button>
+      </form>
+    </div>
+
+    <!-- Floating Trigger Button -->
+    <button
+      type="button"
+      onclick="toggleChatWidget()"
+      class="group relative flex items-center gap-2.5 rounded-full bg-gradient-to-r from-blue-600 to-indigo-600 px-4 py-3.5 text-white shadow-2xl shadow-blue-600/40 hover:scale-105 transition"
+    >
+      <span id="lj-chat-unread-badge" class="absolute -top-1 -right-1 flex h-4 w-4 items-center justify-center rounded-full bg-emerald-400 text-[10px] font-bold text-slate-950">
+        1
+      </span>
+      <svg class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.2">
+        <path stroke-linecap="round" stroke-linejoin="round" d="M8 10h.01M12 10h.01M16 10h.01M9 16H5a2 2 0 01-2-2V6a2 2 0 012-2h14a2 2 0 012 2v8a2 2 0 01-2 2h-5l-5 5v-5z" />
+      </svg>
+      <span class="text-xs sm:text-sm font-bold pr-1">LJ KI-Assistent testen</span>
+    </button>
+  </div>
+
+  <!-- ========================================================================
+       10. LEGAL MODAL (Impressum / Datenschutz Preview)
+       ======================================================================== -->
+  <div id="legal-modal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/75 p-4 backdrop-blur-sm">
+    <div class="w-full max-w-lg rounded-2xl bg-slate-900 border border-slate-700 p-6 text-white shadow-2xl">
+      <div class="flex items-center justify-between border-b border-slate-800 pb-3 mb-4">
+        <h3 id="legal-modal-title" class="text-lg font-bold">Rechtliche Hinweise</h3>
+        <button type="button" onclick="closeLegalModal()" class="text-slate-400 hover:text-white">✕</button>
+      </div>
+      <div id="legal-modal-body"></div>
+      <div class="mt-6 text-right">
+        <button
+          type="button"
+          onclick="closeLegalModal()"
+          class="rounded-xl bg-blue-600 hover:bg-blue-500 px-4 py-2 text-xs font-bold text-white"
+        >
+          Schließen
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Application Script -->
+  <script src="app.js"></script>
+</body>
+</html>
