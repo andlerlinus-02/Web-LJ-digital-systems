@@ -1,6 +1,7 @@
 const http = require('http');
 const fs = require('fs');
 const path = require('path');
+const { exec } = require('child_process');
 
 const PORT = 3000;
 const PUBLIC_DIR = __dirname;
@@ -35,5 +36,7 @@ const server = http.createServer((req, res) => {
 });
 
 server.listen(PORT, '127.0.0.1', () => {
-  console.log(`LJ Digital Systems Live-Server läuft auf: http://localhost:${PORT}`);
+  const url = `http://localhost:${PORT}`;
+  console.log(`LJ Digital Systems Live-Server läuft auf: ${url}`);
+  exec(`start "" "${url}"`);
 });
