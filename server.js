@@ -19,7 +19,11 @@ const MIME_TYPES = {
 
 const server = http.createServer((req, res) => {
   const safeUrl = req.url.split('?')[0];
-  const filePath = path.join(PUBLIC_DIR, safeUrl === '/' ? 'index.html' : safeUrl);
+  let filePath = path.join(PUBLIC_DIR, safeUrl === '/' ? 'index.html' : safeUrl);
+
+  if (!path.extname(filePath) && fs.existsSync(filePath + '.html')) {
+    filePath += '.html';
+  }
 
   const ext = path.extname(filePath).toLowerCase();
   const contentType = MIME_TYPES[ext] || 'application/octet-stream';

@@ -664,33 +664,133 @@ function openLegalModal(type) {
   if (!modal || !title || !body) return;
 
   if (type === 'impressum') {
-    title.textContent = 'Impressum (Muster-Vorlage zur Ergänzung)';
+    title.textContent = 'Impressum';
     body.innerHTML = `
-      <div class="space-y-3 text-sm text-slate-300">
-        <p><strong class="text-white">Angaben gemäß § 5 DDG:</strong></p>
-        <p><strong>LJ Digital Systems</strong><br>
-        [Vorname Nachname / Rechtsform hier eintragen]<br>
-        [Straße und Hausnummer]<br>
-        [PLZ und Ort]</p>
-        <p><strong class="text-white">Kontakt:</strong><br>
-        E-Mail: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline">lj.systems.de@gmail.com</a><br>
-        Telefon: [Telefonnummer ergänzen]</p>
-        <p><strong class="text-white">Umsatzsteuer-ID:</strong><br>
-        Umsatzsteuer-Identifikationsnummer gemäß § 27 a Umsatzsteuergesetz: [Falls vorhanden eintragen]</p>
-        <p class="text-xs text-slate-400 pt-2 border-t border-slate-800">Hinweis: Bitte vor dem öffentlichen Livegang Straße, vollständigen Namen und Telefonnummer ergänzen.</p>
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Angaben gemäß § 5 DDG</h4>
+          <p>
+            <strong>LJ Digital Systems</strong><br>
+            Vertreten durch die Geschäftsführung / Inhaber<br>
+            Deutschland
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Kontakt</h4>
+          <p>
+            E-Mail: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline hover:text-sky-300">lj.systems.de@gmail.com</a><br>
+            Website: <a href="https://web-lj-digital-systems.vercel.app" class="text-sky-400 underline hover:text-sky-300">web-lj-digital-systems.vercel.app</a>
+          </p>
+        </div>
+
+        <div>
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Verantwortlich für den Inhalt nach § 18 Abs. 2 MStV</h4>
+          <p>
+            LJ Digital Systems<br>
+            Kontakt: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline">lj.systems.de@gmail.com</a>
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Haftung für Inhalte</h4>
+          <p>
+            Als Diensteanbieter sind wir gemäß § 7 Abs. 1 DDG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 DDG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen. Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Haftung für Links</h4>
+          <p>
+            Unser Angebot enthält Links zu externen Websites Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich. Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">Urheberrecht</h4>
+          <p>
+            Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen Zustimmung des jeweiligen Autors bzw. Erstellers. Downloads und Kopien dieser Seite sind nur für den privaten, nicht kommerziellen Gebrauch gestattet.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">EU-Streitschlichtung / Verbraucherstreitbeilegung</h4>
+          <p>
+            Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: 
+            <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline">https://ec.europa.eu/consumers/odr/</a>.<br>
+            Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.
+          </p>
+        </div>
       </div>
     `;
   } else {
-    title.textContent = 'Datenschutzerklärung (Übersicht)';
+    title.textContent = 'Datenschutzerklärung';
     body.innerHTML = `
-      <div class="space-y-3 text-sm text-slate-300">
-        <p><strong class="text-white">1. Datenschutz auf einen Blick</strong><br>
-        Der Schutz Ihrer persönlichen und geschäftlichen Daten hat für LJ Digital Systems höchste Priorität. Wenn Sie über diese Website Kontakt mit uns aufnehmen, werden Ihre angegebenen Kontaktdaten ausschließlich zur Bearbeitung Ihrer Anfrage verwendet.</p>
-        <p><strong class="text-white">2. Verantwortliche Stelle</strong><br>
-        LJ Digital Systems<br>
-        E-Mail: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline">lj.systems.de@gmail.com</a></p>
-        <p><strong class="text-white">3. Datensicherheit bei KI- & Netzwerk-Lösungen</strong><br>
-        Bei der Implementierung unserer KI-Agenten (Stufe 1 bis 3) setzen wir auf geschützte Verbindungen, rollenbasierte Zugriffsrechte und DSGVO-konforme Datenverarbeitung.</p>
+      <div class="space-y-4 text-xs sm:text-sm text-slate-300 leading-relaxed">
+        <div>
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">1. Datenschutz auf einen Blick</h4>
+          <p class="mb-2">
+            <strong>Allgemeine Hinweise:</strong> Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren personenbezogenen Daten passiert, wenn Sie unsere Website besuchen. Personenbezogene Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
+          </p>
+          <p>
+            <strong>Datenerfassung auf dieser Website:</strong> Die Datenverarbeitung auf dieser Website erfolgt durch den Websitebetreiber. Dessen Kontaktdaten können Sie dem Abschnitt „Verantwortliche Stelle“ dieser Datenschutzerklärung entnehmen.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">2. Verantwortliche Stelle</h4>
+          <p>
+            <strong>LJ Digital Systems</strong><br>
+            E-Mail: <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline hover:text-sky-300">lj.systems.de@gmail.com</a><br>
+            Website: <a href="https://web-lj-digital-systems.vercel.app" class="text-sky-400 underline hover:text-sky-300">web-lj-digital-systems.vercel.app</a>
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">3. Hosting & Bereitstellung der Website</h4>
+          <p>
+            Wir hosten unsere Website bei <strong>Vercel</strong> (Vercel Inc., 440 N Barranca Ave #4133, Covina, CA 91723, USA). Wenn Sie unsere Website besuchen, erfasst Vercel verschiedene Logfiles inklusive Ihrer IP-Adresse, Datum und Uhrzeit des Abrufs, Browsertyp und aufgerufene Seiten. Details entnehmen Sie der Datenschutzerklärung von Vercel: <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer" class="text-sky-400 underline">https://vercel.com/legal/privacy-policy</a>. Der Einsatz erfolgt auf Grundlage unseres berechtigten Interesses an einer sicheren, schnellen und effizienten Bereitstellung unserer Website (Art. 6 Abs. 1 lit. f DSGVO).
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">4. Datenerfassung auf dieser Website</h4>
+          <p class="mb-2">
+            <strong>Kontaktformular & Potenzialanalyse:</strong> Wenn Sie uns per Kontaktformular Anfragen zukommen lassen, werden Ihre Angaben aus dem Anfrageformular inklusive der von Ihnen dort angegebenen Kontaktdaten (Name, Unternehmen, E-Mail-Adresse, Telefonnummer, gewählte Leistungsbereiche und Nachricht) zwecks Bearbeitung der Anfrage und für den Fall von Anschlussfragen bei uns gespeichert. Die Verarbeitung erfolgt auf Grundlage von Art. 6 Abs. 1 lit. b DSGVO (Vertragserfüllung oder vorvertragliche Maßnahmen) sowie Art. 6 Abs. 1 lit. a DSGVO (Ihre Einwilligung).
+          </p>
+          <p>
+            <strong>Formularübertragung (FormSubmit):</strong> Für die sichere Weiterleitung von Anfragen nutzen wir FormSubmit. Ihre Daten werden verschlüsselt an unsere E-Mail-Adresse weitergeleitet. Es erfolgt keine Weitergabe an unbefugte Dritte oder Nutzung zu Werbezwecken.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">5. Datensicherheit bei KI- und Automatisierungslösungen</h4>
+          <p>
+            LJ Digital Systems legt größten Wert auf Vertraulichkeit und Datensicherheit. Bei der Konzeption und Bereitstellung unserer KI-Agenten und Schnittstellen (Stufen 1 bis 3) gilt:
+          </p>
+          <ul class="list-disc pl-5 space-y-1 mt-1 text-slate-300">
+            <li>Geschäftliche Daten und Dokumente unserer Kunden werden nicht zur öffentlichen Modell-Trainierung verwendet.</li>
+            <li>Der Zugriff auf Unternehmensdaten erfolgt ausschließlich über geschützte Schnittstellen mit rollenbasierten Freigaben.</li>
+            <li>Sensible Prozesse unterliegen konfigurierbaren Bestätigungs- und Kontrollschritten durch den Kunden.</li>
+          </ul>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">6. Ihre Rechte als betroffene Person</h4>
+          <p>
+            Sie haben jederzeit das Recht auf unentgeltliche Auskunft über Herkunft, Empfänger und Zweck Ihrer gespeicherten personenbezogenen Daten (Art. 15 DSGVO). Sie haben außerdem ein Recht, die Berichtigung (Art. 16 DSGVO), Löschung (Art. 17 DSGVO) oder Einschränkung der Verarbeitung (Art. 18 DSGVO) dieser Daten zu verlangen. Wenn Sie eine Einwilligung zur Datenverarbeitung erteilt haben, können Sie diese Einwilligung jederzeit für die Zukunft widerrufen (Art. 7 Abs. 3 DSGVO). Zudem steht Ihnen ein Beschwerderecht bei der zuständigen Aufsichtsbehörde zu (Art. 77 DSGVO).
+          </p>
+          <p class="mt-2">
+            Hierzu sowie zu weiteren Fragen zum Thema Datenschutz können Sie sich jederzeit unter <a href="mailto:lj.systems.de@gmail.com" class="text-sky-400 underline">lj.systems.de@gmail.com</a> an uns wenden.
+          </p>
+        </div>
+
+        <div class="pt-2 border-t border-slate-800">
+          <h4 class="font-bold text-white text-sm sm:text-base mb-1">7. SSL- bzw. TLS-Verschlüsselung</h4>
+          <p>
+            Diese Seite nutzt aus Sicherheitsgründen und zum Schutz der Übertragung vertraulicher Inhalte eine SSL- bzw. TLS-Verschlüsselung. Eine verschlüsselte Verbindung erkennen Sie daran, dass die Adresszeile des Browsers von „http://“ auf „https://“ wechselt und an dem Schloss-Symbol in Ihrer Browserzeile.
+          </p>
+        </div>
       </div>
     `;
   }
