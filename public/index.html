@@ -93,81 +93,40 @@
       box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
     }
 
-    /* Hero Section: Hauchzarte Eleganz & volle Sichtbarkeit aller Personen */
+    /* Hero Section: Perfekt ausbalanciert – Bild nach rechts gerückt, volle Sicht auf Linus & Jasper */
     .hero-section {
       position: relative;
       overflow: hidden;
       min-height: 86vh;
       display: flex;
       align-items: center;
-      background-color: #f1f5f9;
-    }
-
-    .hero-bg-layer {
-      position: absolute;
-      inset: 0;
-      background-image: url('assets/team-lj-digital-systems.jpg');
-      background-size: cover;
-      background-position: center 25%;
-      opacity: 0.96;
-      pointer-events: none;
-      z-index: 0;
-    }
-
-    /* Hauchzarter, transparenter Verlauf – verdeckt niemanden */
-    .hero-gradient-overlay {
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(
-        90deg, 
-        rgba(248, 250, 252, 0.40) 0%, 
-        rgba(248, 250, 252, 0.20) 42%, 
-        rgba(248, 250, 252, 0.05) 68%, 
-        rgba(248, 250, 252, 0.00) 100%
-      );
-      z-index: 1;
-      pointer-events: none;
+      background-color: #f8fafc;
     }
 
     /* Hauchzarter Frosted-Glass Text-Container */
     .hero-text-card {
-      max-width: 580px;
-      background: rgba(255, 255, 255, 0.20);
-      backdrop-filter: blur(10px) saturate(130%);
-      -webkit-backdrop-filter: blur(10px) saturate(130%);
-      border: 1px solid rgba(255, 255, 255, 0.55);
+      max-width: 540px;
+      background: rgba(255, 255, 255, 0.40);
+      backdrop-filter: blur(12px) saturate(130%);
+      -webkit-backdrop-filter: blur(12px) saturate(130%);
+      border: 1px solid rgba(255, 255, 255, 0.75);
       border-radius: 20px;
       padding: 38px 36px;
-      box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.12);
+      box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.10);
     }
 
     @media (max-width: 1024px) {
-      .hero-bg-layer {
-        background-position: 58% 22% !important;
-      }
       .hero-text-card {
-        background: rgba(255, 255, 255, 0.35) !important;
-        backdrop-filter: blur(12px) !important;
+        background: rgba(255, 255, 255, 0.55) !important;
+        backdrop-filter: blur(14px) !important;
       }
     }
 
     @media (max-width: 768px) {
-      .hero-bg-layer {
-        background-position: 54% 15% !important;
-        opacity: 0.90 !important;
-      }
-      .hero-gradient-overlay {
-        background: linear-gradient(
-          180deg, 
-          rgba(248, 250, 252, 0.65) 0%, 
-          rgba(248, 250, 252, 0.40) 50%, 
-          rgba(248, 250, 252, 0.15) 100%
-        ) !important;
-      }
       .hero-text-card {
         padding: 24px !important;
-        background: rgba(255, 255, 255, 0.45) !important;
-        backdrop-filter: blur(14px) !important;
+        background: rgba(255, 255, 255, 0.70) !important;
+        backdrop-filter: blur(16px) !important;
       }
     }
   </style>
@@ -256,17 +215,24 @@
 
   <main>
         <!-- =======================================================================
-         3. EYECATCHER HERO-BEREICH (Transparentes Frosted Glass mit voller Sicht auf das Team)
+         3. EYECATCHER HERO-BEREICH (Perfekt ausbalanciert: Linus & Jasper glasklar im Fokus)
          ======================================================================= -->
     <section class="hero-section py-12 sm:py-16 lg:py-20 border-b border-slate-200">
       
-      <!-- 1. Brillantes Hintergrundbild: Alle 4 Personen im Blickfeld, Fokus auf Linus & Jasper in der Mitte -->
-      <div class="hero-bg-layer"></div>
+      <!-- Hintergrund-Bildbereich rechts: Linus & Jasper voll im freien Sichtfeld ohne Überdeckung -->
+      <div class="absolute top-0 bottom-0 right-0 w-full lg:w-[65%] xl:w-[60%] z-0 overflow-hidden pointer-events-none">
+        <img 
+          src="assets/team-lj-digital-systems.jpg" 
+          alt="Linus Andler und Jasper Landgraf von LJ Digital Systems vor Ort im Betrieb" 
+          class="w-full h-full object-cover object-[52%_25%] opacity-95"
+          loading="eager"
+        />
+        <!-- Weicher, nahtloser Verlauf nach links in den Textbereich -->
+        <div class="absolute inset-0 bg-gradient-to-r from-slate-50 via-slate-50/40 to-transparent hidden lg:block"></div>
+        <div class="absolute inset-0 bg-gradient-to-b from-slate-50/95 via-slate-50/75 to-slate-50/30 lg:hidden"></div>
+      </div>
 
-      <!-- 2. Hauchzarter Verlauf: Hält die Personen glasklar sichtbar -->
-      <div class="hero-gradient-overlay"></div>
-
-      <!-- 3. Vordergrund: Transparenter Text-Container links & freier Blick auf das Team -->
+      <!-- Vordergrund: Text-Container links & freier Blick auf Linus & Jasper rechts -->
       <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 w-full">
         
         <div class="hero-text-card space-y-6">
@@ -276,7 +242,7 @@
             <span>Web &amp; Entlastung für Fachbetriebe &amp; Dienstleister</span>
           </div>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.18] drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">
+          <h1 class="text-3xl sm:text-4xl lg:text-[2.75rem] font-extrabold text-slate-950 tracking-tight leading-[1.18] drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">
             Schluss mit Telefonstress bei der Arbeit und <span class="text-amber-900 underline decoration-amber-400 decoration-4">Büro-Schichten</span> nach Feierabend.
           </h1>
 
@@ -302,7 +268,7 @@
             </a>
           </div>
 
-          <!-- 3 Trust Bullets (Bodenständig & glasklar lesbar) -->
+          <!-- 3 Trust Bullets (Glasklar lesbar) -->
           <div class="pt-4 border-t border-slate-900/15 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-bold text-slate-950">
             <div class="flex items-center gap-2 drop-shadow-sm">
               <span class="text-amber-800 font-extrabold text-sm">✓</span>
@@ -320,7 +286,7 @@
 
         </div>
 
-        <!-- Dezente Status-Badge oben rechts -->
+        <!-- Dezente Status-Badge über Linus & Jasper -->
         <div class="hidden xl:inline-flex absolute top-4 right-6 items-center gap-2 bg-slate-900/80 backdrop-blur-md border border-white/20 text-white text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg">
           <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
           <span>Linus Andler &amp; Jasper Landgraf vor Ort</span>
