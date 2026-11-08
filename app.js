@@ -60,40 +60,40 @@ const AGENT_TIERS = {
     ],
     scenarios: [
       {
-        name: 'Prompt 1: Angebot aus Preisliste 2026 & Vorlage erstellen',
+        name: '1. Angebot & Preisliste',
         customerMsg: 'Inhaber-Befehl: "Erstelle einen Angebotsentwurf basierend auf unserer Preisliste 2026 und der Projektvorlage für Neukunde Meyer."',
         agentReply: 'Geschützter Zugriff auf Ordner /Kalkulationen_2026 und /Vorlagen aktiv. Bestandsdaten und Leistungspositionen wurden extrahiert und in den Standard-Angebotsrahmen eingefügt.',
         customerFollowup: 'Prüfung: "Bitte 5% Projekt-Nachlass einrechnen und als Freigabe-Entwurf bereitlegen."',
         agentFinal: '✓ Angebotsentwurf fertig kalkuliert (Netto: 5.420 €). PDF unter /Entwuerfe/Angebot_Meyer_2026.pdf abgelegt. E-Mail-Entwurf liegt im Postfach – 1 Klick zur Freigabe genügt.',
         logs: [
-          { time: '[08:42:01]', tag: 'STORAGE_AUTH', color: 'text-amber-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
+          { time: '[08:42:01]', tag: 'SYSTEM', color: 'text-amber-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
           { time: '[08:42:04]', tag: 'DATA_EXTRACT', color: 'text-amber-200', text: 'Artikelpreise, Stundenkontingente & Nachlass kalkuliert' },
-          { time: '[08:42:07]', tag: 'DRAFT_GEN', color: 'text-emerald-400', text: 'Rechtssicheres Angebots-PDF generiert & archiviert' },
-          { time: '[08:42:09]', tag: 'WAIT_APPROVAL', color: 'text-amber-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
+          { time: '[08:42:07]', tag: 'SECURITY', color: 'text-emerald-400', text: 'Rechtssicheres Angebots-PDF generiert & archiviert' },
+          { time: '[08:42:09]', tag: 'ACTION', color: 'text-amber-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
         ]
       },
       {
-        name: 'Prompt 2: Dokumentensuche & Leistungsabgleich',
+        name: '2. Dokumentensuche',
         customerMsg: 'Rückfrage: "Welche Konditionen und Spezifikationen hatten wir beim Projekt Weber im Vorjahr vereinbart?"',
         agentReply: 'Durchsuche freigegebenen Speicher... Gefunden in /Projekte_2025/Weber_GmbH: Sondervereinbarung Stundensatz 85 €, Garantieerweiterung auf 36 Monate.',
         customerFollowup: 'Kopiere diese Konditionen direkt in den neuen Entwurf für das Folgeprojekt.',
         agentFinal: '✓ Konditionen übernommen. Nachtrags-Angebot mit identischen Parametern erzeugt und zur Prüfung auf das Inhaber-Dashboard gelegt.',
         logs: [
-          { time: '[14:20:11]', tag: 'FILE_SEARCH', color: 'text-amber-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
-          { time: '[14:20:13]', tag: 'KNOWLEDGE_SYNC', color: 'text-amber-200', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
-          { time: '[14:20:16]', tag: 'DRAFT_UPDATED', color: 'text-emerald-400', text: 'Folgeangebot aktualisiert & zur Freigabe bereit ✓' }
+          { time: '[14:20:11]', tag: 'SYSTEM', color: 'text-amber-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
+          { time: '[14:20:13]', tag: 'SECURITY', color: 'text-amber-200', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
+          { time: '[14:20:16]', tag: 'ACTION', color: 'text-emerald-400', text: 'Folgeangebot aktualisiert & zur Freigabe bereit ✓' }
         ]
       },
       {
-        name: 'Projektplaner & Dokumentenprüfung',
-        customerMsg: 'Kunde lädt CAD-Skizze hoch. Prüfe Vollständigkeit, erfasse Maße und erstelle Auftragsordner im Firmennetzwerk.',
+        name: '3. CAD- & Skizzenprüfung',
+        customerMsg: 'Kunde lädt Skizze & Maße hoch. Prüfe Vollständigkeit und lege Projektordner an.',
         agentReply: 'CAD-Skizze empfangen und gescannt: 100% Vollständigkeit verifiziert. Wandstärken, Anschlüsse und Maßketten extrahiert. Auftragsordner im Firmennetzwerk angelegt.',
         customerFollowup: 'Prüfprotokoll und Angebotsentwurf zur finalen 1-Klick-Freigabe bereitlegen.',
         agentFinal: '✓ Dokument #2026-84 zur 1-Klick-Freigabe bereitgelegt. Zugriff auf /Preise_2026.xlsx protokolliert, vertrauliche Chef-Ordner gesperrt.',
         logs: [
-          { time: '[08:29:12]', tag: 'AUTH_OK', color: 'text-emerald-400', text: 'Verifiziere Berechtigung: Zugriff auf /Preise_2026.xlsx gewährt.' },
-          { time: '[08:29:13]', tag: 'SECURITY_CHECK', color: 'text-amber-400', text: 'Sicherheits-Check: Vertrauliche Ordner gesperrt.' },
-          { time: '[08:29:14]', tag: 'APPROVAL_READY', color: 'text-emerald-400', text: 'Dokument #2026-84 zur 1-Klick-Freigabe bereitgelegt.' }
+          { time: '[08:29:12]', tag: 'SYSTEM', color: 'text-emerald-400', text: 'Verifiziere Ordnerrechte... Zugriff auf /Preise_2026.xlsx gewährt.' },
+          { time: '[08:29:13]', tag: 'SECURITY', color: 'text-amber-400', text: 'Chef- & Personaldaten gesperrt (100% DSGVO).' },
+          { time: '[08:29:14]', tag: 'ACTION', color: 'text-emerald-400', text: 'Angebotsentwurf #2026-84 zur 1-Klick-Freigabe abgelegt.' }
         ]
       }
     ],
@@ -462,7 +462,7 @@ async function handleContactSubmit(event) {
       }
       if (feedbackDesc) {
         feedbackDesc.innerHTML =
-          'Wir haben Ihre Angaben für die 15-Minuten-Potenzialanalyse unter <strong>kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.';
+          'Wir haben Ihre Angaben unter <strong class="text-amber-400">kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.';
       }
       if (feedbackBox) feedbackBox.classList.remove('hidden');
     } else {
@@ -1023,7 +1023,7 @@ function switchServiceView(serviceKey, scrollIntoView = false) {
 
 // Initialization on DOMContentLoaded
 document.addEventListener('DOMContentLoaded', () => {
-  selectSimulatorTier('tier2', 0);
+  selectSimulatorTier('tier2', 2);
   updateHiddenFormSummary();
   updateRoiCalculator();
 });
