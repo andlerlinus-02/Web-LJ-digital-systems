@@ -93,6 +93,20 @@
       box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
     }
   </style>
+  <script>
+    // Sofortiger Fallback-Redirect für alte Anker-Links (#live-simulation -> #betriebs-check)
+    (function() {
+      if (window.location.hash === '#live-simulation') {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '#betriebs-check');
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+          var el = document.getElementById('betriebs-check');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
 </head>
 <body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900 min-h-screen flex flex-col justify-between">
 
@@ -227,7 +241,10 @@
             <div class="relative rounded-2xl overflow-hidden border border-slate-300 shadow-xl bg-slate-900 group">
               <img
                 src="assets/team-lj-digital-systems.jpg"
-                alt="LJ Digital Systems Team - Linus Andler & Jasper Landgraf mit Kunden vor Ort"
+                alt="LJ Digital Systems Team - Linus Andler & Jasper Landgraf im Einsatz"
+                loading="eager"
+                width="800"
+                height="600"
                 class="w-full h-[380px] sm:h-[440px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
               />
               
@@ -607,7 +624,7 @@
               </p>
 
               <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
-                Genau hier springen wir ein. <strong>Linus Andler &amp; Jasper Landgraf</strong> begleiten Ihren Betrieb persönlich – von der ersten Aufnahme Ihrer Wünsche bis zur fertigen Einrichtung. Feste Ansprechpartner, erreichbar per Telefon, WhatsApp oder direkt vor Ort in der Region.
+                Genau hier springen wir ein. <strong>Linus Andler &amp; Jasper Landgraf</strong> begleiten Ihren Betrieb persönlich – von der ersten Aufnahme Ihrer Wünsche bis zur fertigen Einrichtung. Erreichbar per E-Mail, über unser Anfrageformular oder direkt vor Ort in der Region.
               </p>
 
               <!-- 4 Pfeiler -->
@@ -647,6 +664,9 @@
               <img
                 src="assets/team-lj-digital-systems.jpg"
                 alt="Linus Andler und Jasper Landgraf von LJ Digital Systems im Betriebseinsatz"
+                loading="lazy"
+                width="800"
+                height="600"
                 class="w-full h-full object-cover object-center absolute inset-0"
               />
               <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent lg:hidden"></div>
@@ -828,9 +848,9 @@
             <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-mono font-bold flex items-center justify-center text-sm mb-4">
               01
             </div>
-            <h3 class="text-base font-bold text-slate-900">10 Min. Kennenlernen</h3>
+            <h3 class="text-base font-bold text-slate-900">10 Min. Ersteinschätzung</h3>
             <p class="text-xs text-slate-600 mt-2 leading-relaxed">
-              Ein kurzer Anruf zum Wunschtermin. Wir hören zu, verstehen Ihren Betrieb und prüfen ohne Fachchinesisch, was für Sie Sinn macht.
+              Kurzer, unkomplizierter Austausch per E-Mail oder vor Ort. Wir hören zu, verstehen Ihren Betrieb und prüfen ohne Fachchinesisch, was für Sie Sinn macht.
             </p>
           </div>
 
@@ -928,13 +948,13 @@
 
             <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
               <div>
-                <label for="contact-phone" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                  Telefonnummer für den Rückruf *
+                <label for="contact-email" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                  Ihre E-Mail-Adresse für unsere Rückmeldung *
                 </label>
                 <input
-                  type="tel"
-                  id="contact-phone"
-                  placeholder="0171 / 1234567"
+                  type="email"
+                  id="contact-email"
+                  placeholder="name@ihr-betrieb.de"
                   required
                   class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                 />
@@ -942,16 +962,16 @@
 
               <div>
                 <label for="contact-time" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
-                  Bevorzugte Rückruf-Zeit
+                  Gewünschtes Rückmelde-Zeitfenster
                 </label>
                 <select
                   id="contact-time"
                   class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
                 >
-                  <option value="Morgens (07:30 - 09:00 Uhr)">Morgens vor Arbeitsbeginn (07:30 - 09:00 Uhr)</option>
-                  <option value="Mittags (12:00 - 13:30 Uhr)">Mittagszeit (12:00 - 13:30 Uhr)</option>
-                  <option value="Feierabend (ab 16:30 Uhr)" selected>Feierabend (ab 16:30 Uhr)</option>
-                  <option value="Flexibel">Jederzeit erreichbar</option>
+                  <option value="Schnellstmöglich per E-Mail">Schnellstmöglich per E-Mail</option>
+                  <option value="Vormittags (08:00 - 12:00 Uhr)">Vormittags (08:00 - 12:00 Uhr)</option>
+                  <option value="Nachmittags (12:00 - 17:00 Uhr)">Nachmittags (12:00 - 17:00 Uhr)</option>
+                  <option value="Feierabend (ab 17:00 Uhr)" selected>Feierabend (ab 17:00 Uhr)</option>
                 </select>
               </div>
             </div>
@@ -974,11 +994,11 @@
                 id="contact-submit-btn"
                 class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
               >
-                <span>Rückruf unverbindlich anfragen</span>
+                <span>Unverbindliche Ersteinschätzung anfragen</span>
                 <span>→</span>
               </button>
               <div class="text-[11px] text-center text-slate-500 mt-2.5">
-                🔒 Keine Werbeanrufe, kein Verkaufsdruck. Ihre Daten werden streng vertraulich behandelt.
+                🔒 Kein Spam, kein Verkaufsdruck. Ihre Daten werden streng vertraulich behandelt.
               </div>
             </div>
 

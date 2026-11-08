@@ -6,6 +6,24 @@
  */
 
 // -------------------------------------------------------------
+// 0. Fallback & Redirect für veraltete Anker (#live-simulation -> #betriebs-check)
+// -------------------------------------------------------------
+function checkLegacyHashRedirect() {
+  if (window.location.hash === '#live-simulation') {
+    if (window.history && window.history.replaceState) {
+      window.history.replaceState(null, '', '#betriebs-check');
+    }
+    const target = document.getElementById('betriebs-check');
+    if (target) {
+      setTimeout(() => {
+        target.scrollIntoView({ behavior: 'smooth' });
+      }, 100);
+    }
+  }
+}
+window.addEventListener('hashchange', checkLegacyHashRedirect);
+
+// -------------------------------------------------------------
 // 1. Interaktiver 60-Sekunden Betriebs-Check (Quiz)
 // -------------------------------------------------------------
 const quizState = {
@@ -189,7 +207,7 @@ const serviceData = {
     tagline: 'Volle Verbindung von Anfrage, Terminen, Dokumenten & Nachunternehmern.',
     idealFor: 'Etablierte Fachbetriebe mit mehreren Mitarbeitern oder hohem Projektvolumen.',
     highlights: [
-      'Verbindet Website, Kalender, Auftragsordner und WhatsApp/E-Mail',
+      'Verbindet Website, Kalender, Auftragsordner und E-Mail-Postfach',
       'Automatische Status-Nachrichten an Kunden ("Material bestellt", "Termin bestätigt")',
       'Dokumentenprüfung: Prüft hochgeladene Skizzen auf Vollständigkeit',
       'Persönlich eingerichtet und dauerhaft betreut von Linus & Jasper'
@@ -339,7 +357,7 @@ async function handleContactSubmit(event) {
   const feedbackDesc = document.getElementById('contact-feedback-desc');
 
   const nameVal = document.getElementById('contact-name')?.value || '';
-  const phoneVal = document.getElementById('contact-phone')?.value || '';
+  const emailVal = document.getElementById('contact-email')?.value || '';
   const branchVal = document.getElementById('contact-branch')?.value || '';
   const timeVal = document.getElementById('contact-time')?.value || '';
   const noteVal = document.getElementById('contact-note')?.value || '';
@@ -362,8 +380,8 @@ async function handleContactSubmit(event) {
     feedbackDesc.innerHTML = `
       Wir haben Ihre Angaben für <strong>${nameVal || 'Ihren Betrieb'}</strong> unter 
       <strong class="text-amber-600 font-mono">kontakt@lj-digital-systems.de</strong> erhalten.<br>
-      Linus Andler oder Jasper Landgraf melden sich verlässlich zum Zeitfenster 
-      <strong>(${timeVal})</strong> unter <strong>${phoneVal}</strong> bei Ihnen.
+      Linus Andler oder Jasper Landgraf melden sich verlässlich zum gewünschten Zeitfenster 
+      <strong>(${timeVal})</strong> per E-Mail an <strong>${emailVal}</strong> bei Ihnen zurück.
     `;
   }
 }
@@ -372,6 +390,9 @@ async function handleContactSubmit(event) {
 // 5. Initialisierung beim Laden
 // -------------------------------------------------------------
 document.addEventListener('DOMContentLoaded', () => {
+  // Check for legacy hash redirect (#live-simulation -> #betriebs-check)
+  checkLegacyHashRedirect();
+
   // Init Quiz
   goToQuizStep(1);
 
