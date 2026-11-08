@@ -58,22 +58,20 @@
   <!-- ========================================================================
        TOP NOTIFICATION BAR (B2B Precision & Direct Access)
        ======================================================================== -->
-  <div class="bg-slate-950/90 text-slate-400 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
+  <div class="bg-slate-950/95 text-slate-400 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold font-mono text-[11px]">
           <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
           Digitale Systeme für spezialisierte Fach- &amp; Dienstleistungsbetriebe
         </span>
         <span class="text-slate-700">•</span>
-        <span class="text-slate-300">Persönlich eingerichtet von den Gründern Linus &amp; Jasper</span>
+        <span class="text-slate-300 text-xs">Persönlich eingerichtet von Linus &amp; Jasper</span>
       </div>
-      <div class="flex items-center gap-4 text-slate-300">
-        <a href="tel:+498001234567" class="hover:text-amber-400 transition flex items-center gap-1.5 font-medium">
-          <span>📞</span> <span>0800 123 456 7</span>
-        </a>
+      <div class="flex items-center gap-3 text-slate-300 font-mono text-[11px]">
+        <span>📍 Region Rhein-Main &amp; Bundesweit</span>
         <span class="text-slate-700">•</span>
-        <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-amber-400 transition flex items-center gap-1.5 font-medium">
+        <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-amber-400 transition flex items-center gap-1.5 text-slate-200">
           <span>✉️</span> <span>kontakt@lj-digital-systems.de</span>
         </a>
       </div>
@@ -171,10 +169,10 @@
        ======================================================================== -->
   <section class="relative bg-tech-grid-dark pt-20 pb-20 lg:pt-28 lg:pb-28 text-white overflow-hidden border-b border-white/10">
     <div class="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8 relative z-10">
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
         
         <!-- Left: Copy & Value Proposition -->
-        <div class="lg:col-span-8 space-y-6">
+        <div class="lg:col-span-7 space-y-6">
           <div class="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-400/30 px-3.5 py-1.5 text-xs font-semibold text-amber-300">
             <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
             <span>Digitale Systeme für spezialisierte Fach- &amp; Dienstleistungsbetriebe</span>
@@ -233,33 +231,100 @@
           </div>
         </div>
 
-        <!-- Right: Proof Metrics & System Architecture Card -->
-        <div class="lg:col-span-4 space-y-4">
-          <div class="glass-tech-card p-6">
-            <div class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">MESSBARER NUTZEN</div>
-            <div class="text-3xl font-extrabold text-white font-mono">8 – 25+ Std.</div>
-            <div class="text-xs text-slate-300 font-semibold mt-1">Wöchentliche Entlastung im Büro</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Statt abends Akten zu wälzen, bereitet der interne Agent Angebote auf Knopfdruck aus Ihren freigegebenen Dokumenten vor.
-            </p>
-          </div>
+        <!-- Right: Interactive Dark-Mode Card Mockup (LJ Frontdesk & Knowledge Core) -->
+        <div class="lg:col-span-5 relative">
+          <div class="glass-tech-card border border-white/15 shadow-2xl rounded-2xl overflow-hidden bg-[#091322]/95 backdrop-blur-xl">
+            
+            <!-- Window Top Bar: Traffic Light Dots + internal host -->
+            <div class="px-4 py-3 bg-[#060c18] border-b border-white/10 flex items-center justify-between">
+              <div class="flex items-center gap-2">
+                <span class="h-3 w-3 rounded-full bg-rose-500/90 inline-block shadow-sm"></span>
+                <span class="h-3 w-3 rounded-full bg-amber-400/90 inline-block shadow-sm"></span>
+                <span class="h-3 w-3 rounded-full bg-emerald-500/90 inline-block shadow-sm"></span>
+                <span class="ml-2 font-mono text-[11px] text-slate-300 font-medium tracking-tight">core.lj-systems.internal</span>
+              </div>
+              <div class="flex items-center gap-1.5 font-mono text-[10px] text-emerald-400 bg-emerald-950/70 border border-emerald-500/30 px-2 py-0.5 rounded">
+                <span class="h-1.5 w-1.5 rounded-full bg-emerald-400 pulse-node"></span>
+                <span>SYSTEM LIVE</span>
+              </div>
+            </div>
 
-          <div class="glass-tech-card p-6">
-            <div class="text-xs font-bold uppercase tracking-wider text-emerald-400 mb-1">ERSTKLÄRIGE REAKTIONSZEIT</div>
-            <div class="text-3xl font-extrabold text-white font-mono">&lt; 15 Sek.</div>
-            <div class="text-xs text-slate-300 font-semibold mt-1">Sofortige Vorqualifizierung 24/7</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Interessenten laden Fotos und Maße mobil hoch. Kein Anruf geht mehr auf der Baustelle oder im Kundentermin verloren.
-            </p>
-          </div>
+            <!-- 3 Dynamic Status Cards -->
+            <div class="p-4 sm:p-5 space-y-3">
+              
+              <!-- Karte 1: Eingang (Vorqualifiziert) -->
+              <div class="rounded-xl bg-[#0c182b] border border-emerald-500/30 p-3.5 shadow-sm transition hover:border-emerald-500/60">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
+                    <span class="font-mono text-[11px] font-bold text-emerald-300 uppercase tracking-wide">● EINGANG (Vorqualifiziert)</span>
+                  </div>
+                  <span class="font-mono text-[10px] text-slate-400">vor 3 Min.</span>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed">
+                  <strong>Kunde Becker:</strong> 140m² Projekt, Maße &amp; 3 Pläne hochgeladen, Rückruf gewünscht.
+                </p>
+                <div class="mt-2 flex flex-wrap items-center gap-1.5 text-[10px] font-mono text-slate-400">
+                  <span class="bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/60">3 Anhänge (PDF/DWG)</span>
+                  <span class="bg-slate-800/80 px-2 py-0.5 rounded border border-slate-700/60">140 m²</span>
+                  <span class="text-emerald-400 bg-emerald-950/60 px-2 py-0.5 rounded border border-emerald-500/30 font-semibold">Qualifiziert ✓</span>
+                </div>
+              </div>
 
-          <div class="glass-tech-card p-6">
-            <div class="text-xs font-bold uppercase tracking-wider text-sky-400 mb-1">ECHTE DATENSICHERHEIT</div>
-            <div class="text-3xl font-extrabold text-white font-mono">100% Schutz</div>
-            <div class="text-xs text-slate-300 font-semibold mt-1">Kein fremdes KI-Training</div>
-            <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
-              Rollenbasierte Rechte: Der Assistent liest nur Ordner, die Sie explizit freigeben. Finanz- und Personalakten bleiben gesperrt.
-            </p>
+              <!-- Karte 2: Agent Stufe 2 (Kalkulation) -->
+              <div class="rounded-xl bg-[#0c182b] border border-amber-500/30 p-3.5 shadow-sm transition hover:border-amber-500/60">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="text-amber-400 text-xs">⚡</span>
+                    <span class="font-mono text-[11px] font-bold text-amber-300 uppercase tracking-wide">AGENT STUFE 2 (Kalkulation)</span>
+                  </div>
+                  <span class="font-mono text-[10px] text-amber-400/90 font-semibold">Autonom aktiv</span>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed">
+                  Lese freigegebene Preisliste 2026 ... Positionsliste &amp; Deckungsbeitrag berechnet.
+                </p>
+                <div class="mt-2 flex items-center justify-between text-[10px] font-mono text-slate-400 pt-1 border-t border-white/5">
+                  <span class="text-slate-300">Quelle: <span class="text-amber-400 font-mono">/Preise_2026.xlsx</span></span>
+                  <span class="text-emerald-400 font-semibold font-mono">DB-Marge: 42,8% OK</span>
+                </div>
+              </div>
+
+              <!-- Karte 3: Freigabe-Bereit mit 1-Klick-Button -->
+              <div id="hero-approval-card" class="rounded-xl bg-[#0c182b] border border-amber-500/40 p-3.5 shadow-sm transition">
+                <div class="flex items-center justify-between mb-1.5">
+                  <div class="flex items-center gap-2">
+                    <span class="text-emerald-400 font-bold text-xs">✓</span>
+                    <span class="font-mono text-[11px] font-bold text-emerald-300 uppercase tracking-wide">FREIGABE-BEREIT</span>
+                  </div>
+                  <span class="font-mono text-[10px] text-slate-400">#2026-84</span>
+                </div>
+                <p class="text-xs text-slate-200 leading-relaxed">
+                  Angebotsentwurf #2026-84 als PDF generiert.
+                </p>
+                <div class="mt-3">
+                  <button
+                    type="button"
+                    id="hero-approval-btn"
+                    onclick="triggerHeroOneClickApproval()"
+                    class="w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-mono text-xs font-bold py-2.5 px-3 shadow transition transform active:scale-95 cursor-pointer"
+                  >
+                    <span>[1-Klick-Freigabe erteilen]</span>
+                    <span>⚡</span>
+                  </button>
+                </div>
+                <div id="hero-approval-status" class="hidden mt-2 font-mono text-[10px] text-emerald-400 flex items-center gap-1.5">
+                  <span>✓ Freigabe erteilt &amp; im Kundenordner archiviert.</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Mockup Footer Meta -->
+            <div class="px-4 py-2.5 bg-[#060c18] border-t border-white/10 flex items-center justify-between font-mono text-[10px] text-slate-400">
+              <span>Verarbeitungszeit: <strong class="text-amber-400 font-mono">&lt; 1.4 Sek.</strong></span>
+              <span class="text-slate-300">100% DSGVO &amp; rollenbasierte Rechte</span>
+            </div>
+
           </div>
         </div>
 
@@ -395,7 +460,7 @@
         <div class="glass-tech-card p-7 space-y-4">
           <div class="flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 01</span>
-            <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~4–6 Std. / Woche gespart</span>
+            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~4–6 Std. / Woche gespart</span>
           </div>
           
           <h3 class="text-lg font-bold text-white leading-snug">
@@ -419,7 +484,7 @@
         <div class="glass-tech-card p-7 space-y-4 border-amber-500/40">
           <div class="flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 02</span>
-            <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~8–15 Std. / Woche gespart</span>
+            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~8–15 Std. / Woche gespart</span>
           </div>
 
           <h3 class="text-lg font-bold text-white leading-snug">
@@ -443,7 +508,7 @@
         <div class="glass-tech-card p-7 space-y-4">
           <div class="flex justify-between items-center">
             <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 03</span>
-            <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~15–25+ Std. / Woche gespart</span>
+            <span class="text-xs font-mono font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~15–25+ Std. / Woche gespart</span>
           </div>
 
           <h3 class="text-lg font-bold text-white leading-snug">
@@ -726,9 +791,12 @@
 
             <!-- System Execution Log -->
             <div class="rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[11px]">
-              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center justify-between">
-                <span>⚡ SYSTEM EXECUTION LOG (ECHTZEIT-PROTOKOLL)</span>
-                <span class="text-amber-400 font-sans">DSGVO-SECURE • LOKAL FREIGEGEBEN</span>
+              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2.5 pb-2 border-b border-white/10 flex items-center justify-between font-mono">
+                <div class="flex items-center gap-2">
+                  <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
+                  <span class="text-emerald-400">⚡ TERMINAL-PROTOKOLL (LIVE-AUDIT)</span>
+                </div>
+                <span class="text-amber-400 font-mono text-[10px]">DSGVO-SECURE • LOKAL FREIGEGEBEN</span>
               </div>
               <div id="sim-terminal-logs" class="space-y-1 overflow-y-auto max-h-44 custom-scrollbar"></div>
             </div>
@@ -760,20 +828,62 @@
       </div>
 
       <div class="glass-tech-card p-8 sm:p-10 border-amber-500/30">
+        
+        <!-- 3 Schnellwahl-Buttons ("Typisches Betriebs-Profil laden") -->
+        <div class="mb-8 pb-6 border-b border-white/10">
+          <div class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 mb-3 flex items-center gap-2">
+            <span>⚡</span> <span>Typisches Betriebs-Profil laden (Schnellwahl):</span>
+          </div>
+          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+            <button
+              type="button"
+              data-roi-preset="craft"
+              onclick="applyRoiPreset('craft', this)"
+              class="roi-preset-btn p-3 rounded-xl border border-amber-500 bg-amber-950/60 shadow-md text-left transition hover:border-amber-400 cursor-pointer"
+            >
+              <div class="font-bold text-white text-xs sm:text-sm">Fachhandwerk &amp; Montage</div>
+              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">30 Anfragen • 14 Std. Büro / Wo.</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Telefon-Filter &amp; Aufmaß</div>
+            </button>
+
+            <button
+              type="button"
+              data-roi-preset="planning"
+              onclick="applyRoiPreset('planning', this)"
+              class="roi-preset-btn p-3 rounded-xl border border-slate-700 bg-slate-900/90 text-left transition hover:border-amber-400 cursor-pointer"
+            >
+              <div class="font-bold text-white text-xs sm:text-sm">Planungs- &amp; Ingenieurbüro</div>
+              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">15 Anfragen • 18 Std. Büro / Wo.</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Angebote &amp; Leistungsverzeichnisse</div>
+            </button>
+
+            <button
+              type="button"
+              data-roi-preset="expert"
+              onclick="applyRoiPreset('expert', this)"
+              class="roi-preset-btn p-3 rounded-xl border border-slate-700 bg-slate-900/90 text-left transition hover:border-amber-400 cursor-pointer"
+            >
+              <div class="font-bold text-white text-xs sm:text-sm">Gutachter &amp; Spezialist</div>
+              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">20 Anfragen • 12 Std. Büro / Wo.</div>
+              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Fotodokumente &amp; Vorprüfung</div>
+            </button>
+          </div>
+        </div>
+
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div class="lg:col-span-7 space-y-6">
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="roi-team-size" class="text-sm font-bold text-slate-200">Mitarbeiter im Büro / Verwaltung:</label>
-                <span id="roi-val-team" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">3 Mitarbeiter</span>
+                <label for="roi-requests" class="text-sm font-bold text-slate-200">Kundenanfragen pro Woche:</label>
+                <span id="roi-val-requests" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">30 Anfragen / Woche</span>
               </div>
               <input
                 type="range"
-                id="roi-team-size"
-                min="1"
-                max="30"
-                value="3"
+                id="roi-requests"
+                min="5"
+                max="60"
+                value="30"
                 class="lj-slider"
                 oninput="updateRoiCalculator()"
               />
@@ -781,15 +891,15 @@
 
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="roi-routine-hours" class="text-sm font-bold text-slate-200">Routine- &amp; Suchstunden pro Mitarbeiter / Woche:</label>
-                <span id="roi-val-hours" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">12 Std. / Woche</span>
+                <label for="roi-routine-hours" class="text-sm font-bold text-slate-200">Büro- &amp; Dokumentenzeit pro Woche:</label>
+                <span id="roi-val-hours" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">14 Std. Büro / Woche</span>
               </div>
               <input
                 type="range"
                 id="roi-routine-hours"
                 min="4"
-                max="30"
-                value="12"
+                max="40"
+                value="14"
                 class="lj-slider"
                 oninput="updateRoiCalculator()"
               />
@@ -803,7 +913,7 @@
               <input
                 type="range"
                 id="roi-hourly-rate"
-                min="25"
+                min="30"
                 max="120"
                 value="55"
                 step="5"
@@ -814,31 +924,39 @@
           </div>
 
           <div class="lg:col-span-5 bg-slate-900/90 rounded-2xl border border-slate-800 p-6 shadow-xl text-center">
-            <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Berechnetes Einsparpotenzial</span>
+            <span class="text-xs font-bold uppercase tracking-wider text-slate-400 font-mono">Berechnetes Einsparpotenzial</span>
             
             <div class="mt-4">
-              <div id="roi-hours-saved" class="text-4xl font-extrabold text-amber-400 font-mono">
-                ca. 98 Std.
+              <div id="roi-hours-saved" class="text-4xl font-extrabold text-amber-400 font-mono transition-all duration-300">
+                ca. 60 Std.
               </div>
               <div class="text-xs text-slate-300 mt-1">gewonnene Arbeitszeit pro Monat</div>
             </div>
 
-            <div class="mt-6 pt-6 border-t border-slate-800 grid grid-cols-2 gap-4 text-left">
-              <div>
-                <span class="text-[11px] font-semibold text-slate-400 uppercase">Monatliche Entlastung</span>
-                <div id="roi-euro-monthly" class="text-xl font-bold text-white font-mono">5.390 €</div>
-              </div>
-              <div>
-                <span class="text-[11px] font-semibold text-slate-400 uppercase">Jährlicher Wert</span>
-                <div id="roi-euro-yearly" class="text-xl font-bold text-emerald-400 font-mono">64.680 €</div>
+            <!-- Dynamische Stufen-Empfehlung -->
+            <div class="mt-4 pt-3 border-t border-slate-800">
+              <span class="text-[10px] uppercase font-mono font-bold text-slate-400 block mb-1">Empfohlene Agenten-Stufe:</span>
+              <div id="roi-recommended-tier" class="font-mono text-xs font-bold text-amber-300 bg-amber-950/70 border border-amber-500/40 px-3 py-1.5 rounded-lg inline-flex items-center gap-1.5 transition-all duration-300">
+                <span>⚡</span> <span id="roi-recommended-tier-text">Stufe 2 (Büro- &amp; Angebots-Assistent)</span>
               </div>
             </div>
 
-            <div class="mt-6">
+            <div class="mt-5 pt-4 border-t border-slate-800 grid grid-cols-2 gap-4 text-left">
+              <div>
+                <span class="text-[10px] font-semibold text-slate-400 uppercase font-mono">Monatliche Entlastung</span>
+                <div id="roi-euro-monthly" class="text-xl font-bold text-white font-mono">3.300 €</div>
+              </div>
+              <div>
+                <span class="text-[10px] font-semibold text-slate-400 uppercase font-mono">Jährlicher Wert</span>
+                <div id="roi-euro-yearly" class="text-xl font-bold text-emerald-400 font-mono">39.600 €</div>
+              </div>
+            </div>
+
+            <div class="mt-5">
               <button
                 type="button"
                 onclick="transferRoiToContact()"
-                class="w-full btn-amber-primary justify-center text-xs"
+                class="w-full btn-amber-primary justify-center text-xs font-mono"
               >
                 Ergebnis in Potenzialanalyse übernehmen →
               </button>
@@ -1063,7 +1181,8 @@
 
             <div class="mt-8 pt-6 border-t border-white/10 space-y-2 text-xs">
               <div class="font-bold text-white">Direktkontakt:</div>
-              <div class="text-slate-300">📞 <a href="tel:+498001234567" class="text-amber-400 hover:underline">0800 123 456 7</a> <span class="text-slate-500">(Mo–Fr 07:30–18:00)</span></div>
+              <div class="text-slate-300 flex items-center gap-1.5 font-mono text-xs"><span>📍</span> <span>Region Rhein-Main &amp; Bundesweiter Rollout</span></div>
+              <div class="text-slate-400 text-[11px] mt-1">📞 Telefonische Rückrufe nach Terminabsprache im gewünschten Zeitfenster (Mo–Fr)</div>
               <div class="text-slate-300">✉️ <a href="mailto:kontakt@lj-digital-systems.de" class="text-amber-400 hover:underline">kontakt@lj-digital-systems.de</a></div>
             </div>
           </div>
@@ -1250,9 +1369,9 @@
 
             <!-- Feedback Box -->
             <div id="contact-feedback-box" class="mt-6 hidden p-6 rounded-xl bg-slate-900 border border-amber-500/40 text-slate-200">
-              <div id="contact-feedback-title" class="font-bold text-base text-amber-400">✓ Vielen Dank! Ihre Anfrage ging direkt bei Linus &amp; Jasper ein.</div>
+              <div id="contact-feedback-title" class="font-bold text-base text-amber-400 font-mono">✓ Vielen Dank! Ihre Anfrage wurde direkt an LJ Digital Systems gesendet.</div>
               <div id="contact-feedback-desc" class="text-xs text-slate-300 mt-2">
-                Wir haben Ihre Nachricht erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.
+                Wir haben Ihre Angaben für die 15-Minuten-Potenzialanalyse unter <strong>kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.
               </div>
               <div class="mt-4 pt-3 border-t border-slate-800 text-[11px] text-slate-400">
                 <strong>Zusammenfassung Ihrer Nachricht:</strong>

@@ -60,6 +60,10 @@ body {
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
+.scale-102 {
+  transform: scale(1.02);
+}
+
 /* ==========================================================================
    Architektur- & Werkstatt-Rasterhintergrund (Warm Prussian & Amber Glow)
    ========================================================================== */

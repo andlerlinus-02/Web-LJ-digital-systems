@@ -25,10 +25,10 @@ const AGENT_TIERS = {
         customerFollowup: 'Kunde lädt 3 Detailfotos & Maßblatt hoch: "Ausführung idealerweise im nächsten Monat."',
         agentFinal: '✓ Anfrage vollständig qualifiziert: Eckdaten, Maße und 3 Fotos erfasst. Projektakte strukturiert im Büro-Postfach abgelegt. Der Inhaber erhält eine Benachrichtigung zur Freigabe.',
         logs: [
-          { time: '20:15:02', tag: 'INCOMING', color: 'text-amber-400', text: 'Website-Anfrage außerhalb der Geschäftszeiten erkannt' },
-          { time: '20:15:04', tag: 'INPUT_PARSE', color: 'text-amber-200', text: 'Strukturierte Pflichtfelder & Foto-Upload abgefragt' },
-          { time: '20:15:08', tag: 'UPLOAD_VERIFY', color: 'text-emerald-400', text: '3 Dateien empfangen (Pläne & Typenschilder validiert)' },
-          { time: '20:15:10', tag: 'HANDOVER', color: 'text-amber-300', text: 'Fertige Projektakte an kontakt@lj-digital-systems.de übergeben ✓' }
+          { time: '[20:15:02]', tag: 'INCOMING', color: 'text-amber-400', text: 'Website-Anfrage außerhalb der Geschäftszeiten erkannt' },
+          { time: '[20:15:04]', tag: 'INPUT_PARSE', color: 'text-amber-200', text: 'Strukturierte Pflichtfelder & Foto-Upload abgefragt' },
+          { time: '[20:15:08]', tag: 'UPLOAD_VERIFY', color: 'text-emerald-400', text: '3 Dateien empfangen (Pläne & Typenschilder validiert)' },
+          { time: '[20:15:10]', tag: 'HANDOVER', color: 'text-amber-300', text: 'Fertige Projektakte an kontakt@lj-digital-systems.de übergeben ✓' }
         ]
       },
       {
@@ -38,9 +38,9 @@ const AGENT_TIERS = {
         customerFollowup: 'Standort bestätigt: "Gewerbepark Süd, Tor 4 – Stillstand seit 30 Minuten."',
         agentFinal: '✓ Express-Ticket priorisiert erstellt. Einsatzleiter per SMS & Push alarmiert. Kunden-Bestätigung mit geschätzter Ankunftszeit versendet.',
         logs: [
-          { time: '11:02:10', tag: 'PRIORITY_ALERT', color: 'text-amber-400', text: 'Dringlichkeit: Hoch / Betriebsstillstand verifiziert' },
-          { time: '11:02:14', tag: 'DISPO_TRIGGER', color: 'text-emerald-400', text: 'Standort abgeglichen & Team-Bereitschaft alarmiert' },
-          { time: '11:02:18', tag: 'SMS_SENT', color: 'text-amber-300', text: 'Push-Benachrichtigung an Einsatzteam übermittelt ✓' }
+          { time: '[11:02:10]', tag: 'PRIORITY_ALERT', color: 'text-amber-400', text: 'Dringlichkeit: Hoch / Betriebsstillstand verifiziert' },
+          { time: '[11:02:14]', tag: 'DISPO_TRIGGER', color: 'text-emerald-400', text: 'Standort abgeglichen & Team-Bereitschaft alarmiert' },
+          { time: '[11:02:18]', tag: 'SMS_SENT', color: 'text-amber-300', text: 'Push-Benachrichtigung an Einsatzteam übermittelt ✓' }
         ]
       }
     ],
@@ -66,22 +66,35 @@ const AGENT_TIERS = {
         customerFollowup: 'Prüfung: "Bitte 5% Projekt-Nachlass einrechnen und als Freigabe-Entwurf bereitlegen."',
         agentFinal: '✓ Angebotsentwurf fertig kalkuliert (Netto: 5.420 €). PDF unter /Entwuerfe/Angebot_Meyer_2026.pdf abgelegt. E-Mail-Entwurf liegt im Postfach – 1 Klick zur Freigabe genügt.',
         logs: [
-          { time: '08:42:01', tag: 'STORAGE_AUTH', color: 'text-amber-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
-          { time: '08:42:04', tag: 'DATA_EXTRACT', color: 'text-amber-200', text: 'Artikelpreise, Stundenkontingente & Nachlass kalkuliert' },
-          { time: '08:42:07', tag: 'DRAFT_GEN', color: 'text-emerald-400', text: 'Rechtssicheres Angebots-PDF generiert & archiviert' },
-          { time: '08:42:09', tag: 'WAIT_APPROVAL', color: 'text-amber-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
+          { time: '[08:42:01]', tag: 'STORAGE_AUTH', color: 'text-amber-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
+          { time: '[08:42:04]', tag: 'DATA_EXTRACT', color: 'text-amber-200', text: 'Artikelpreise, Stundenkontingente & Nachlass kalkuliert' },
+          { time: '[08:42:07]', tag: 'DRAFT_GEN', color: 'text-emerald-400', text: 'Rechtssicheres Angebots-PDF generiert & archiviert' },
+          { time: '[08:42:09]', tag: 'WAIT_APPROVAL', color: 'text-amber-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
         ]
       },
       {
-        name: 'Prompt 2: Dokumentensuche & Leistungsabgleich in Bestandsakten',
+        name: 'Prompt 2: Dokumentensuche & Leistungsabgleich',
         customerMsg: 'Rückfrage: "Welche Konditionen und Spezifikationen hatten wir beim Projekt Weber im Vorjahr vereinbart?"',
         agentReply: 'Durchsuche freigegebenen Speicher... Gefunden in /Projekte_2025/Weber_GmbH: Sondervereinbarung Stundensatz 85 €, Garantieerweiterung auf 36 Monate.',
         customerFollowup: 'Kopiere diese Konditionen direkt in den neuen Entwurf für das Folgeprojekt.',
         agentFinal: '✓ Konditionen übernommen. Nachtrags-Angebot mit identischen Parametern erzeugt und zur Prüfung auf das Inhaber-Dashboard gelegt.',
         logs: [
-          { time: '14:20:11', tag: 'FILE_SEARCH', color: 'text-amber-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
-          { time: '14:20:13', tag: 'KNOWLEDGE_SYNC', color: 'text-amber-200', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
-          { time: '14:20:16', tag: 'DRAFT_UPDATED', color: 'text-emerald-400', text: 'Folgeangebot aktualisiert & zur Freigabe bereit ✓' }
+          { time: '[14:20:11]', tag: 'FILE_SEARCH', color: 'text-amber-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
+          { time: '[14:20:13]', tag: 'KNOWLEDGE_SYNC', color: 'text-amber-200', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
+          { time: '[14:20:16]', tag: 'DRAFT_UPDATED', color: 'text-emerald-400', text: 'Folgeangebot aktualisiert & zur Freigabe bereit ✓' }
+        ]
+      },
+      {
+        name: 'Prompt 3: Projektplaner & Dokumentenprüfung',
+        customerMsg: 'Kunde lädt Skizze & CAD-Export hoch (08:29 Uhr): "Hier ist der Grundriss für die Spezialanlage. Sind alle Anschlussmaße und Vorgaben für das Angebot vollständig?"',
+        agentReply: 'Lese hochgeladene Dateien... 2 von 2 Pflichtvorgaben erkannt. Maßketten & Wandstärken validiert. Vollständigkeits-Status: Grün.',
+        customerFollowup: 'Inhaber-Befehl: "Ordner im Firmenlaufwerk anlegen und Vorprüfung archivieren."',
+        agentFinal: '✓ Projektordner "/Projekte_2026/Becker_Spezialanlage" im geschützten Firmenlaufwerk angelegt. Vollständigkeitsbericht archiviert und zur Freigabe bereitgestellt.',
+        logs: [
+          { time: '[08:29:12]', tag: 'AUTH_CHECK', color: 'text-amber-400', text: 'Verifiziere Ordner-Berechtigung: Zugriff auf /Preise_2026 gestattet. Chef-Ordner gesperrt.' },
+          { time: '[08:29:14]', tag: 'FILE_OCR_PARSE', color: 'text-amber-200', text: 'Grundriss_Becker.pdf analysiert -> Maße & Anschlüsse verifiziert.' },
+          { time: '[08:29:17]', tag: 'DIRECTORY_SYNC', color: 'text-emerald-400', text: 'Ordner /Projekte_2026/Becker_Spezialanlage im Firmenlaufwerk erzeugt.' },
+          { time: '[08:29:19]', tag: 'PERMISSION_OK', color: 'text-amber-300', text: 'Lese- und Schreibrechte rollenbasiert vererbt (Audit-Log #9182) ✓' }
         ]
       }
     ],
@@ -107,10 +120,10 @@ const AGENT_TIERS = {
         customerFollowup: 'Folgeschritte: Materialbestellung & Ausführungstermin planen.',
         agentFinal: '✓ Abgeschlossen: Dispositions-Slot im Teamkalender geblockt, Materialbedarf an Lieferantenschnittstelle übermittelt, Auftragsbestätigung versendet.',
         logs: [
-          { time: '09:10:02', tag: 'EVENT_TRIGGER', color: 'text-amber-400', text: 'Digitale Signatur registriert -> Workflow gestartet' },
-          { time: '09:10:05', tag: 'ERP_WRITE', color: 'text-amber-200', text: 'Kundenakte im Branchensystem erzeugt & Projektpfad gesichert' },
-          { time: '09:10:08', tag: 'DISPO_SYNC', color: 'text-emerald-400', text: 'Team-Kalender KW 48 geblockt & Bestätigung versendet' },
-          { time: '09:10:11', tag: 'PIPELINE_OK', color: 'text-amber-300', text: 'End-to-End Workflow fehlerfrei abgeschlossen ✓' }
+          { time: '[09:10:02]', tag: 'EVENT_TRIGGER', color: 'text-amber-400', text: 'Digitale Signatur registriert -> Workflow gestartet' },
+          { time: '[09:10:05]', tag: 'ERP_WRITE', color: 'text-amber-200', text: 'Kundenakte im Branchensystem erzeugt & Projektpfad gesichert' },
+          { time: '[09:10:08]', tag: 'DISPO_SYNC', color: 'text-emerald-400', text: 'Team-Kalender KW 48 geblockt & Bestätigung versendet' },
+          { time: '[09:10:11]', tag: 'PIPELINE_OK', color: 'text-amber-300', text: 'End-to-End Workflow fehlerfrei abgeschlossen ✓' }
         ]
       }
     ],
@@ -136,9 +149,9 @@ const AGENT_TIERS = {
         customerFollowup: 'Erstelle den Entwurf für das Zwischengutachten.',
         agentFinal: '✓ Zwischenbericht im Gutachten-Format erzeugt. Mängel fotodokumentiert im freigegebenen Projektordner abgelegt.',
         logs: [
-          { time: '15:30:01', tag: 'AUDIO_PARSE', color: 'text-amber-400', text: 'Sprachmemo transkribiert & Fachbegriffe zugeordnet' },
-          { time: '15:30:04', tag: 'VISION_API', color: 'text-amber-200', text: '4 Fotos analysiert & Bauschäden strukturiert erfasst' },
-          { time: '15:30:08', tag: 'REPORT_READY', color: 'text-emerald-400', text: 'Berichtsentwurf zur Freigabe bereitgestellt ✓' }
+          { time: '[15:30:01]', tag: 'AUDIO_PARSE', color: 'text-amber-400', text: 'Sprachmemo transkribiert & Fachbegriffe zugeordnet' },
+          { time: '[15:30:04]', tag: 'VISION_API', color: 'text-amber-200', text: '4 Fotos analysiert & Bauschäden strukturiert erfasst' },
+          { time: '[15:30:08]', tag: 'REPORT_READY', color: 'text-emerald-400', text: 'Berichtsentwurf zur Freigabe bereitgestellt ✓' }
         ]
       }
     ],
@@ -446,11 +459,11 @@ async function handleContactSubmit(event) {
 
     if (response.ok && (result.success === 'true' || result.success === true)) {
       if (feedbackTitle) {
-        feedbackTitle.textContent = '✓ Vielen Dank! Ihre Anfrage ging direkt bei Linus & Jasper ein.';
+        feedbackTitle.textContent = '✓ Vielen Dank! Ihre Anfrage wurde direkt an LJ Digital Systems gesendet.';
       }
       if (feedbackDesc) {
         feedbackDesc.innerHTML =
-          'Wir haben Ihre Angaben für die 15-Minuten-Potenzialanalyse unter <strong>kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zur gewünschten Zeit bei Ihnen.';
+          'Wir haben Ihre Angaben für die 15-Minuten-Potenzialanalyse unter <strong>kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.';
       }
       if (feedbackBox) feedbackBox.classList.remove('hidden');
     } else {
@@ -662,40 +675,141 @@ function toggleMobileMenu() {
 let currentRoiRecommendationTopic = 'Stufe 2: Interner Büro- & Angebots-Assistent';
 let currentRoiSummaryNote = '';
 
+
+/* ==========================================================================
+   Hero Software-Mockup 1-Click Approval Interaction
+   ========================================================================== */
+function triggerHeroOneClickApproval() {
+  const btn = document.getElementById('hero-approval-btn');
+  const status = document.getElementById('hero-approval-status');
+  const card = document.getElementById('hero-approval-card');
+  if (!btn) return;
+
+  btn.innerHTML = `<span class="text-emerald-950 font-bold">✓ Freigegeben &amp; versendet (1 Klick)</span>`;
+  btn.className = 'w-full inline-flex items-center justify-center gap-2 rounded-lg bg-emerald-400 text-slate-950 font-mono text-xs font-bold py-2 px-3 shadow-lg shadow-emerald-500/30 transition transform scale-102';
+  
+  if (status) {
+    const now = new Date();
+    const timeStr = now.toTimeString().split(' ')[0];
+    status.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 pulse-node"></span><span class="text-emerald-300">Protokolliert um ${timeStr} • PDF in /Ausgang archiviert</span>`;
+    status.classList.remove('hidden');
+  }
+
+  if (card) {
+    card.classList.add('border-emerald-500/60', 'bg-emerald-950/30');
+  }
+
+  setTimeout(() => {
+    btn.innerHTML = `<span>[1-Klick-Freigabe erteilen]</span><span>⚡</span>`;
+    btn.className = 'w-full inline-flex items-center justify-center gap-2 rounded-lg bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-400 hover:to-amber-500 text-slate-950 font-mono text-xs font-bold py-2 px-3 shadow transition transform active:scale-95';
+    if (status) status.classList.add('hidden');
+    if (card) {
+      card.classList.remove('border-emerald-500/60', 'bg-emerald-950/30');
+    }
+  }, 4500);
+}
+
+/* ==========================================================================
+   Interactive ROI Calculator with Quick Presets
+   ========================================================================== */
+function applyRoiPreset(presetKey, btnElement) {
+  const requestsInput = document.getElementById('roi-requests');
+  const hoursInput = document.getElementById('roi-routine-hours');
+
+  if (!requestsInput || !hoursInput) return;
+
+  if (presetKey === 'craft') {
+    requestsInput.value = 30;
+    hoursInput.value = 14;
+  } else if (presetKey === 'planning') {
+    requestsInput.value = 15;
+    hoursInput.value = 18;
+  } else if (presetKey === 'expert') {
+    requestsInput.value = 20;
+    hoursInput.value = 12;
+  }
+
+  document.querySelectorAll('.roi-preset-btn').forEach(btn => {
+    btn.classList.remove('border-amber-500', 'bg-amber-950/60', 'shadow-md', 'ring-1', 'ring-amber-400/40');
+    btn.classList.add('border-slate-700', 'bg-slate-900/90');
+  });
+
+  if (btnElement) {
+    btnElement.classList.remove('border-slate-700', 'bg-slate-900/90');
+    btnElement.classList.add('border-amber-500', 'bg-amber-950/60', 'shadow-md', 'ring-1', 'ring-amber-400/40');
+  }
+
+  updateRoiCalculator();
+}
+
 function updateRoiCalculator() {
-  const teamSizeInput = document.getElementById('roi-team-size');
+  const requestsInput = document.getElementById('roi-requests') || document.getElementById('roi-team-size');
   const routineHoursInput = document.getElementById('roi-routine-hours');
   const hourlyRateInput = document.getElementById('roi-hourly-rate');
 
-  const teamVal = document.getElementById('roi-val-team');
+  const requestsVal = document.getElementById('roi-val-requests') || document.getElementById('roi-val-team');
   const hoursVal = document.getElementById('roi-val-hours');
   const rateVal = document.getElementById('roi-val-rate');
 
   const hoursSavedEl = document.getElementById('roi-hours-saved');
   const euroMonthlyEl = document.getElementById('roi-euro-monthly');
   const euroYearlyEl = document.getElementById('roi-euro-yearly');
+  const recommendedTierText = document.getElementById('roi-recommended-tier-text');
+  const recommendedTierBox = document.getElementById('roi-recommended-tier');
 
-  if (!teamSizeInput || !routineHoursInput || !hourlyRateInput) return;
+  if (!requestsInput || !routineHoursInput || !hourlyRateInput) return;
 
-  const team = parseInt(teamSizeInput.value, 10) || 1;
-  const hours = parseInt(routineHoursInput.value, 10) || 10;
-  const rate = parseInt(hourlyRateInput.value, 10) || 45;
+  const requests = parseInt(requestsInput.value, 10) || 20;
+  const officeHours = parseInt(routineHoursInput.value, 10) || 12;
+  const rate = parseInt(hourlyRateInput.value, 10) || 55;
 
-  if (teamVal) teamVal.textContent = `${team} Mitarbeiter`;
-  if (hoursVal) hoursVal.textContent = `${hours} Std. / Woche`;
+  if (requestsVal) requestsVal.textContent = `${requests} Anfragen / Woche`;
+  if (hoursVal) hoursVal.textContent = `${officeHours} Std. Büro / Woche`;
   if (rateVal) rateVal.textContent = `${rate} € / Std.`;
 
-  // Assume conservative 65% automation of repetitive routine
-  const totalRoutineMonth = team * hours * 4.2;
-  const savedHoursMonth = Math.round(totalRoutineMonth * 0.65);
+  // Realistic calculation:
+  // Each request saved ~15 min of phone/clarification through 24/7 Frontdesk (70% automated)
+  // Each office hour saved ~65% through internal quote/document agent
+  const weeklyFrontdeskSaved = (requests * 0.25) * 0.70;
+  const weeklyOfficeSaved = officeHours * 0.65;
+  const totalWeeklySaved = weeklyFrontdeskSaved + weeklyOfficeSaved;
+  const savedHoursMonth = Math.round(totalWeeklySaved * 4.2);
   const euroSavedMonthly = Math.round(savedHoursMonth * rate);
   const euroSavedYearly = euroSavedMonthly * 12;
 
-  if (hoursSavedEl) hoursSavedEl.textContent = `ca. ${savedHoursMonth} Std.`;
+  if (hoursSavedEl) {
+    hoursSavedEl.textContent = `ca. ${savedHoursMonth} Std.`;
+    hoursSavedEl.classList.add('text-amber-300');
+    setTimeout(() => hoursSavedEl.classList.remove('text-amber-300'), 300);
+  }
+
   if (euroMonthlyEl) euroMonthlyEl.textContent = `${euroSavedMonthly.toLocaleString('de-DE')} €`;
   if (euroYearlyEl) euroYearlyEl.textContent = `${euroSavedYearly.toLocaleString('de-DE')} €`;
 
-  currentRoiSummaryNote = `[Entlastungs-Rechner: ${team} Mitarbeiter, ${hours} Std. Routine/Woche -> Einsparung: ca. ${savedHoursMonth} Std. / Monat (${euroSavedMonthly.toLocaleString('de-DE')} €/Monat)]`;
+  // Determine recommended tier
+  let recTierName = 'Stufe 2: Interner Büro- & Angebots-Assistent';
+  let recDisplay = 'Stufe 2 (Büro- & Angebots-Assistent)';
+  if (requests >= 25 && officeHours >= 16) {
+    recTierName = 'Stufe 3: Vollintegrierte Betriebs-Automation';
+    recDisplay = 'Stufe 3 (Vollintegrierte Automation)';
+  } else if (requests >= 25 && officeHours < 12) {
+    recTierName = 'Stufe 1: 24/7 Smart Frontdesk & Anfragesystem';
+    recDisplay = 'Stufe 1 (24/7 Smart Frontdesk)';
+  } else {
+    recTierName = 'Stufe 2: Interner Büro- & Angebots-Assistent';
+    recDisplay = 'Stufe 2 (Büro- & Angebots-Assistent)';
+  }
+
+  currentRoiRecommendationTopic = recTierName;
+  if (recommendedTierText) {
+    recommendedTierText.textContent = recDisplay;
+  }
+  if (recommendedTierBox) {
+    recommendedTierBox.classList.add('scale-102');
+    setTimeout(() => recommendedTierBox.classList.remove('scale-102'), 250);
+  }
+
+  currentRoiSummaryNote = `[Entlastungs-Rechner: ${requests} Anfragen/Woche, ${officeHours} Std. Büro/Woche -> ca. ${savedHoursMonth} Std. / Monat gespart (${euroSavedMonthly.toLocaleString('de-DE')} €/Monat) • Empfohlen: ${recDisplay}]`;
 }
 
 function transferRoiToContact() {
