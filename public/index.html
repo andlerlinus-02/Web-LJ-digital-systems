@@ -93,23 +93,20 @@
       box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
     }
 
-    /* Hero Section: Hauchzarte Transparenz & weite Staffelung */
+    /* Hero Section: Hauchzarte Transparenz & kompakte, vollständige Staffelung */
     .hero-section {
       position: relative;
       overflow: hidden;
-      min-height: 86vh;
+      min-height: 84vh;
       display: flex;
       align-items: center;
       background-color: #f1f5f9;
     }
 
-    /* Bild nach rechts gerückt, damit Linus & Jasper glasklar im freien Raum stehen */
+    /* Das Hintergrundbild liegt kompakt im Vollformat: Mann links, Linus & Jasper in der Mitte, Mann rechts alle sichtbar */
     .hero-bg-layer {
       position: absolute;
-      top: 0;
-      bottom: 0;
-      left: 0;
-      width: 100%;
+      inset: 0;
       background-image: url('assets/team-lj-digital-systems.jpg');
       background-size: cover;
       background-position: center 25%;
@@ -119,65 +116,47 @@
       transition: all 0.3s ease;
     }
 
-    @media (min-width: 1024px) {
-      .hero-bg-layer {
-        width: 125%;
-        left: -5vw;
-        transform: translateX(12vw);
-        background-position: center 25%;
-      }
-    }
-
-    @media (min-width: 1440px) {
-      .hero-bg-layer {
-        width: 120%;
-        left: -3vw;
-        transform: translateX(11vw);
-        background-position: center 25%;
-      }
-    }
-
-    /* Hauchzarter, transparenter Verlauf links für perfekte Lesbarkeit */
+    /* Hauchzarter, transparenter Verlauf links für optimale Schriftlesbarkeit */
     .hero-gradient-overlay {
       position: absolute;
       inset: 0;
       background: linear-gradient(
         90deg, 
-        rgba(248, 250, 252, 0.45) 0%, 
-        rgba(248, 250, 252, 0.22) 35%, 
-        rgba(248, 250, 252, 0.05) 58%, 
+        rgba(248, 250, 252, 0.40) 0%, 
+        rgba(248, 250, 252, 0.20) 35%, 
+        rgba(248, 250, 252, 0.05) 55%, 
         rgba(248, 250, 252, 0.00) 75%
       );
       z-index: 1;
       pointer-events: none;
     }
 
-    /* Hauchzarter Frosted-Glass Text-Container – schlank und weit links gehalten */
+    /* Hauchzarter Frosted-Glass Text-Container – kompakt & ganz links gehalten */
     .hero-text-card {
-      max-width: 500px;
+      max-width: 475px;
       background: rgba(255, 255, 255, 0.20);
       backdrop-filter: blur(10px) saturate(130%);
       -webkit-backdrop-filter: blur(10px) saturate(130%);
       border: 1px solid rgba(255, 255, 255, 0.55);
       border-radius: 20px;
-      padding: 36px 32px;
+      padding: 34px 30px;
       box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.12);
     }
 
     @media (max-width: 1024px) {
       .hero-text-card {
-        max-width: 560px;
+        max-width: 520px;
         background: rgba(255, 255, 255, 0.35) !important;
         backdrop-filter: blur(12px) !important;
+      }
+      .hero-bg-layer {
+        background-position: 54% 20% !important;
       }
     }
 
     @media (max-width: 768px) {
       .hero-bg-layer {
-        background-position: 54% 15% !important;
-        width: 100% !important;
-        left: 0 !important;
-        transform: none !important;
+        background-position: 52% 15% !important;
         opacity: 0.90 !important;
       }
       .hero-gradient-overlay {
@@ -280,27 +259,27 @@
 
   <main>
         <!-- =======================================================================
-         3. EYECATCHER HERO-BEREICH (Transparentes Frosted Glass mit voller Sicht auf das Team)
+         3. EYECATCHER HERO-BEREICH (Kompakt: Mann links, Linus & Jasper in der Mitte, Mann rechts)
          ======================================================================= -->
-    <section class="hero-section py-12 sm:py-16 lg:py-20 border-b border-slate-200">
+    <section class="hero-section py-10 sm:py-14 lg:py-16 border-b border-slate-200">
       
-      <!-- 1. Bild nach rechts verschoben: Volle Sichtbarkeit von Linus & Jasper in der Mitte -->
+      <!-- 1. Kompaktes Hintergrundbild: Vollformat mit allen Personen im Blickfeld -->
       <div class="hero-bg-layer"></div>
 
-      <!-- 2. Hauchzarter Verlauf links: Schützt den Text, lässt das Team rechts 100% frei -->
+      <!-- 2. Hauchzarter Verlauf links: Schützt den Text, lässt alle Personen klar erkennbar -->
       <div class="hero-gradient-overlay"></div>
 
-      <!-- 3. Vordergrund: Text-Container weit links & ungestörter Blick auf Linus & Jasper rechts -->
-      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
+      <!-- 3. Vordergrund: Text-Container weit links & freier Blick auf das gesamte Team -->
+      <div class="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full flex justify-start">
         
-        <div class="hero-text-card space-y-6">
+        <div class="hero-text-card space-y-5">
           
           <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-lg bg-slate-900/85 backdrop-blur-md border border-white/20 text-white text-xs font-semibold shadow-sm">
             <span class="w-2 h-2 rounded-full bg-amber-400"></span>
             <span>Web &amp; Entlastung für Fachbetriebe &amp; Dienstleister</span>
           </div>
 
-          <h1 class="text-3xl sm:text-4xl lg:text-[2.65rem] font-extrabold text-slate-950 tracking-tight leading-[1.18] drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">
+          <h1 class="text-3xl sm:text-4xl lg:text-[2.5rem] font-extrabold text-slate-950 tracking-tight leading-[1.18] drop-shadow-[0_1px_2px_rgba(255,255,255,0.7)]">
             Schluss mit Telefonstress bei der Arbeit und <span class="text-amber-900 underline decoration-amber-400 decoration-4">Büro-Schichten</span> nach Feierabend.
           </h1>
 
@@ -309,10 +288,10 @@
           </p>
 
           <!-- Action Buttons -->
-          <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+          <div class="pt-1 flex flex-col sm:flex-row items-stretch sm:items-center gap-3">
             <a
               href="#betriebs-check"
-              class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all text-center flex items-center justify-center gap-2 group cursor-pointer"
+              class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3 px-5 rounded-xl shadow-md transition-all text-center flex items-center justify-center gap-2 group cursor-pointer text-sm"
             >
               <span>60-Sekunden Betriebs-Check starten</span>
               <span class="group-hover:translate-y-0.5 transition-transform">↓</span>
@@ -320,23 +299,23 @@
 
             <a
               href="#kontakt"
-              class="bg-slate-900/90 hover:bg-slate-900 text-white font-bold py-3.5 px-6 rounded-xl border border-white/20 transition-all text-center flex items-center justify-center shadow-md backdrop-blur-sm"
+              class="bg-slate-900/90 hover:bg-slate-900 text-white font-bold py-3 px-5 rounded-xl border border-white/20 transition-all text-center flex items-center justify-center shadow-md backdrop-blur-sm text-sm"
             >
               <span>Kostenlose Potenzialanalyse</span>
             </a>
           </div>
 
           <!-- 3 Trust Bullets (Bodenständig & glasklar lesbar) -->
-          <div class="pt-4 border-t border-slate-900/15 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs font-bold text-slate-950">
-            <div class="flex items-center gap-2 drop-shadow-sm">
+          <div class="pt-3 border-t border-slate-900/15 grid grid-cols-1 sm:grid-cols-3 gap-2 text-xs font-bold text-slate-950">
+            <div class="flex items-center gap-1.5 drop-shadow-sm">
               <span class="text-amber-800 font-extrabold text-sm">✓</span>
               <span>Feste Gründerbetreuung</span>
             </div>
-            <div class="flex items-center gap-2 drop-shadow-sm">
+            <div class="flex items-center gap-1.5 drop-shadow-sm">
               <span class="text-amber-800 font-extrabold text-sm">✓</span>
               <span>Schlüsselfertig eingerichtet</span>
             </div>
-            <div class="flex items-center gap-2 drop-shadow-sm">
+            <div class="flex items-center gap-1.5 drop-shadow-sm">
               <span class="text-amber-800 font-extrabold text-sm">✓</span>
               <span>Spürbare Zeitersparnis</span>
             </div>
