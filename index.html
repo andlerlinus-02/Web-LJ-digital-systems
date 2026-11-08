@@ -36,12 +36,13 @@
           },
           colors: {
             brand: {
-              dark: '#070b14',
-              navy: '#0f172a',
-              card: 'rgba(15, 23, 42, 0.85)',
-              cyan: '#06b6d4',
-              sky: '#38bdf8',
-              blue: '#2563eb'
+              dark: '#0a1322',
+              navy: '#0f2852',
+              navyDark: '#091526',
+              card: 'rgba(15, 29, 51, 0.85)',
+              amber: '#d97706',
+              amberLight: '#f59e0b',
+              amberDark: '#b45309'
             }
           }
         }
@@ -52,7 +53,7 @@
   <!-- Custom Stylesheet -->
   <link rel="stylesheet" href="styles.css" />
 </head>
-<body class="bg-[#070b14] text-white antialiased selection:bg-cyan-500 selection:text-slate-950 flex flex-col min-h-screen">
+<body class="bg-[#0a1322] text-white antialiased selection:bg-amber-600 selection:text-white flex flex-col min-h-screen">
 
   <!-- ========================================================================
        TOP NOTIFICATION BAR (B2B Precision & Direct Access)
@@ -60,19 +61,19 @@
   <div class="bg-slate-950/90 text-slate-400 text-xs py-2 px-4 border-b border-white/10 hidden sm:block">
     <div class="max-w-7xl mx-auto flex justify-between items-center">
       <div class="flex items-center gap-3">
-        <span class="inline-flex items-center gap-1.5 text-cyan-400 font-semibold">
-          <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+        <span class="inline-flex items-center gap-1.5 text-amber-400 font-semibold">
+          <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
           Digitale Systeme für spezialisierte Fach- &amp; Dienstleistungsbetriebe
         </span>
         <span class="text-slate-700">•</span>
         <span class="text-slate-300">Persönlich eingerichtet von den Gründern Linus &amp; Jasper</span>
       </div>
       <div class="flex items-center gap-4 text-slate-300">
-        <a href="tel:+498001234567" class="hover:text-cyan-400 transition flex items-center gap-1.5 font-medium">
+        <a href="tel:+498001234567" class="hover:text-amber-400 transition flex items-center gap-1.5 font-medium">
           <span>📞</span> <span>0800 123 456 7</span>
         </a>
         <span class="text-slate-700">•</span>
-        <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-cyan-400 transition flex items-center gap-1.5 font-medium">
+        <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-amber-400 transition flex items-center gap-1.5 font-medium">
           <span>✉️</span> <span>kontakt@lj-digital-systems.de</span>
         </a>
       </div>
@@ -82,25 +83,25 @@
   <!-- ========================================================================
        A. STICKY HEADER & NAVIGATION
        ======================================================================== -->
-  <header class="sticky top-0 z-50 bg-[#070b14]/90 backdrop-blur-md border-b border-white/10">
+  <header class="sticky top-0 z-50 bg-[#0a1322]/90 backdrop-blur-md border-b border-white/10">
     <div class="mx-auto flex max-w-7xl items-center justify-between px-4 py-3 sm:px-6 lg:px-8">
       
       <!-- Brand & New Tech Monogram Emblem -->
       <a href="#" class="flex items-center gap-3 group">
         <div class="relative group-hover:scale-105 transition-transform duration-200">
           <svg class="h-10 w-10 shrink-0" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <rect x="3" y="3" width="94" height="94" rx="18" fill="#0f172a" stroke="#0ea5e9" stroke-width="2"/>
-            <rect x="7" y="7" width="86" height="86" rx="14" stroke="#38bdf8" stroke-width="1" stroke-opacity="0.3" stroke-dasharray="3 3"/>
-            <path d="M26 24 H38 V64 H64 V76 H26 V24 Z" fill="#ffffff"/>
-            <path d="M48 24 H76 V36 H64 V60 C64 68 59 74 50 74 C42 74 37 69 35 63 L44 58 C45 61 47 63 50 63 C53 63 54 61 54 56 V24 H48 Z" fill="#38bdf8"/>
-            <circle cx="70" cy="24" r="3.5" fill="#06b6d4"/>
+            <rect x="3" y="3" width="94" height="94" rx="20" fill="#0b1728" stroke="#1d2e47" stroke-width="2.5"/>
+            <rect x="7" y="7" width="86" height="86" rx="16" stroke="#b45309" stroke-width="1.2" stroke-opacity="0.45" stroke-dasharray="3 3"/>
+            <path d="M25 24 H37 V63 H62 V74 H25 V24 Z" fill="#ffffff"/>
+            <path d="M48 24 H75 V34 H63 V59 C63 67 58 73 50 73 C43 73 38 69.5 36.5 64 L45 59.5 C46 62 47.5 63.5 50 63.5 C52.5 63.5 54 62 54 57 V24 H48 Z" fill="#d97706"/>
+            <circle cx="69" cy="24" r="3.5" fill="#f59e0b"/>
           </svg>
         </div>
 
         <div class="flex flex-col">
           <div class="flex items-center gap-2">
             <span class="text-base sm:text-lg font-extrabold tracking-tight text-white leading-none">LJ Digital Systems</span>
-            <span class="text-[9px] font-bold text-cyan-300 bg-cyan-950/80 px-2 py-0.5 rounded border border-cyan-500/40 uppercase">Linus &amp; Jasper</span>
+            <span class="text-[9px] font-bold text-amber-300 bg-amber-950/80 px-2 py-0.5 rounded border border-amber-500/40 uppercase">Linus &amp; Jasper</span>
           </div>
           <span class="text-[11px] text-slate-400 font-medium tracking-wide mt-0.5">Web &amp; KI-Automatisierung für inhabergeführte Betriebe &amp; Fachdienstleister</span>
         </div>
@@ -108,22 +109,22 @@
 
       <!-- Desktop Navigation -->
       <nav class="hidden lg:flex items-center gap-6 text-sm font-semibold text-slate-300">
-        <a href="#leistungen" class="hover:text-cyan-400 transition">Web &amp; Anfrage-System</a>
-        <a href="#agenten-stufen" class="hover:text-cyan-400 transition">Die 3 Agenten-Stufen</a>
-        <a href="#live-simulation" class="hover:text-cyan-400 transition flex items-center gap-1.5">
-          <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+        <a href="#leistungen" class="hover:text-amber-400 transition">Web &amp; Anfrage-System</a>
+        <a href="#agenten-stufen" class="hover:text-amber-400 transition">Die 3 Agenten-Stufen</a>
+        <a href="#live-simulation" class="hover:text-amber-400 transition flex items-center gap-1.5">
+          <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
           <span>Live-Simulation</span>
         </a>
-        <a href="#entlastungs-rechner" class="hover:text-cyan-400 transition">Entlastungs-Rechner</a>
-        <a href="#sicherheit" class="hover:text-cyan-400 transition">Sicherheit &amp; DSGVO</a>
-        <a href="#ueber-uns" class="hover:text-cyan-400 transition">Über uns</a>
+        <a href="#entlastungs-rechner" class="hover:text-amber-400 transition">Entlastungs-Rechner</a>
+        <a href="#sicherheit" class="hover:text-amber-400 transition">Sicherheit &amp; DSGVO</a>
+        <a href="#ueber-uns" class="hover:text-amber-400 transition">Über uns</a>
       </nav>
 
       <!-- Header Direct Contact & CTA -->
       <div class="hidden md:flex items-center gap-3">
         <a
           href="#kontakt"
-          class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-sky-500 to-blue-600 hover:from-sky-400 hover:to-blue-500 px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg shadow-sky-500/25 transition transform hover:-translate-y-0.5"
+          class="inline-flex items-center gap-2 rounded-xl bg-gradient-to-r from-amber-500 to-amber-700 hover:from-amber-400 hover:to-amber-600 px-4 py-2.5 text-xs sm:text-sm font-bold text-white shadow-lg shadow-amber-500/25 transition transform hover:-translate-y-0.5"
         >
           <span>Potenzialanalyse buchen</span>
           <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
@@ -149,7 +150,7 @@
     <div id="mobile-nav-menu" class="hidden lg:hidden border-t border-slate-800 bg-[#0b1120] px-4 pt-3 pb-5 space-y-2">
       <a href="#leistungen" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800">Web &amp; Anfrage-System</a>
       <a href="#agenten-stufen" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800">Die 3 Agenten-Stufen</a>
-      <a href="#live-simulation" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-cyan-400 hover:bg-slate-800">Live-Simulation</a>
+      <a href="#live-simulation" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-amber-400 hover:bg-slate-800">Live-Simulation</a>
       <a href="#entlastungs-rechner" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800">Entlastungs-Rechner</a>
       <a href="#sicherheit" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800">Sicherheit &amp; DSGVO</a>
       <a href="#ueber-uns" onclick="toggleMobileMenu()" class="block rounded-lg px-3 py-2 text-sm font-semibold text-slate-200 hover:bg-slate-800">Über uns (Linus &amp; Jasper)</a>
@@ -157,7 +158,7 @@
         <a
           href="#kontakt"
           onclick="toggleMobileMenu()"
-          class="flex w-full items-center justify-center rounded-xl bg-cyan-600 px-4 py-2.5 text-sm font-bold text-white shadow"
+          class="flex w-full items-center justify-center rounded-xl bg-amber-600 px-4 py-2.5 text-sm font-bold text-white shadow"
         >
           15-Min. Potenzialanalyse buchen
         </a>
@@ -174,13 +175,13 @@
         
         <!-- Left: Copy & Value Proposition -->
         <div class="lg:col-span-8 space-y-6">
-          <div class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3.5 py-1.5 text-xs font-semibold text-cyan-300">
-            <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+          <div class="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-400/30 px-3.5 py-1.5 text-xs font-semibold text-amber-300">
+            <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
             <span>Digitale Systeme für spezialisierte Fach- &amp; Dienstleistungsbetriebe</span>
           </div>
 
           <h1 class="text-3xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight leading-[1.15]">
-            Schluss mit Telefonstress im Einsatz und Büro-Schichten <span class="text-gradient-cyan">nach Feierabend.</span>
+            Schluss mit Telefonstress im Einsatz und Büro-Schichten <span class="text-gradient-amber">nach Feierabend.</span>
           </h1>
 
           <p class="text-base sm:text-lg text-slate-300 leading-relaxed max-w-3xl">
@@ -190,19 +191,19 @@
           <!-- USPs unter Subline -->
           <div class="grid grid-cols-1 sm:grid-cols-3 gap-3 pt-2">
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-              <svg class="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <svg class="h-5 w-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span><strong>24/7 digitaler Kundenempfang</strong> &amp; Vorqualifizierung</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-              <svg class="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <svg class="h-5 w-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span><strong>Automatisierter Zugriff</strong> auf Preislisten, Vorlagen &amp; Dokumente</span>
             </div>
             <div class="flex items-start gap-2.5 text-xs sm:text-sm text-slate-200">
-              <svg class="h-5 w-5 text-cyan-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+              <svg class="h-5 w-5 text-amber-400 shrink-0 mt-0.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
               <span><strong>Nahtlos anpassbar</strong> an Ihre bestehenden Branchen-Programme</span>
@@ -211,7 +212,7 @@
 
           <!-- Hero CTAs -->
           <div class="pt-4 flex flex-wrap gap-4 items-center">
-            <a href="#kontakt" class="btn-cyan-primary text-sm sm:text-base">
+            <a href="#kontakt" class="btn-amber-primary text-sm sm:text-base">
               <span>15-Min. Potenzialanalyse buchen</span>
               <svg class="h-4 w-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M19 14l-7 7m0 0l-7-7m7 7V3" />
@@ -219,7 +220,7 @@
             </a>
 
             <a href="#live-simulation" class="btn-dark-secondary text-sm sm:text-base">
-              <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+              <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
               <span>Live-Simulation testen</span>
             </a>
           </div>
@@ -228,14 +229,14 @@
           <div class="pt-4 border-t border-white/10 text-xs text-slate-400 flex flex-wrap items-center gap-2">
             <span class="font-semibold text-slate-200">Persönliche Betreuung durch die Gründer Linus &amp; Jasper</span>
             <span>•</span>
-            <span class="text-cyan-400">100% DSGVO &amp; geschützte Ordnerfreigabe</span>
+            <span class="text-amber-400">100% DSGVO &amp; geschützte Ordnerfreigabe</span>
           </div>
         </div>
 
         <!-- Right: Proof Metrics & System Architecture Card -->
         <div class="lg:col-span-4 space-y-4">
           <div class="glass-tech-card p-6">
-            <div class="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-1">MESSBARER NUTZEN</div>
+            <div class="text-xs font-bold uppercase tracking-wider text-amber-400 mb-1">MESSBARER NUTZEN</div>
             <div class="text-3xl font-extrabold text-white font-mono">8 – 25+ Std.</div>
             <div class="text-xs text-slate-300 font-semibold mt-1">Wöchentliche Entlastung im Büro</div>
             <p class="text-[11px] text-slate-400 mt-2 leading-relaxed">
@@ -269,11 +270,11 @@
   <!-- ========================================================================
        C. PRAXIS-VERGLEICH (Alte Website vs. LJ-System)
        ======================================================================== -->
-  <section class="py-20 bg-[#09111e] border-b border-white/10 text-white">
+  <section class="py-20 bg-[#0e1a2d] border-b border-white/10 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           Der Unterschied in der Praxis
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -327,15 +328,15 @@
         </div>
 
         <!-- Das LJ-System im Alltag -->
-        <div class="glass-tech-card p-8 border-cyan-500/30 bg-cyan-950/15">
-          <div class="flex items-center gap-2.5 text-cyan-400 font-bold text-lg mb-6">
-            <span class="h-6 w-6 rounded-full bg-cyan-500/20 text-cyan-400 flex items-center justify-center text-sm font-black">✓</span>
+        <div class="glass-tech-card p-8 border-amber-500/30 bg-amber-950/15">
+          <div class="flex items-center gap-2.5 text-amber-400 font-bold text-lg mb-6">
+            <span class="h-6 w-6 rounded-full bg-amber-500/20 text-amber-400 flex items-center justify-center text-sm font-black">✓</span>
             <span>Das LJ-System im Alltag:</span>
           </div>
 
           <div class="space-y-6">
             <div class="flex items-start gap-3.5">
-              <span class="text-cyan-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
+              <span class="text-amber-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
               <div>
                 <h4 class="font-bold text-white text-sm">24/7 Vorqualifizierung &amp; strukturierte Eckdaten</h4>
                 <p class="text-xs text-slate-300 mt-1 leading-relaxed">
@@ -345,7 +346,7 @@
             </div>
 
             <div class="flex items-start gap-3.5">
-              <span class="text-cyan-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
+              <span class="text-amber-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
               <div>
                 <h4 class="font-bold text-white text-sm">Direkter Datei- &amp; Foto-Upload</h4>
                 <p class="text-xs text-slate-300 mt-1 leading-relaxed">
@@ -355,7 +356,7 @@
             </div>
 
             <div class="flex items-start gap-3.5">
-              <span class="text-cyan-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
+              <span class="text-amber-400 text-lg font-bold shrink-0 mt-0.5">✓</span>
               <div>
                 <h4 class="font-bold text-white text-sm">Interaktive 60-Sekunden-Anfragestrecke</h4>
                 <p class="text-xs text-slate-300 mt-1 leading-relaxed">
@@ -373,11 +374,11 @@
   <!-- ========================================================================
        D. DIE 3 TYPISCHEN PRAXIS-ZEITFRESSER (Vorher vs. Nachher)
        ======================================================================== -->
-  <section class="py-20 bg-[#070b14] border-b border-white/10 text-white">
+  <section class="py-20 bg-[#0a1322] border-b border-white/10 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           Engpässe im Tagesgeschäft lösen
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -393,7 +394,7 @@
         <!-- Zeitfresser 01 -->
         <div class="glass-tech-card p-7 space-y-4">
           <div class="flex justify-between items-center">
-            <span class="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">ALLTAGSSITUATION 01</span>
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 01</span>
             <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~4–6 Std. / Woche gespart</span>
           </div>
           
@@ -407,17 +408,17 @@
               Ständige Unterbrechungen kosten Konzentration, Gesprächsnotizen auf Zetteln gehen verloren und wichtige Rückrufe bleiben bis zum Abend liegen.
             </div>
 
-            <div class="p-3 rounded-lg bg-cyan-950/20 border border-cyan-500/30 text-slate-300">
-              <strong class="text-cyan-400 block mb-0.5">Die Lösung (Stufe 1):</strong>
+            <div class="p-3 rounded-lg bg-amber-950/20 border border-amber-500/30 text-slate-300">
+              <strong class="text-amber-400 block mb-0.5">Die Lösung (Stufe 1):</strong>
               Der 24/7 Web-Frontdesk nimmt jede Anfrage an, filtert Routinefragen und übergibt fertige Projektakten inklusive Maßen und Fotos direkt ins Postfach.
             </div>
           </div>
         </div>
 
         <!-- Zeitfresser 02 -->
-        <div class="glass-tech-card p-7 space-y-4 border-cyan-500/40">
+        <div class="glass-tech-card p-7 space-y-4 border-amber-500/40">
           <div class="flex justify-between items-center">
-            <span class="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">ALLTAGSSITUATION 02</span>
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 02</span>
             <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~8–15 Std. / Woche gespart</span>
           </div>
 
@@ -431,8 +432,8 @@
               Vorlagen, PDF-Kataloge und Kundenakten müssen mühsam manuell zusammenkopiert werden. Der Inhaber sitzt bis tief in die Nacht am Schreibtisch.
             </div>
 
-            <div class="p-3 rounded-lg bg-cyan-950/20 border border-cyan-500/30 text-slate-300">
-              <strong class="text-cyan-400 block mb-0.5">Die Lösung (Stufe 2):</strong>
+            <div class="p-3 rounded-lg bg-amber-950/20 border border-amber-500/30 text-slate-300">
+              <strong class="text-amber-400 block mb-0.5">Die Lösung (Stufe 2):</strong>
               Der interne Büro-Agent greift geschützt auf Ihre freigegebenen Vorlagen, Kalkulationen und Preislisten zu und legt den fertigen Angebotsentwurf zur 1-Klick-Freigabe bereit.
             </div>
           </div>
@@ -441,7 +442,7 @@
         <!-- Zeitfresser 03 -->
         <div class="glass-tech-card p-7 space-y-4">
           <div class="flex justify-between items-center">
-            <span class="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">ALLTAGSSITUATION 03</span>
+            <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">ALLTAGSSITUATION 03</span>
             <span class="text-xs font-bold text-emerald-400 bg-emerald-950/60 px-2.5 py-0.5 rounded border border-emerald-500/30">~15–25+ Std. / Woche gespart</span>
           </div>
 
@@ -455,8 +456,8 @@
               Zettelwirtschaft und Medienbrüche: Manuelles Abtippen zwischen E-Mails, Kalendern, Excel-Tabellen und verschiedenen Branchensystemen.
             </div>
 
-            <div class="p-3 rounded-lg bg-cyan-950/20 border border-cyan-500/30 text-slate-300">
-              <strong class="text-cyan-400 block mb-0.5">Die Lösung (Stufe 3):</strong>
+            <div class="p-3 rounded-lg bg-amber-950/20 border border-amber-500/30 text-slate-300">
+              <strong class="text-amber-400 block mb-0.5">Die Lösung (Stufe 3):</strong>
               Der vollintegrierte Netzwerk-Agent vernetzt Speicher, Postfächer, Kalender und Fachsysteme und stößt Folgeprozesse (Auftragsordner, Bestätigung, Terminslot) automatisch an.
             </div>
           </div>
@@ -471,11 +472,11 @@
        E. DIE 3 MODULAREN AGENTEN-STUFEN & FOKUSSIERTE LEISTUNGEN
        (Kombinierte fokussierte Leistungs-Sektion)
        ======================================================================== -->
-  <section id="agenten-stufen" class="py-20 lg:py-28 bg-[#09111e] border-b border-white/10 text-white">
+  <section id="agenten-stufen" class="py-20 lg:py-28 bg-[#0e1a2d] border-b border-white/10 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div id="leistungen" class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           Modulare Systemarchitektur
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -492,7 +493,7 @@
         <div class="glass-tech-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">STUFE 1 • STARTER</span>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">STUFE 1 • STARTER</span>
               <span class="text-xs font-bold text-slate-400">24/7 Kundenkontakt</span>
             </div>
 
@@ -503,19 +504,19 @@
 
             <ul class="space-y-2 text-xs text-slate-300 pt-2 border-t border-white/10">
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Qualifiziert Kundenanfragen mit Pflichtfeldern vor</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Direkter Foto- &amp; Plan-Upload (spart den Ersttermin)</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Vergibt Wunsch-Termine nach definierten Zeitfenstern</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Inklusive moderner, mobiloptimierter Website</span>
               </li>
             </ul>
@@ -533,14 +534,14 @@
         </div>
 
         <!-- Stufe 2 (Beliebteste Wahl) -->
-        <div class="glass-tech-card p-8 flex flex-col justify-between border-cyan-500/50 shadow-2xl relative">
-          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-sky-400 to-cyan-500 text-slate-950 font-extrabold text-[10px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg">
+        <div class="glass-tech-card p-8 flex flex-col justify-between border-amber-500/50 shadow-2xl relative">
+          <div class="absolute -top-3 left-1/2 -translate-x-1/2 bg-gradient-to-r from-amber-400 to-amber-600 text-slate-950 font-extrabold text-[10px] uppercase tracking-wider px-3.5 py-1 rounded-full shadow-lg">
             Beliebteste Wahl für Nischenbetriebe
           </div>
 
           <div class="space-y-4 pt-2">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/40">STUFE 2 • PRO</span>
+              <span class="text-xs font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/40">STUFE 2 • PRO</span>
               <span class="text-xs font-bold text-emerald-400">Höchster Zeitgewinn</span>
             </div>
 
@@ -551,19 +552,19 @@
 
             <ul class="space-y-2 text-xs text-slate-300 pt-2 border-t border-white/10">
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Alles aus Stufe 1 enthalten (Frontdesk &amp; Web)</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Geschützter Lesezugriff auf Preislisten &amp; PDF-Archive</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Erstellt anmeldefertige Angebote &amp; Leistungsverzeichnisse</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Volle Kontrolle: 1-Klick-Freigabe durch den Inhaber</span>
               </li>
             </ul>
@@ -573,7 +574,7 @@
             <button
               type="button"
               onclick="scrollToContactWithTopic('Stufe 2: Interner Büro- & Angebots-Assistent')"
-              class="w-full btn-cyan-primary justify-center text-xs"
+              class="w-full btn-amber-primary justify-center text-xs"
             >
               Stufe 2 anfragen (Empfohlen) →
             </button>
@@ -584,7 +585,7 @@
         <div class="glass-tech-card p-8 flex flex-col justify-between">
           <div class="space-y-4">
             <div class="flex items-center justify-between">
-              <span class="text-xs font-mono font-bold text-cyan-400 bg-cyan-950/80 px-2.5 py-1 rounded border border-cyan-500/30">STUFE 3 • AUTONOM</span>
+              <span class="text-xs font-mono font-bold text-amber-400 bg-amber-950/80 px-2.5 py-1 rounded border border-amber-500/30">STUFE 3 • AUTONOM</span>
               <span class="text-xs font-bold text-slate-400">Voll vernetzt</span>
             </div>
 
@@ -595,19 +596,19 @@
 
             <ul class="space-y-2 text-xs text-slate-300 pt-2 border-t border-white/10">
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Alles aus Stufe 1 &amp; 2 inklusive</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Schreibzugriff &amp; Synchronisation mit Branchen-ERP</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Automatische Materialabgleiche &amp; Team-Disposition</span>
               </li>
               <li class="flex items-start gap-2">
-                <span class="text-cyan-400 font-bold">✓</span>
+                <span class="text-amber-400 font-bold">✓</span>
                 <span>Lückenloser Audit-Trail &amp; DSGVO-Sicherheitsarchitektur</span>
               </li>
             </ul>
@@ -632,12 +633,12 @@
   <!-- ========================================================================
        F. LIVE-SIMULATION (Visualisierter Dokumenten- & Freigabe-Ablauf)
        ======================================================================== -->
-  <section id="live-simulation" class="py-20 bg-[#070b14] border-b border-white/10 text-white">
+  <section id="live-simulation" class="py-20 bg-[#0a1322] border-b border-white/10 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="inline-flex items-center gap-2 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-cyan-400 mb-3">
-          <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+        <span class="inline-flex items-center gap-2 rounded-full bg-amber-500/10 border border-amber-400/30 px-3.5 py-1 text-xs font-bold uppercase tracking-wider text-amber-400 mb-3">
+          <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
           Interaktive Live-Demo
         </span>
         <h2 class="text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -649,12 +650,12 @@
       </div>
 
       <!-- Simulator Console Container -->
-      <div class="glass-tech-card p-6 sm:p-10 border-cyan-500/30">
+      <div class="glass-tech-card p-6 sm:p-10 border-amber-500/30">
         
         <!-- Header Switcher -->
         <div class="flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4 pb-6 border-b border-white/10">
           <div>
-            <span id="sim-tier-badge" class="inline-block rounded bg-cyan-500/20 px-2.5 py-1 text-xs font-mono font-semibold text-cyan-300 mb-1">STUFE 2 • BELIEBTESTE WAHL</span>
+            <span id="sim-tier-badge" class="inline-block rounded bg-amber-500/20 px-2.5 py-1 text-xs font-mono font-semibold text-amber-300 mb-1">STUFE 2 • BELIEBTESTE WAHL</span>
             <h3 id="sim-tier-title" class="text-2xl font-extrabold text-white">Interner Büro- &amp; Angebots-Assistent</h3>
             <p id="sim-tier-subtitle" class="text-xs text-slate-300 mt-0.5">Sicherer Lesezugriff auf freigegebene Preislisten, Vorlagen &amp; Kundenakten.</p>
           </div>
@@ -702,7 +703,7 @@
               id="sim-tier-cta"
               type="button"
               onclick="scrollToContactWithTopic('Stufe 2: Interner Büro- & Angebots-Assistent')"
-              class="w-full btn-cyan-primary justify-center text-xs"
+              class="w-full btn-amber-primary justify-center text-xs"
             >
               Genau diese Stufe für meinen Betrieb anfragen →
             </button>
@@ -716,7 +717,7 @@
             </div>
 
             <!-- Live Dialog Box -->
-            <div class="rounded-xl border border-slate-800 bg-[#09111e] p-4 min-h-[220px]">
+            <div class="rounded-xl border border-slate-800 bg-[#0e1a2d] p-4 min-h-[220px]">
               <div class="text-[11px] font-semibold uppercase tracking-wider text-slate-400 mb-3 flex items-center gap-1.5">
                 <span>💬</span> <span>Visualisierter Ablauf &amp; 1-Klick-Freigabe:</span>
               </div>
@@ -727,7 +728,7 @@
             <div class="rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[11px]">
               <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2 flex items-center justify-between">
                 <span>⚡ SYSTEM EXECUTION LOG (ECHTZEIT-PROTOKOLL)</span>
-                <span class="text-cyan-400 font-sans">DSGVO-SECURE • LOKAL FREIGEGEBEN</span>
+                <span class="text-amber-400 font-sans">DSGVO-SECURE • LOKAL FREIGEGEBEN</span>
               </div>
               <div id="sim-terminal-logs" class="space-y-1 overflow-y-auto max-h-44 custom-scrollbar"></div>
             </div>
@@ -743,11 +744,11 @@
   <!-- ========================================================================
        ENTLASTUNGS- & ROI-RECHNER
        ======================================================================== -->
-  <section id="entlastungs-rechner" class="py-20 bg-[#09111e] border-b border-white/10 text-white">
+  <section id="entlastungs-rechner" class="py-20 bg-[#0e1a2d] border-b border-white/10 text-white">
     <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-12">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           📊 Potenzial-Kalkulation
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -758,14 +759,14 @@
         </p>
       </div>
 
-      <div class="glass-tech-card p-8 sm:p-10 border-cyan-500/30">
+      <div class="glass-tech-card p-8 sm:p-10 border-amber-500/30">
         <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
           
           <div class="lg:col-span-7 space-y-6">
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label for="roi-team-size" class="text-sm font-bold text-slate-200">Mitarbeiter im Büro / Verwaltung:</label>
-                <span id="roi-val-team" class="text-sm font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-500/40">3 Mitarbeiter</span>
+                <span id="roi-val-team" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">3 Mitarbeiter</span>
               </div>
               <input
                 type="range"
@@ -781,7 +782,7 @@
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label for="roi-routine-hours" class="text-sm font-bold text-slate-200">Routine- &amp; Suchstunden pro Mitarbeiter / Woche:</label>
-                <span id="roi-val-hours" class="text-sm font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-500/40">12 Std. / Woche</span>
+                <span id="roi-val-hours" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">12 Std. / Woche</span>
               </div>
               <input
                 type="range"
@@ -797,7 +798,7 @@
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label for="roi-hourly-rate" class="text-sm font-bold text-slate-200">Kalkulatorischer Stundensatz:</label>
-                <span id="roi-val-rate" class="text-sm font-mono font-bold text-cyan-300 bg-cyan-950/80 px-2.5 py-0.5 rounded border border-cyan-500/40">55 € / Std.</span>
+                <span id="roi-val-rate" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">55 € / Std.</span>
               </div>
               <input
                 type="range"
@@ -816,7 +817,7 @@
             <span class="text-xs font-bold uppercase tracking-wider text-slate-400">Berechnetes Einsparpotenzial</span>
             
             <div class="mt-4">
-              <div id="roi-hours-saved" class="text-4xl font-extrabold text-cyan-400 font-mono">
+              <div id="roi-hours-saved" class="text-4xl font-extrabold text-amber-400 font-mono">
                 ca. 98 Std.
               </div>
               <div class="text-xs text-slate-300 mt-1">gewonnene Arbeitszeit pro Monat</div>
@@ -837,7 +838,7 @@
               <button
                 type="button"
                 onclick="transferRoiToContact()"
-                class="w-full btn-cyan-primary justify-center text-xs"
+                class="w-full btn-amber-primary justify-center text-xs"
               >
                 Ergebnis in Potenzialanalyse übernehmen →
               </button>
@@ -853,11 +854,11 @@
   <!-- ========================================================================
        G. SICHERHEIT & DSGVO (Sorgen abbauen: 3 Schutzebenen & Software-Offenheit)
        ======================================================================== -->
-  <section id="sicherheit" class="py-20 bg-[#070b14] border-b border-white/10 text-white">
+  <section id="sicherheit" class="py-20 bg-[#0a1322] border-b border-white/10 text-white">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-3xl mx-auto mb-16">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           Sicherheit &amp; Vertraulichkeit
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -872,7 +873,7 @@
         
         <!-- Schutzebene 1 -->
         <div class="glass-tech-card p-8 space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-extrabold text-sm flex items-center justify-center border border-cyan-500/30">1</div>
+          <div class="h-10 w-10 rounded-xl bg-amber-500/20 text-amber-400 font-extrabold text-sm flex items-center justify-center border border-amber-500/30">1</div>
           <h3 class="text-lg font-bold text-white">Rollenbasierte Ordnerrechte</h3>
           <p class="text-xs text-slate-300 leading-relaxed">
             Der Assistent liest nur Ordner, die Sie explizit freigeben (z. B. Preislisten, Vorlagen). Finanzakten und Personalordner bleiben zu 100% gesperrt.
@@ -881,7 +882,7 @@
 
         <!-- Schutzebene 2 -->
         <div class="glass-tech-card p-8 space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-extrabold text-sm flex items-center justify-center border border-cyan-500/30">2</div>
+          <div class="h-10 w-10 rounded-xl bg-amber-500/20 text-amber-400 font-extrabold text-sm flex items-center justify-center border border-amber-500/30">2</div>
           <h3 class="text-lg font-bold text-white">Der Inhaber behält die Kontrolle</h3>
           <p class="text-xs text-slate-300 leading-relaxed">
             Keine KI schickt unbemerkt Angebote oder Mails raus. Das System bereitet alles vor – Sie prüfen kurz und geben mit einem Klick frei.
@@ -890,7 +891,7 @@
 
         <!-- Schutzebene 3 -->
         <div class="glass-tech-card p-8 space-y-3">
-          <div class="h-10 w-10 rounded-xl bg-cyan-500/20 text-cyan-400 font-extrabold text-sm flex items-center justify-center border border-cyan-500/30">3</div>
+          <div class="h-10 w-10 rounded-xl bg-amber-500/20 text-amber-400 font-extrabold text-sm flex items-center justify-center border border-amber-500/30">3</div>
           <h3 class="text-lg font-bold text-white">Null KI-Training</h3>
           <p class="text-xs text-slate-300 leading-relaxed">
             Ihre Betriebsinterna, Kalkulationen und Kundendaten bleiben streng geschützt und werden niemals zum Trainieren öffentlicher KI-Modelle genutzt.
@@ -917,17 +918,17 @@
   <!-- ========================================================================
        H. ÜBER UNS / DAS TEAM (Linus & Jasper)
        ======================================================================== -->
-  <section id="ueber-uns" class="py-20 bg-[#09111e] border-b border-white/10 text-white">
+  <section id="ueber-uns" class="py-20 bg-[#0e1a2d] border-b border-white/10 text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6">
       
-      <div class="glass-tech-card p-8 sm:p-12 border-cyan-500/30">
+      <div class="glass-tech-card p-8 sm:p-12 border-amber-500/30">
         <div class="flex flex-col sm:flex-row items-center sm:items-start gap-6">
-          <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-cyan-500 to-blue-600 text-white font-black text-2xl flex items-center justify-center shrink-0 shadow-lg shadow-cyan-500/30">
+          <div class="h-16 w-16 rounded-2xl bg-gradient-to-br from-amber-500 to-amber-700 text-white font-black text-2xl flex items-center justify-center shrink-0 shadow-lg shadow-amber-500/30">
             LJ
           </div>
 
           <div class="space-y-4 text-center sm:text-left">
-            <span class="inline-block rounded bg-cyan-500/10 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+            <span class="inline-block rounded bg-amber-500/10 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
               Die Gründer
             </span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white">
@@ -949,11 +950,11 @@
   <!-- ========================================================================
        FAQ-AKKORDEON
        ======================================================================== -->
-  <section id="faq" class="py-20 bg-[#070b14] border-b border-white/10 text-white">
+  <section id="faq" class="py-20 bg-[#0a1322] border-b border-white/10 text-white">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="text-center max-w-2xl mx-auto mb-12">
-        <span class="inline-flex items-center gap-1.5 rounded-full bg-cyan-500/10 border border-cyan-400/30 px-3 py-1 text-xs font-bold text-cyan-400 uppercase tracking-wide">
+        <span class="inline-flex items-center gap-1.5 rounded-full bg-amber-500/10 border border-amber-400/30 px-3 py-1 text-xs font-bold text-amber-400 uppercase tracking-wide">
           Häufige Fragen
         </span>
         <h2 class="mt-3 text-3xl sm:text-4xl font-extrabold tracking-tight">
@@ -970,7 +971,7 @@
             class="w-full p-5 text-left font-bold text-white bg-slate-900 hover:bg-slate-850 flex justify-between items-center transition"
           >
             <span>Muss ich meine bestehende Software oder mein Branchenprogramm wechseln?</span>
-            <span class="text-xl font-mono text-cyan-400">+</span>
+            <span class="text-xl font-mono text-amber-400">+</span>
           </button>
           <div class="p-5 text-xs text-slate-300 bg-[#0b1120] border-t border-white/10 hidden leading-relaxed">
             Nein! Das ist der entscheidende Vorteil unserer Systeme: Wir docken an Ihre bestehenden Programme, E-Mails, Kalender und Cloud-Speicher an. Ihre Mitarbeiter müssen sich in keine fremde Software einarbeiten.
@@ -985,7 +986,7 @@
             class="w-full p-5 text-left font-bold text-white bg-slate-900 hover:bg-slate-850 flex justify-between items-center transition"
           >
             <span>Werden Angebote oder E-Mails vollautomatisch an Kunden verschickt?</span>
-            <span class="text-xl font-mono text-cyan-400">+</span>
+            <span class="text-xl font-mono text-amber-400">+</span>
           </button>
           <div class="p-5 text-xs text-slate-300 bg-[#0b1120] border-t border-white/10 hidden leading-relaxed">
             Nein. Der Inhaber behält jederzeit die volle Kontrolle. Der Büro-Assistent liest die Preislisten und Daten aus und generiert den fertigen Entwurf. Sie werfen kurz einen Blick darauf und geben das Angebot mit 1 Klick frei.
@@ -1000,7 +1001,7 @@
             class="w-full p-5 text-left font-bold text-white bg-slate-900 hover:bg-slate-850 flex justify-between items-center transition"
           >
             <span>Wie schnell kann ein solches System bei uns einsatzbereit sein?</span>
-            <span class="text-xl font-mono text-cyan-400">+</span>
+            <span class="text-xl font-mono text-amber-400">+</span>
           </button>
           <div class="p-5 text-xs text-slate-300 bg-[#0b1120] border-t border-white/10 hidden leading-relaxed">
             Ein Stufe-1 Frontdesk oder Web-System ist meist innerhalb von 1 bis 2 Wochen schlüsselfertig einsatzbereit. Größere Stufe-2- oder Stufe-3-Systeme mit Ordner- und ERP-Anbindung realisieren wir in der Regel in 2 bis 4 Wochen – völlig ohne Störung Ihres laufenden Betriebs.
@@ -1015,7 +1016,7 @@
             class="w-full p-5 text-left font-bold text-white bg-slate-900 hover:bg-slate-850 flex justify-between items-center transition"
           >
             <span>Wie läuft die persönliche Betreuung durch Linus &amp; Jasper ab?</span>
-            <span class="text-xl font-mono text-cyan-400">+</span>
+            <span class="text-xl font-mono text-amber-400">+</span>
           </button>
           <div class="p-5 text-xs text-slate-300 bg-[#0b1120] border-t border-white/10 hidden leading-relaxed">
             Sie haben stets einen direkten Draht zu uns. Keine Warteschleifen, kein Ticket-Pingpong. Wenn sich Preislisten ändern oder neue Mitarbeiter dazukommen, passen wir Ihr System umgehend an.
@@ -1029,15 +1030,15 @@
   <!-- ========================================================================
        KONTAKT & 15-MIN. POTENZIALANALYSE
        ======================================================================== -->
-  <section id="kontakt" class="py-20 bg-[#09111e] text-white border-t border-white/10">
+  <section id="kontakt" class="py-20 bg-[#0e1a2d] text-white border-t border-white/10">
     <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
       
       <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
         
         <!-- Left: Context & Direct Contact -->
         <div class="lg:col-span-5 space-y-6">
-          <div class="glass-tech-card p-8 border-cyan-500/30">
-            <span class="text-xs font-bold uppercase tracking-wider text-cyan-400">15-Minuten Potenzialanalyse</span>
+          <div class="glass-tech-card p-8 border-amber-500/30">
+            <span class="text-xs font-bold uppercase tracking-wider text-amber-400">15-Minuten Potenzialanalyse</span>
             <h2 class="text-2xl sm:text-3xl font-extrabold text-white mt-1">
               Sprechen wir 15 Minuten über Ihren Betrieb.
             </h2>
@@ -1047,30 +1048,30 @@
 
             <div class="mt-6 space-y-3.5 text-xs text-slate-300">
               <div class="flex items-start gap-2.5">
-                <span class="text-cyan-400 font-bold">1.</span>
+                <span class="text-amber-400 font-bold">1.</span>
                 <span><strong>Direkt mit Linus &amp; Jasper:</strong> Persönlicher Austausch zum Wunschtermin.</span>
               </div>
               <div class="flex items-start gap-2.5">
-                <span class="text-cyan-400 font-bold">2.</span>
+                <span class="text-amber-400 font-bold">2.</span>
                 <span><strong>Bedarfsanalyse:</strong> Wir prüfen Ihre Anfragen- und Büroabläufe.</span>
               </div>
               <div class="flex items-start gap-2.5">
-                <span class="text-cyan-400 font-bold">3.</span>
+                <span class="text-amber-400 font-bold">3.</span>
                 <span><strong>Konkreter Vorschlag:</strong> Transparent, messbar und ohne Risiko.</span>
               </div>
             </div>
 
             <div class="mt-8 pt-6 border-t border-white/10 space-y-2 text-xs">
               <div class="font-bold text-white">Direktkontakt:</div>
-              <div class="text-slate-300">📞 <a href="tel:+498001234567" class="text-cyan-400 hover:underline">0800 123 456 7</a> <span class="text-slate-500">(Mo–Fr 07:30–18:00)</span></div>
-              <div class="text-slate-300">✉️ <a href="mailto:kontakt@lj-digital-systems.de" class="text-cyan-400 hover:underline">kontakt@lj-digital-systems.de</a></div>
+              <div class="text-slate-300">📞 <a href="tel:+498001234567" class="text-amber-400 hover:underline">0800 123 456 7</a> <span class="text-slate-500">(Mo–Fr 07:30–18:00)</span></div>
+              <div class="text-slate-300">✉️ <a href="mailto:kontakt@lj-digital-systems.de" class="text-amber-400 hover:underline">kontakt@lj-digital-systems.de</a></div>
             </div>
           </div>
         </div>
 
         <!-- Right: Contact Form -->
         <div class="lg:col-span-7">
-          <div class="glass-tech-card p-8 sm:p-10 border-cyan-500/30">
+          <div class="glass-tech-card p-8 sm:p-10 border-amber-500/30">
             <h3 class="text-xl sm:text-2xl font-bold text-white">Kurzer Austausch am Telefon?</h3>
             <p class="text-xs text-slate-400 mt-1">Sagen Sie uns kurz, worum es geht. Wir melden uns verlässlich innerhalb eines Werktages bei Ihnen.</p>
 
@@ -1170,7 +1171,7 @@
                     id="contact-name"
                     required
                     placeholder="z. B. Michael Weber"
-                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-amber-400 focus:outline-none"
                   />
                 </div>
 
@@ -1180,7 +1181,7 @@
                     type="text"
                     id="contact-company"
                     placeholder="z. B. Weber Planungsbüro / Gutachter"
-                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-amber-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -1193,7 +1194,7 @@
                     id="contact-phone"
                     required
                     placeholder="0171 / 1234567"
-                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-amber-400 focus:outline-none"
                   />
                 </div>
 
@@ -1204,7 +1205,7 @@
                     id="contact-email"
                     required
                     placeholder="kontakt@mein-betrieb.de"
-                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+                    class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-amber-400 focus:outline-none"
                   />
                 </div>
               </div>
@@ -1215,27 +1216,27 @@
                   id="contact-message"
                   rows="3"
                   placeholder="z. B. Zu viele unstrukturierte Telefonanfragen am Tag und abends stundenlange Vorbereitung von Angeboten..."
-                  class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-cyan-400 focus:outline-none"
+                  class="w-full rounded-lg border border-slate-700 bg-slate-900/90 p-3 text-sm text-white focus:border-amber-400 focus:outline-none"
                 ></textarea>
               </div>
 
               <!-- Summary pill -->
               <div class="text-[11px] text-slate-400 bg-slate-900/90 p-2.5 rounded-lg border border-slate-800">
-                <span class="font-bold text-cyan-400">Auswahl:</span> <span id="selected-config-summary">Stufe 2: Interner Büro- &amp; Angebots-Assistent • Wunschfenster: Jederzeit tagsüber</span>
+                <span class="font-bold text-amber-400">Auswahl:</span> <span id="selected-config-summary">Stufe 2: Interner Büro- &amp; Angebots-Assistent • Wunschfenster: Jederzeit tagsüber</span>
               </div>
 
               <!-- DSGVO Checkbox -->
               <div class="flex items-start gap-2">
-                <input type="checkbox" id="contact-dsgvo" required class="mt-1 accent-cyan-500 cursor-pointer" />
+                <input type="checkbox" id="contact-dsgvo" required class="mt-1 accent-amber-500 cursor-pointer" />
                 <label for="contact-dsgvo" class="text-xs text-slate-400 leading-snug">
-                  Ich willige ein, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. Keine Werbeanrufe. Details siehe <button type="button" onclick="openLegalModal('datenschutz')" class="text-cyan-400 underline">Datenschutzerklärung</button>.
+                  Ich willige ein, dass meine Angaben zur Kontaktaufnahme verarbeitet werden. Keine Werbeanrufe. Details siehe <button type="button" onclick="openLegalModal('datenschutz')" class="text-amber-400 underline">Datenschutzerklärung</button>.
                 </label>
               </div>
 
               <button
                 type="submit"
                 id="contact-submit-btn"
-                class="w-full btn-cyan-primary justify-center text-sm sm:text-base py-4"
+                class="w-full btn-amber-primary justify-center text-sm sm:text-base py-4"
               >
                 <span id="contact-submit-btn-text">15-Min. Potenzialanalyse anfordern</span>
                 <span>→</span>
@@ -1248,8 +1249,8 @@
             </form>
 
             <!-- Feedback Box -->
-            <div id="contact-feedback-box" class="mt-6 hidden p-6 rounded-xl bg-slate-900 border border-cyan-500/40 text-slate-200">
-              <div id="contact-feedback-title" class="font-bold text-base text-cyan-400">✓ Vielen Dank! Ihre Anfrage ging direkt bei Linus &amp; Jasper ein.</div>
+            <div id="contact-feedback-box" class="mt-6 hidden p-6 rounded-xl bg-slate-900 border border-amber-500/40 text-slate-200">
+              <div id="contact-feedback-title" class="font-bold text-base text-amber-400">✓ Vielen Dank! Ihre Anfrage ging direkt bei Linus &amp; Jasper ein.</div>
               <div id="contact-feedback-desc" class="text-xs text-slate-300 mt-2">
                 Wir haben Ihre Nachricht erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.
               </div>
@@ -1257,7 +1258,7 @@
                 <strong>Zusammenfassung Ihrer Nachricht:</strong>
                 <pre id="contact-summary-preview" class="mt-1 font-mono text-[10px] bg-slate-950 p-2.5 rounded whitespace-pre-wrap text-slate-300"></pre>
                 <div class="mt-2 flex gap-4">
-                  <a id="contact-direct-mailto" href="#" class="underline text-cyan-400 font-bold">In eigenem Mail-Programm öffnen</a>
+                  <a id="contact-direct-mailto" href="#" class="underline text-amber-400 font-bold">In eigenem Mail-Programm öffnen</a>
                   <button type="button" onclick="copyRequestText()" class="underline text-slate-300 font-bold">Text kopieren</button>
                 </div>
               </div>
@@ -1278,7 +1279,7 @@
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
       <div class="flex flex-col md:flex-row justify-between items-center gap-6">
         <div class="flex items-center gap-3">
-          <div class="h-8 w-8 rounded-lg bg-cyan-500/20 text-cyan-400 font-black text-xs flex items-center justify-center border border-cyan-500/40">
+          <div class="h-8 w-8 rounded-lg bg-amber-500/20 text-amber-400 font-black text-xs flex items-center justify-center border border-amber-500/40">
             LJ
           </div>
           <div>
@@ -1288,11 +1289,11 @@
         </div>
 
         <div class="flex items-center gap-6 text-slate-400 font-medium">
-          <button type="button" onclick="openLegalModal('impressum')" class="hover:text-cyan-400 transition">Impressum</button>
-          <a href="impressum.html" class="hover:text-cyan-400 transition text-slate-500">Impressum (Vollbild)</a>
-          <button type="button" onclick="openLegalModal('datenschutz')" class="hover:text-cyan-400 transition">Datenschutz</button>
-          <a href="datenschutz.html" class="hover:text-cyan-400 transition text-slate-500">Datenschutz (Vollbild)</a>
-          <a href="#kontakt" class="hover:text-cyan-400 transition">Kontakt</a>
+          <button type="button" onclick="openLegalModal('impressum')" class="hover:text-amber-400 transition">Impressum</button>
+          <a href="impressum.html" class="hover:text-amber-400 transition text-slate-500">Impressum (Vollbild)</a>
+          <button type="button" onclick="openLegalModal('datenschutz')" class="hover:text-amber-400 transition">Datenschutz</button>
+          <a href="datenschutz.html" class="hover:text-amber-400 transition text-slate-500">Datenschutz (Vollbild)</a>
+          <a href="#kontakt" class="hover:text-amber-400 transition">Kontakt</a>
         </div>
       </div>
     </div>
@@ -1305,7 +1306,7 @@
     <button
       type="button"
       onclick="toggleChatWidget()"
-      class="flex h-13 w-13 p-3.5 items-center justify-center rounded-full bg-cyan-600 hover:bg-cyan-500 text-white shadow-xl shadow-cyan-500/30 transition transform hover:scale-105 border border-cyan-300"
+      class="flex h-13 w-13 p-3.5 items-center justify-center rounded-full bg-amber-600 hover:bg-amber-500 text-white shadow-xl shadow-amber-500/30 transition transform hover:scale-105 border border-amber-300"
       aria-label="Assistenten öffnen"
     >
       <span class="text-xl">💬</span>
@@ -1318,10 +1319,10 @@
     >
       <div class="bg-slate-950 p-4 text-white flex justify-between items-center border-b border-slate-800">
         <div class="flex items-center gap-2">
-          <span class="h-2 w-2 rounded-full bg-cyan-400 pulse-node"></span>
+          <span class="h-2 w-2 rounded-full bg-amber-400 pulse-node"></span>
           <div>
             <div class="text-xs font-bold leading-tight">LJ Digital Systems Assistent</div>
-            <div class="text-[10px] text-cyan-400">Direkte Antworten zu den 3 Stufen &amp; DSGVO</div>
+            <div class="text-[10px] text-amber-400">Direkte Antworten zu den 3 Stufen &amp; DSGVO</div>
           </div>
         </div>
         <button type="button" onclick="toggleChatWidget()" class="text-slate-400 hover:text-white text-lg">×</button>
@@ -1344,9 +1345,9 @@
           type="text"
           id="chat-widget-input"
           placeholder="Ihre Frage an Linus & Jasper..."
-          class="flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-white focus:outline-none focus:border-cyan-400"
+          class="flex-1 rounded-lg border border-slate-700 bg-slate-900 px-3 py-2 text-xs text-white focus:outline-none focus:border-amber-400"
         />
-        <button type="submit" class="bg-cyan-600 hover:bg-cyan-500 text-white px-3.5 py-2 rounded-lg text-xs font-bold">
+        <button type="submit" class="bg-amber-600 hover:bg-amber-500 text-white px-3.5 py-2 rounded-lg text-xs font-bold">
           Senden
         </button>
       </form>

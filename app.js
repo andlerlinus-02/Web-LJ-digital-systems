@@ -25,10 +25,10 @@ const AGENT_TIERS = {
         customerFollowup: 'Kunde lädt 3 Detailfotos & Maßblatt hoch: "Ausführung idealerweise im nächsten Monat."',
         agentFinal: '✓ Anfrage vollständig qualifiziert: Eckdaten, Maße und 3 Fotos erfasst. Projektakte strukturiert im Büro-Postfach abgelegt. Der Inhaber erhält eine Benachrichtigung zur Freigabe.',
         logs: [
-          { time: '20:15:02', tag: 'INCOMING', color: 'text-cyan-400', text: 'Website-Anfrage außerhalb der Geschäftszeiten erkannt' },
-          { time: '20:15:04', tag: 'INPUT_PARSE', color: 'text-sky-400', text: 'Strukturierte Pflichtfelder & Foto-Upload abgefragt' },
+          { time: '20:15:02', tag: 'INCOMING', color: 'text-amber-400', text: 'Website-Anfrage außerhalb der Geschäftszeiten erkannt' },
+          { time: '20:15:04', tag: 'INPUT_PARSE', color: 'text-amber-200', text: 'Strukturierte Pflichtfelder & Foto-Upload abgefragt' },
           { time: '20:15:08', tag: 'UPLOAD_VERIFY', color: 'text-emerald-400', text: '3 Dateien empfangen (Pläne & Typenschilder validiert)' },
-          { time: '20:15:10', tag: 'HANDOVER', color: 'text-cyan-300', text: 'Fertige Projektakte an kontakt@lj-digital-systems.de übergeben ✓' }
+          { time: '20:15:10', tag: 'HANDOVER', color: 'text-amber-300', text: 'Fertige Projektakte an kontakt@lj-digital-systems.de übergeben ✓' }
         ]
       },
       {
@@ -38,9 +38,9 @@ const AGENT_TIERS = {
         customerFollowup: 'Standort bestätigt: "Gewerbepark Süd, Tor 4 – Stillstand seit 30 Minuten."',
         agentFinal: '✓ Express-Ticket priorisiert erstellt. Einsatzleiter per SMS & Push alarmiert. Kunden-Bestätigung mit geschätzter Ankunftszeit versendet.',
         logs: [
-          { time: '11:02:10', tag: 'PRIORITY_ALERT', color: 'text-cyan-400', text: 'Dringlichkeit: Hoch / Betriebsstillstand verifiziert' },
+          { time: '11:02:10', tag: 'PRIORITY_ALERT', color: 'text-amber-400', text: 'Dringlichkeit: Hoch / Betriebsstillstand verifiziert' },
           { time: '11:02:14', tag: 'DISPO_TRIGGER', color: 'text-emerald-400', text: 'Standort abgeglichen & Team-Bereitschaft alarmiert' },
-          { time: '11:02:18', tag: 'SMS_SENT', color: 'text-cyan-300', text: 'Push-Benachrichtigung an Einsatzteam übermittelt ✓' }
+          { time: '11:02:18', tag: 'SMS_SENT', color: 'text-amber-300', text: 'Push-Benachrichtigung an Einsatzteam übermittelt ✓' }
         ]
       }
     ],
@@ -66,10 +66,10 @@ const AGENT_TIERS = {
         customerFollowup: 'Prüfung: "Bitte 5% Projekt-Nachlass einrechnen und als Freigabe-Entwurf bereitlegen."',
         agentFinal: '✓ Angebotsentwurf fertig kalkuliert (Netto: 5.420 €). PDF unter /Entwuerfe/Angebot_Meyer_2026.pdf abgelegt. E-Mail-Entwurf liegt im Postfach – 1 Klick zur Freigabe genügt.',
         logs: [
-          { time: '08:42:01', tag: 'STORAGE_AUTH', color: 'text-cyan-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
-          { time: '08:42:04', tag: 'DATA_EXTRACT', color: 'text-sky-400', text: 'Artikelpreise, Stundenkontingente & Nachlass kalkuliert' },
+          { time: '08:42:01', tag: 'STORAGE_AUTH', color: 'text-amber-400', text: 'Rollenbasierter Zugriff: /Preislisten/2026.xlsx & /Vorlagen/Angebot.docx' },
+          { time: '08:42:04', tag: 'DATA_EXTRACT', color: 'text-amber-200', text: 'Artikelpreise, Stundenkontingente & Nachlass kalkuliert' },
           { time: '08:42:07', tag: 'DRAFT_GEN', color: 'text-emerald-400', text: 'Rechtssicheres Angebots-PDF generiert & archiviert' },
-          { time: '08:42:09', tag: 'WAIT_APPROVAL', color: 'text-cyan-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
+          { time: '08:42:09', tag: 'WAIT_APPROVAL', color: 'text-amber-300', text: 'Bereit zur 1-Klick-Freigabe durch den Inhaber ✓' }
         ]
       },
       {
@@ -79,8 +79,8 @@ const AGENT_TIERS = {
         customerFollowup: 'Kopiere diese Konditionen direkt in den neuen Entwurf für das Folgeprojekt.',
         agentFinal: '✓ Konditionen übernommen. Nachtrags-Angebot mit identischen Parametern erzeugt und zur Prüfung auf das Inhaber-Dashboard gelegt.',
         logs: [
-          { time: '14:20:11', tag: 'FILE_SEARCH', color: 'text-cyan-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
-          { time: '14:20:13', tag: 'KNOWLEDGE_SYNC', color: 'text-sky-400', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
+          { time: '14:20:11', tag: 'FILE_SEARCH', color: 'text-amber-400', text: 'Indexierter Scan von 3.400 PDF-Akten in 1,2 Sekunden' },
+          { time: '14:20:13', tag: 'KNOWLEDGE_SYNC', color: 'text-amber-200', text: 'Historische Konditionen aus Projektakte 2025 übernommen' },
           { time: '14:20:16', tag: 'DRAFT_UPDATED', color: 'text-emerald-400', text: 'Folgeangebot aktualisiert & zur Freigabe bereit ✓' }
         ]
       }
@@ -107,10 +107,10 @@ const AGENT_TIERS = {
         customerFollowup: 'Folgeschritte: Materialbestellung & Ausführungstermin planen.',
         agentFinal: '✓ Abgeschlossen: Dispositions-Slot im Teamkalender geblockt, Materialbedarf an Lieferantenschnittstelle übermittelt, Auftragsbestätigung versendet.',
         logs: [
-          { time: '09:10:02', tag: 'EVENT_TRIGGER', color: 'text-cyan-400', text: 'Digitale Signatur registriert -> Workflow gestartet' },
-          { time: '09:10:05', tag: 'ERP_WRITE', color: 'text-sky-400', text: 'Kundenakte im Branchensystem erzeugt & Projektpfad gesichert' },
+          { time: '09:10:02', tag: 'EVENT_TRIGGER', color: 'text-amber-400', text: 'Digitale Signatur registriert -> Workflow gestartet' },
+          { time: '09:10:05', tag: 'ERP_WRITE', color: 'text-amber-200', text: 'Kundenakte im Branchensystem erzeugt & Projektpfad gesichert' },
           { time: '09:10:08', tag: 'DISPO_SYNC', color: 'text-emerald-400', text: 'Team-Kalender KW 48 geblockt & Bestätigung versendet' },
-          { time: '09:10:11', tag: 'PIPELINE_OK', color: 'text-cyan-300', text: 'End-to-End Workflow fehlerfrei abgeschlossen ✓' }
+          { time: '09:10:11', tag: 'PIPELINE_OK', color: 'text-amber-300', text: 'End-to-End Workflow fehlerfrei abgeschlossen ✓' }
         ]
       }
     ],
@@ -136,8 +136,8 @@ const AGENT_TIERS = {
         customerFollowup: 'Erstelle den Entwurf für das Zwischengutachten.',
         agentFinal: '✓ Zwischenbericht im Gutachten-Format erzeugt. Mängel fotodokumentiert im freigegebenen Projektordner abgelegt.',
         logs: [
-          { time: '15:30:01', tag: 'AUDIO_PARSE', color: 'text-cyan-400', text: 'Sprachmemo transkribiert & Fachbegriffe zugeordnet' },
-          { time: '15:30:04', tag: 'VISION_API', color: 'text-sky-400', text: '4 Fotos analysiert & Bauschäden strukturiert erfasst' },
+          { time: '15:30:01', tag: 'AUDIO_PARSE', color: 'text-amber-400', text: 'Sprachmemo transkribiert & Fachbegriffe zugeordnet' },
+          { time: '15:30:04', tag: 'VISION_API', color: 'text-amber-200', text: '4 Fotos analysiert & Bauschäden strukturiert erfasst' },
           { time: '15:30:08', tag: 'REPORT_READY', color: 'text-emerald-400', text: 'Berichtsentwurf zur Freigabe bereitgestellt ✓' }
         ]
       }
@@ -186,7 +186,7 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
       .map(
         (cap) => `
         <li class="flex items-start gap-2.5 text-xs text-slate-300">
-          <span class="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-cyan-500/20 text-cyan-400">
+          <span class="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-400">
             <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
@@ -206,13 +206,13 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
     const isConnected = tier.connectedNodes.includes(nodeId);
     if (isConnected) {
       el.classList.remove('opacity-40', 'border-slate-800', 'bg-slate-900/40');
-      el.classList.add('border-cyan-500/50', 'bg-slate-900/90', 'shadow-md');
+      el.classList.add('border-amber-500/50', 'bg-slate-900/90', 'shadow-md');
       if (statusEl) {
-        statusEl.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-cyan-400 pulse-node"></span><span class="text-cyan-400 font-medium">Aktiv verbunden</span>`;
+        statusEl.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-amber-400 pulse-node"></span><span class="text-amber-400 font-medium">Aktiv verbunden</span>`;
       }
     } else {
       el.classList.add('opacity-40', 'border-slate-800', 'bg-slate-900/40');
-      el.classList.remove('border-cyan-500/50', 'bg-slate-900/90', 'shadow-md');
+      el.classList.remove('border-amber-500/50', 'bg-slate-900/90', 'shadow-md');
       if (statusEl) {
         statusEl.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-slate-600"></span><span class="text-slate-500">Inaktiv</span>`;
       }
@@ -231,7 +231,7 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
             onclick="selectSimulatorTier('${tierKey}', ${idx})"
             class="px-2.5 py-1 rounded-lg text-xs font-medium transition-all ${
               idx === scenarioIdx
-                ? 'bg-cyan-500/20 text-cyan-300 border border-cyan-500/40'
+                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
                 : 'bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200'
             }"
           >
@@ -240,7 +240,7 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
         )
         .join('');
     } else {
-      scenarioSwitcher.innerHTML = `<span class="text-xs text-cyan-400 font-medium">${tier.scenarios[0].name}</span>`;
+      scenarioSwitcher.innerHTML = `<span class="text-xs text-amber-400 font-medium">${tier.scenarios[0].name}</span>`;
     }
   }
 
@@ -262,9 +262,9 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
 
         <!-- System response -->
         <div class="flex items-start justify-end gap-3">
-          <div class="rounded-xl rounded-tr-none bg-cyan-950/70 border border-cyan-500/30 px-3.5 py-2 text-xs text-white max-w-[90%] shadow-md">
-            <div class="flex items-center gap-1.5 text-[10px] font-semibold text-cyan-300 mb-0.5">
-              <span class="h-1.5 w-1.5 rounded-full bg-cyan-400 pulse-node"></span>
+          <div class="rounded-xl rounded-tr-none bg-amber-950/70 border border-amber-500/30 px-3.5 py-2 text-xs text-white max-w-[90%] shadow-md">
+            <div class="flex items-center gap-1.5 text-[10px] font-semibold text-amber-300 mb-0.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-amber-400 pulse-node"></span>
               LJ System (${tier.badge.split('•')[0].trim()})
             </div>
             ${scenario.agentReply}
@@ -509,18 +509,18 @@ function appendChatMessage(sender, text, ctaTopic = null) {
 
   if (sender === 'user') {
     msgDiv.innerHTML = `
-      <div class="rounded-xl rounded-tr-none bg-cyan-600 px-3.5 py-2.5 text-xs text-white max-w-[85%] shadow">
+      <div class="rounded-xl rounded-tr-none bg-amber-600 px-3.5 py-2.5 text-xs text-white max-w-[85%] shadow">
         ${text}
       </div>
     `;
   } else {
     msgDiv.innerHTML = `
       <div class="rounded-xl rounded-tl-none bg-slate-900 border border-slate-700/80 px-3.5 py-2.5 text-xs text-slate-200 max-w-[90%] shadow">
-        <div class="text-[10px] font-semibold uppercase tracking-wider text-cyan-400 mb-1">LJ Digital Systems Assistent</div>
+        <div class="text-[10px] font-semibold uppercase tracking-wider text-amber-400 mb-1">LJ Digital Systems Assistent</div>
         <p class="leading-relaxed">${text}</p>
         ${
           ctaTopic
-            ? `<button onclick="toggleChatWidget(); scrollToContactWithTopic('${ctaTopic}')" class="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-cyan-500/20 border border-cyan-400/40 px-2.5 py-1.5 text-xs font-medium text-cyan-300 hover:bg-cyan-500/30 transition">
+            ? `<button onclick="toggleChatWidget(); scrollToContactWithTopic('${ctaTopic}')" class="mt-2.5 inline-flex items-center gap-1.5 rounded-lg bg-amber-500/20 border border-amber-400/40 px-2.5 py-1.5 text-xs font-medium text-amber-300 hover:bg-amber-500/30 transition">
                 <span>Passendes Thema im Formular wählen</span>
                 <span>→</span>
               </button>`
@@ -624,8 +624,8 @@ function openLegalModal(type) {
         <div>
           <h4 class="font-bold text-white text-sm">Kontakt</h4>
           <p class="mt-1">
-            E-Mail: <a href="mailto:kontakt@lj-digital-systems.de" class="text-cyan-400 underline">kontakt@lj-digital-systems.de</a><br>
-            Website: <a href="https://web-lj-digital-systems.vercel.app" class="text-cyan-400 underline">web-lj-digital-systems.vercel.app</a>
+            E-Mail: <a href="mailto:kontakt@lj-digital-systems.de" class="text-amber-400 underline">kontakt@lj-digital-systems.de</a><br>
+            Website: <a href="https://web-lj-digital-systems.vercel.app" class="text-amber-400 underline">web-lj-digital-systems.vercel.app</a>
           </p>
         </div>
       </div>
@@ -637,7 +637,7 @@ function openLegalModal(type) {
         <h4 class="font-bold text-white text-sm">1. Datenschutz auf einen Blick</h4>
         <p>Wir behandeln Ihre personenbezogenen Daten vertraulich und entsprechend den gesetzlichen Datenschutzvorschriften sowie dieser Datenschutzerklärung. Wenn Sie diese Website benutzen, werden verschiedene personenbezogene Daten erhoben.</p>
         <h4 class="font-bold text-white text-sm">2. Verantwortliche Stelle</h4>
-        <p>LJ Digital Systems • Linus Andler &amp; Jasper Landgraf<br>E-Mail: <a href="mailto:kontakt@lj-digital-systems.de" class="text-cyan-400 underline">kontakt@lj-digital-systems.de</a></p>
+        <p>LJ Digital Systems • Linus Andler &amp; Jasper Landgraf<br>E-Mail: <a href="mailto:kontakt@lj-digital-systems.de" class="text-amber-400 underline">kontakt@lj-digital-systems.de</a></p>
       </div>
     `;
   }
@@ -794,10 +794,10 @@ function goToQaStep(stepNum) {
     }
     if (dotEl) {
       if (i <= stepNum) {
-        dotEl.classList.add('bg-cyan-500', 'text-slate-950');
+        dotEl.classList.add('bg-amber-500', 'text-slate-950');
         dotEl.classList.remove('bg-slate-800', 'text-slate-400');
       } else {
-        dotEl.classList.remove('bg-cyan-500', 'text-slate-950');
+        dotEl.classList.remove('bg-amber-500', 'text-slate-950');
         dotEl.classList.add('bg-slate-800', 'text-slate-400');
       }
     }

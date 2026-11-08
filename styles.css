@@ -1,27 +1,37 @@
 /* ==========================================================================
-   LJ Digital Systems — Modern Tech Dark Mode Stylesheet
-   Dark Mode with Glowing Cyan & White Accents (B2B Enterprise Grade)
+   LJ Digital Systems — Authentic Handwerk & Engineering Dark Stylesheet
+   Grounded Prussian Navy & Warm Craft Bronze / Amber Palette
+   Solid, bespoke, trustworthy — no generic AI/neon tropes
    ========================================================================== */
 
 :root {
-  --bg-dark: #070b14;
-  --bg-dark-elevated: #0f172a;
-  --bg-card: rgba(15, 23, 42, 0.85);
+  /* Authentische, handfeste Farbpalette */
+  --bg-dark: #0a1322;
+  --bg-dark-elevated: #0f1d33;
+  --bg-card: rgba(15, 29, 51, 0.85);
 
-  --accent-cyan: #06b6d4;
-  --accent-cyan-light: #38bdf8;
-  --accent-blue: #2563eb;
-  --accent-blue-hover: #1d4ed8;
+  --accent-amber: #d97706;        /* Warmer Holz-/Bronze-/Bernstein-Ton (Handwerk & Substanz) */
+  --accent-amber-light: #f59e0b;
+  --accent-amber-dark: #b45309;
+  --accent-amber-glow: rgba(217, 119, 6, 0.35);
+
+  --brand-navy: #0f2852;          /* Fundiertes, verlässliches Preußischblau */
+  --brand-navy-light: #1e3a8a;
+  --brand-navy-border: #1e3a8a;
+
+  --accent-success: #16a34a;      /* Seriöses Tannengrün für Bestätigungen */
+  --accent-emerald: #10b981;
 
   --text-main: #ffffff;
   --text-muted: #94a3b8;
   --text-dim: #64748b;
 
   --border-dark: rgba(255, 255, 255, 0.1);
-  --border-cyan: rgba(56, 189, 248, 0.35);
+  --border-amber: rgba(217, 119, 6, 0.35);
+  --border-navy: rgba(30, 58, 138, 0.4);
 
-  --shadow-glow: 0 0 25px -5px rgba(6, 182, 212, 0.25);
-  --shadow-card: 0 16px 36px -10px rgba(0, 0, 0, 0.5);
+  --shadow-glow: 0 0 25px -5px rgba(217, 119, 6, 0.3);
+  --shadow-card: 0 16px 36px -10px rgba(0, 0, 0, 0.6);
 }
 
 * {
@@ -42,8 +52,8 @@ body {
   color: var(--text-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
-  selection-background-color: #06b6d4;
-  selection-color: #070b14;
+  selection-background-color: #b45309;
+  selection-color: #ffffff;
 }
 
 .font-mono-code {
@@ -51,38 +61,44 @@ body {
 }
 
 /* ==========================================================================
-   Tech Grid Dark Mode Backgrounds & Glows
+   Architektur- & Werkstatt-Rasterhintergrund (Warm Prussian & Amber Glow)
    ========================================================================== */
 .bg-tech-grid-dark {
-  background-color: #070b14;
+  background-color: #0a1322;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(6, 182, 212, 0.14) 0px, transparent 50%),
-    radial-gradient(at 85% 25%, rgba(37, 99, 235, 0.16) 0px, transparent 50%),
-    radial-gradient(at 50% 85%, rgba(14, 165, 233, 0.10) 0px, transparent 55%),
+    radial-gradient(at 15% 15%, rgba(30, 58, 138, 0.25) 0px, transparent 55%),
+    radial-gradient(at 85% 25%, rgba(180, 83, 9, 0.16) 0px, transparent 50%),
+    radial-gradient(at 50% 85%, rgba(15, 40, 82, 0.22) 0px, transparent 55%),
     linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
     linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
   background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
 }
 
-.glow-cyan {
-  box-shadow: 0 0 30px -5px rgba(6, 182, 212, 0.35);
+.glow-amber {
+  box-shadow: 0 0 30px -5px rgba(217, 119, 6, 0.35);
 }
 
-.glow-text-cyan {
-  text-shadow: 0 0 20px rgba(56, 189, 248, 0.4);
+.glow-text-amber {
+  text-shadow: 0 0 20px rgba(245, 158, 11, 0.4);
 }
 
-.text-gradient-cyan {
-  background: linear-gradient(135deg, #ffffff 0%, #38bdf8 50%, #06b6d4 100%);
+.text-gradient-amber {
+  background: linear-gradient(135deg, #ffffff 0%, #fef3c7 45%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-gradient-craft {
+  background: linear-gradient(135deg, #ffffff 0%, #fed7aa 50%, #d97706 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
 /* ==========================================================================
-   Dark Glass Cards (High-Trust Tech)
+   Solide Glass Cards (Grounded & Handcrafted Feel)
    ========================================================================== */
 .glass-tech-card {
-  background: rgba(15, 23, 42, 0.78);
+  background: rgba(15, 29, 51, 0.82);
   backdrop-filter: blur(16px) saturate(140%);
   -webkit-backdrop-filter: blur(16px) saturate(140%);
   border: 1px solid rgba(255, 255, 255, 0.1);
@@ -92,16 +108,16 @@ body {
 }
 
 .glass-tech-card:hover {
-  border-color: rgba(56, 189, 248, 0.35);
-  box-shadow: 0 24px 50px -12px rgba(6, 182, 212, 0.18);
+  border-color: rgba(217, 119, 6, 0.4);
+  box-shadow: 0 24px 50px -12px rgba(180, 83, 9, 0.25);
   transform: translateY(-2px);
 }
 
 /* ==========================================================================
-   Buttons (High-Conversion Dark Tech)
+   Buttons (Klassisch, Handfest & Hochwertig)
    ========================================================================== */
-.btn-cyan-primary {
-  background: linear-gradient(135deg, #0ea5e9 0%, #0284c7 100%);
+.btn-amber-primary {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
   color: #ffffff;
   padding: 14px 28px;
   border-radius: 12px;
@@ -109,20 +125,42 @@ body {
   display: inline-flex;
   align-items: center;
   gap: 10px;
-  box-shadow: 0 4px 18px rgba(14, 165, 233, 0.35);
+  box-shadow: 0 4px 18px rgba(180, 83, 9, 0.4);
   transition: all 0.2s ease;
-  border: 1px solid rgba(56, 189, 248, 0.5);
+  border: 1px solid rgba(245, 158, 11, 0.6);
+  text-decoration: none;
+}
+
+.btn-amber-primary:hover {
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.55);
+  transform: translateY(-1.5px);
+}
+
+/* Alias for compatibility */
+.btn-cyan-primary {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  color: #ffffff;
+  padding: 14px 28px;
+  border-radius: 12px;
+  font-weight: 700;
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  box-shadow: 0 4px 18px rgba(180, 83, 9, 0.4);
+  transition: all 0.2s ease;
+  border: 1px solid rgba(245, 158, 11, 0.6);
   text-decoration: none;
 }
 
 .btn-cyan-primary:hover {
-  background: linear-gradient(135deg, #38bdf8 0%, #0284c7 100%);
-  box-shadow: 0 6px 24px rgba(56, 189, 248, 0.55);
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
+  box-shadow: 0 6px 24px rgba(245, 158, 11, 0.55);
   transform: translateY(-1.5px);
 }
 
 .btn-dark-secondary {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 29, 51, 0.85);
   color: #f8fafc;
   border: 1px solid rgba(255, 255, 255, 0.15);
   padding: 14px 24px;
@@ -136,17 +174,17 @@ body {
 }
 
 .btn-dark-secondary:hover {
-  background: rgba(30, 41, 59, 0.9);
-  border-color: rgba(56, 189, 248, 0.4);
-  color: #38bdf8;
+  background: rgba(26, 46, 77, 0.95);
+  border-color: rgba(217, 119, 6, 0.5);
+  color: #f59e0b;
   transform: translateY(-1.5px);
 }
 
 /* ==========================================================================
-   Option Cards & Tabs (Dark Tech)
+   Option Cards & Tabs (Warm Dark Prussian / Amber)
    ========================================================================== */
 .qa-option-card {
-  background: rgba(15, 23, 42, 0.8);
+  background: rgba(15, 29, 51, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 14px;
   padding: 20px;
@@ -155,16 +193,16 @@ body {
 }
 
 .qa-option-card:hover {
-  border-color: #38bdf8;
-  background: rgba(30, 41, 59, 0.9);
-  box-shadow: 0 8px 24px -6px rgba(6, 182, 212, 0.2);
+  border-color: #f59e0b;
+  background: rgba(26, 46, 77, 0.95);
+  box-shadow: 0 8px 24px -6px rgba(180, 83, 9, 0.25);
   transform: translateY(-2px);
 }
 
 .qa-option-card.qa-active {
-  border-color: #38bdf8;
-  background: rgba(14, 165, 233, 0.12);
-  box-shadow: 0 0 0 2px rgba(56, 189, 248, 0.35);
+  border-color: #f59e0b;
+  background: rgba(217, 119, 6, 0.14);
+  box-shadow: 0 0 0 2px rgba(245, 158, 11, 0.4);
 }
 
 .service-tab-btn {
@@ -176,7 +214,7 @@ body {
   font-size: 0.92rem;
   font-weight: 700;
   color: #94a3b8;
-  background: rgba(15, 23, 42, 0.85);
+  background: rgba(15, 29, 51, 0.85);
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.2s ease;
   cursor: pointer;
@@ -184,36 +222,36 @@ body {
 
 .service-tab-btn:hover {
   color: #ffffff;
-  border-color: rgba(56, 189, 248, 0.4);
-  background: rgba(30, 41, 59, 0.9);
+  border-color: rgba(217, 119, 6, 0.4);
+  background: rgba(26, 46, 77, 0.9);
 }
 
 .service-tab-btn.active-tab {
   color: #ffffff;
-  background: linear-gradient(135deg, rgba(14, 165, 233, 0.3) 0%, rgba(37, 99, 235, 0.3) 100%);
-  border-color: #38bdf8;
-  box-shadow: 0 0 20px -3px rgba(56, 189, 248, 0.35);
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.35) 0%, rgba(30, 58, 138, 0.4) 100%);
+  border-color: #f59e0b;
+  box-shadow: 0 0 20px -3px rgba(217, 119, 6, 0.35);
 }
 
 /* ==========================================================================
    Simulator Tier Buttons & Chips
    ========================================================================== */
 .tier-tab-active {
-  background: linear-gradient(135deg, rgba(6, 182, 212, 0.25) 0%, rgba(37, 99, 235, 0.25) 100%) !important;
-  border-color: #38bdf8 !important;
-  box-shadow: 0 0 20px -3px rgba(56, 189, 248, 0.35);
+  background: linear-gradient(135deg, rgba(217, 119, 6, 0.3) 0%, rgba(30, 58, 138, 0.35) 100%) !important;
+  border-color: #f59e0b !important;
+  box-shadow: 0 0 20px -3px rgba(217, 119, 6, 0.35);
 }
 
 .topic-chip-active {
-  background-color: #0284c7 !important;
+  background-color: #b45309 !important;
   color: #ffffff !important;
-  border-color: #38bdf8 !important;
-  box-shadow: 0 4px 14px rgba(14, 165, 233, 0.35);
+  border-color: #f59e0b !important;
+  box-shadow: 0 4px 14px rgba(180, 83, 9, 0.4);
 }
 
 .slot-chip-active {
-  background-color: rgba(14, 165, 233, 0.25) !important;
-  border-color: #38bdf8 !important;
+  background-color: rgba(217, 119, 6, 0.25) !important;
+  border-color: #f59e0b !important;
   color: #ffffff !important;
 }
 
@@ -226,7 +264,7 @@ input[type='range'].lj-slider {
   width: 100%;
   height: 8px;
   border-radius: 9999px;
-  background: #1e293b;
+  background: #15253e;
   outline: none;
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
@@ -237,10 +275,10 @@ input[type='range'].lj-slider::-webkit-slider-thumb {
   width: 22px;
   height: 22px;
   border-radius: 50%;
-  background: linear-gradient(135deg, #38bdf8, #0284c7);
+  background: linear-gradient(135deg, #f59e0b, #b45309);
   cursor: pointer;
   border: 2px solid #ffffff;
-  box-shadow: 0 0 14px rgba(56, 189, 248, 0.6);
+  box-shadow: 0 0 14px rgba(245, 158, 11, 0.6);
   transition: transform 0.15s ease;
 }
 
@@ -248,24 +286,44 @@ input[type='range'].lj-slider::-webkit-slider-thumb:hover {
   transform: scale(1.15);
 }
 
-/* Status Pulse (Cyan Glowing Node) */
+/* Status Pulse (Amber Glowing Node) */
 @keyframes pulse-ring {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0.6);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 8px rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 8px rgba(245, 158, 11, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 0 rgba(245, 158, 11, 0);
   }
 }
 
 .pulse-node {
   animation: pulse-ring 2.2s infinite;
+}
+
+/* Forest Green Pulse for Verified State */
+@keyframes pulse-green {
+  0% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.6);
+  }
+  70% {
+    transform: scale(1);
+    box-shadow: 0 0 0 8px rgba(16, 185, 129, 0);
+  }
+  100% {
+    transform: scale(0.95);
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+.pulse-node-green {
+  animation: pulse-green 2.2s infinite;
 }
 
 /* Scrollbar */
@@ -275,14 +333,14 @@ input[type='range'].lj-slider::-webkit-slider-thumb:hover {
 }
 
 .custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.5);
+  background: rgba(15, 29, 51, 0.5);
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(56, 189, 248, 0.3);
+  background: rgba(217, 119, 6, 0.35);
   border-radius: 9999px;
 }
 
 .custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(56, 189, 248, 0.6);
+  background: rgba(245, 158, 11, 0.6);
 }
