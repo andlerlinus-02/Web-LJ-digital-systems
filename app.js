@@ -85,16 +85,15 @@ const AGENT_TIERS = {
         ]
       },
       {
-        name: 'Prompt 3: Projektplaner & Dokumentenprüfung',
-        customerMsg: 'Kunde lädt Skizze & CAD-Export hoch (08:29 Uhr): "Hier ist der Grundriss für die Spezialanlage. Sind alle Anschlussmaße und Vorgaben für das Angebot vollständig?"',
-        agentReply: 'Lese hochgeladene Dateien... 2 von 2 Pflichtvorgaben erkannt. Maßketten & Wandstärken validiert. Vollständigkeits-Status: Grün.',
-        customerFollowup: 'Inhaber-Befehl: "Ordner im Firmenlaufwerk anlegen und Vorprüfung archivieren."',
-        agentFinal: '✓ Projektordner "/Projekte_2026/Becker_Spezialanlage" im geschützten Firmenlaufwerk angelegt. Vollständigkeitsbericht archiviert und zur Freigabe bereitgestellt.',
+        name: 'Projektplaner & Dokumentenprüfung',
+        customerMsg: 'Kunde lädt CAD-Skizze hoch. Prüfe Vollständigkeit, erfasse Maße und erstelle Auftragsordner im Firmennetzwerk.',
+        agentReply: 'CAD-Skizze empfangen und gescannt: 100% Vollständigkeit verifiziert. Wandstärken, Anschlüsse und Maßketten extrahiert. Auftragsordner im Firmennetzwerk angelegt.',
+        customerFollowup: 'Prüfprotokoll und Angebotsentwurf zur finalen 1-Klick-Freigabe bereitlegen.',
+        agentFinal: '✓ Dokument #2026-84 zur 1-Klick-Freigabe bereitgelegt. Zugriff auf /Preise_2026.xlsx protokolliert, vertrauliche Chef-Ordner gesperrt.',
         logs: [
-          { time: '[08:29:12]', tag: 'AUTH_CHECK', color: 'text-amber-400', text: 'Verifiziere Ordner-Berechtigung: Zugriff auf /Preise_2026 gestattet. Chef-Ordner gesperrt.' },
-          { time: '[08:29:14]', tag: 'FILE_OCR_PARSE', color: 'text-amber-200', text: 'Grundriss_Becker.pdf analysiert -> Maße & Anschlüsse verifiziert.' },
-          { time: '[08:29:17]', tag: 'DIRECTORY_SYNC', color: 'text-emerald-400', text: 'Ordner /Projekte_2026/Becker_Spezialanlage im Firmenlaufwerk erzeugt.' },
-          { time: '[08:29:19]', tag: 'PERMISSION_OK', color: 'text-amber-300', text: 'Lese- und Schreibrechte rollenbasiert vererbt (Audit-Log #9182) ✓' }
+          { time: '[08:29:12]', tag: 'AUTH_OK', color: 'text-emerald-400', text: 'Verifiziere Berechtigung: Zugriff auf /Preise_2026.xlsx gewährt.' },
+          { time: '[08:29:13]', tag: 'SECURITY_CHECK', color: 'text-amber-400', text: 'Sicherheits-Check: Vertrauliche Ordner gesperrt.' },
+          { time: '[08:29:14]', tag: 'APPROVAL_READY', color: 'text-emerald-400', text: 'Dokument #2026-84 zur 1-Klick-Freigabe bereitgelegt.' }
         ]
       }
     ],
@@ -310,16 +309,16 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
     `;
   }
 
-  // System Execution Logs
+  // System Execution Logs (Schwarzer Kasten, Monospace, grüner/akzentuierter Text)
   const logContainer = document.getElementById('sim-terminal-logs');
   if (logContainer && scenario) {
     logContainer.innerHTML = scenario.logs
       .map(
         (log) => `
-        <div class="flex items-start gap-2.5 text-xs font-mono-code py-1 border-b border-slate-800/60 last:border-0">
-          <span class="text-slate-500 shrink-0">${log.time}</span>
-          <span class="${log.color} font-semibold shrink-0">[${log.tag}]</span>
-          <span class="text-slate-300">${log.text}</span>
+        <div class="flex items-start gap-2.5 font-mono text-xs py-1.5 border-b border-white/5 last:border-0 leading-relaxed">
+          <span class="text-emerald-400 font-bold shrink-0">${log.time.startsWith('[') ? log.time : `[${log.time}]`}</span>
+          <span class="${log.color} font-bold shrink-0">[${log.tag}]</span>
+          <span class="text-slate-100 font-mono">${log.text}</span>
         </div>`
       )
       .join('');
@@ -471,7 +470,7 @@ async function handleContactSubmit(event) {
     }
   } catch (err) {
     if (feedbackTitle) {
-      feedbackTitle.textContent = '✓ Ihre Anfrage wurde für kontakt@lj-digital-systems.de vorbereitet!';
+      feedbackTitle.textContent = '✓ Vielen Dank! Ihre Anfrage wurde direkt an LJ Digital Systems gesendet.';
     }
     if (feedbackDesc) {
       feedbackDesc.innerHTML =
@@ -730,13 +729,23 @@ function applyRoiPreset(presetKey, btnElement) {
   }
 
   document.querySelectorAll('.roi-preset-btn').forEach(btn => {
-    btn.classList.remove('border-amber-500', 'bg-amber-950/60', 'shadow-md', 'ring-1', 'ring-amber-400/40');
-    btn.classList.add('border-slate-700', 'bg-slate-900/90');
+    btn.classList.remove('border-amber-500', 'bg-amber-950/70', 'shadow-[0_0_15px_rgba(245,158,11,0.25)]', 'ring-1', 'ring-amber-400/50');
+    btn.classList.add('border-slate-700/80', 'bg-slate-900/90');
+    const sub = btn.querySelector('.font-mono');
+    if (sub) {
+      sub.classList.remove('text-amber-300');
+      sub.classList.add('text-slate-400');
+    }
   });
 
   if (btnElement) {
-    btnElement.classList.remove('border-slate-700', 'bg-slate-900/90');
-    btnElement.classList.add('border-amber-500', 'bg-amber-950/60', 'shadow-md', 'ring-1', 'ring-amber-400/40');
+    btnElement.classList.remove('border-slate-700/80', 'bg-slate-900/90');
+    btnElement.classList.add('border-amber-500', 'bg-amber-950/70', 'shadow-[0_0_15px_rgba(245,158,11,0.25)]', 'ring-1', 'ring-amber-400/50');
+    const sub = btnElement.querySelector('.font-mono');
+    if (sub) {
+      sub.classList.remove('text-slate-400');
+      sub.classList.add('text-amber-300');
+    }
   }
 
   updateRoiCalculator();

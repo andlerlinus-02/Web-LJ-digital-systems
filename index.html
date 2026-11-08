@@ -790,15 +790,15 @@
             </div>
 
             <!-- System Execution Log -->
-            <div class="rounded-xl border border-slate-800 bg-slate-950 p-4 font-mono text-[11px]">
-              <div class="text-[10px] font-bold uppercase tracking-wider text-slate-400 mb-2.5 pb-2 border-b border-white/10 flex items-center justify-between font-mono">
+            <div class="rounded-xl border border-white/15 bg-black p-4 font-mono text-xs shadow-2xl">
+              <div class="text-[11px] font-bold uppercase tracking-wider text-slate-400 mb-2.5 pb-2 border-b border-white/10 flex items-center justify-between font-mono">
                 <div class="flex items-center gap-2">
-                  <span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span>
-                  <span class="text-emerald-400">⚡ TERMINAL-PROTOKOLL (LIVE-AUDIT)</span>
+                  <span class="h-2.5 w-2.5 rounded-full bg-emerald-400 pulse-node"></span>
+                  <span class="text-emerald-400">⚡ TERMINAL-PROTOKOLL (SYSTEM-LOG)</span>
                 </div>
-                <span class="text-amber-400 font-mono text-[10px]">DSGVO-SECURE • LOKAL FREIGEGEBEN</span>
+                <span class="text-amber-400 font-mono text-[10px]">100% DSGVO • AUDIT-LOGGING AKTIV</span>
               </div>
-              <div id="sim-terminal-logs" class="space-y-1 overflow-y-auto max-h-44 custom-scrollbar"></div>
+              <div id="sim-terminal-logs" class="space-y-1.5 overflow-y-auto max-h-44 custom-scrollbar text-xs"></div>
             </div>
           </div>
 
@@ -828,51 +828,52 @@
       </div>
 
       <div class="glass-tech-card p-8 sm:p-10 border-amber-500/30">
-        
-        <!-- 3 Schnellwahl-Buttons ("Typisches Betriebs-Profil laden") -->
-        <div class="mb-8 pb-6 border-b border-white/10">
-          <div class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 mb-3 flex items-center gap-2">
-            <span>⚡</span> <span>Typisches Betriebs-Profil laden (Schnellwahl):</span>
-          </div>
-          <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
-            <button
-              type="button"
-              data-roi-preset="craft"
-              onclick="applyRoiPreset('craft', this)"
-              class="roi-preset-btn p-3 rounded-xl border border-amber-500 bg-amber-950/60 shadow-md text-left transition hover:border-amber-400 cursor-pointer"
-            >
-              <div class="font-bold text-white text-xs sm:text-sm">Fachhandwerk &amp; Montage</div>
-              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">30 Anfragen • 14 Std. Büro / Wo.</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Telefon-Filter &amp; Aufmaß</div>
-            </button>
-
-            <button
-              type="button"
-              data-roi-preset="planning"
-              onclick="applyRoiPreset('planning', this)"
-              class="roi-preset-btn p-3 rounded-xl border border-slate-700 bg-slate-900/90 text-left transition hover:border-amber-400 cursor-pointer"
-            >
-              <div class="font-bold text-white text-xs sm:text-sm">Planungs- &amp; Ingenieurbüro</div>
-              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">15 Anfragen • 18 Std. Büro / Wo.</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Angebote &amp; Leistungsverzeichnisse</div>
-            </button>
-
-            <button
-              type="button"
-              data-roi-preset="expert"
-              onclick="applyRoiPreset('expert', this)"
-              class="roi-preset-btn p-3 rounded-xl border border-slate-700 bg-slate-900/90 text-left transition hover:border-amber-400 cursor-pointer"
-            >
-              <div class="font-bold text-white text-xs sm:text-sm">Gutachter &amp; Spezialist</div>
-              <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">20 Anfragen • 12 Std. Büro / Wo.</div>
-              <div class="text-[10px] text-slate-400 mt-0.5">Fokus: Fotodokumente &amp; Vorprüfung</div>
-            </button>
-          </div>
-        </div>
-
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-start">
           
           <div class="lg:col-span-7 space-y-6">
+            
+            <!-- 3 anklickbare Preset-Buttons DIREKT über den Schiebereglern -->
+            <div>
+              <div class="text-xs font-mono font-bold uppercase tracking-wider text-amber-400 mb-2.5 flex items-center gap-2">
+                <span>⚡</span> <span>Typisches Betriebs-Profil laden (Schnellwahl):</span>
+              </div>
+              <div class="grid grid-cols-1 sm:grid-cols-3 gap-2.5">
+                <button
+                  type="button"
+                  id="preset-craft"
+                  data-roi-preset="craft"
+                  onclick="applyRoiPreset('craft', this)"
+                  class="roi-preset-btn p-3 rounded-xl border border-amber-500 bg-amber-950/70 shadow-[0_0_15px_rgba(245,158,11,0.25)] ring-1 ring-amber-400/50 text-left transition-all duration-200 cursor-pointer"
+                >
+                  <div class="font-bold text-white text-xs sm:text-sm">Fachhandwerk &amp; Montage</div>
+                  <div class="text-[11px] font-mono text-amber-300 mt-1 font-semibold">30 Anfr. • 14 Std./Wo.</div>
+                </button>
+
+                <button
+                  type="button"
+                  id="preset-planning"
+                  data-roi-preset="planning"
+                  onclick="applyRoiPreset('planning', this)"
+                  class="roi-preset-btn p-3 rounded-xl border border-slate-700/80 bg-slate-900/90 text-left transition-all duration-200 hover:border-slate-500 cursor-pointer"
+                >
+                  <div class="font-bold text-white text-xs sm:text-sm">Planungs- &amp; Ingenieurbüro</div>
+                  <div class="text-[11px] font-mono text-slate-400 mt-1 font-semibold">15 Anfr. • 18 Std./Wo.</div>
+                </button>
+
+                <button
+                  type="button"
+                  id="preset-expert"
+                  data-roi-preset="expert"
+                  onclick="applyRoiPreset('expert', this)"
+                  class="roi-preset-btn p-3 rounded-xl border border-slate-700/80 bg-slate-900/90 text-left transition-all duration-200 hover:border-slate-500 cursor-pointer"
+                >
+                  <div class="font-bold text-white text-xs sm:text-sm">Gutachter &amp; Spezialdienstleister</div>
+                  <div class="text-[11px] font-mono text-slate-400 mt-1 font-semibold">20 Anfr. • 12 Std./Wo.</div>
+                </button>
+              </div>
+            </div>
+
+            <!-- Schieberegler 1: Anfragen/Woche -->
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label for="roi-requests" class="text-sm font-bold text-slate-200">Kundenanfragen pro Woche:</label>
@@ -889,9 +890,10 @@
               />
             </div>
 
+            <!-- Schieberegler 2: Büro-Std./Woche -->
             <div>
               <div class="flex justify-between items-center mb-2">
-                <label for="roi-routine-hours" class="text-sm font-bold text-slate-200">Büro- &amp; Dokumentenzeit pro Woche:</label>
+                <label for="roi-routine-hours" class="text-sm font-bold text-slate-200">Bürozeit pro Woche (Kalkulation, Vorlagen, Mails):</label>
                 <span id="roi-val-hours" class="text-sm font-mono font-bold text-amber-300 bg-amber-950/80 px-2.5 py-0.5 rounded border border-amber-500/40">14 Std. Büro / Woche</span>
               </div>
               <input
@@ -905,6 +907,7 @@
               />
             </div>
 
+            <!-- Schieberegler 3: Kalkulatorischer Stundensatz -->
             <div>
               <div class="flex justify-between items-center mb-2">
                 <label for="roi-hourly-rate" class="text-sm font-bold text-slate-200">Kalkulatorischer Stundensatz:</label>
