@@ -920,6 +920,208 @@ function transferRoiToContact() {
 }
 
 /* ==========================================================================
+   Linus Classic Strategy: Interactive Q&A Game (Potenzial-Finder)
+   ========================================================================== */
+
+const qaState = {
+  currentStep: 1,
+  answers: {
+    pain: null,
+    system: null,
+    goal: null
+  }
+};
+
+const qaResultsData = {
+  tier1: {
+    badge: 'EMPFOHLENE LÖSUNG: STUFE 1',
+    title: 'Smart Frontdesk-Agent (24/7 Kundenanfragen)',
+    desc: 'Für Ihren Betrieb ist die direkte Entlastung von Telefonunterbrechungen und die lückenlose Erreichbarkeit nach Feierabend der effektivste Hebel. Der Agent filtert, qualifiziert und vergibt Termine vollautomatisch.',
+    timeSaved: 'Ø 8 – 15 Stunden wöchentlich',
+    serviceKey: 'tier1',
+    topicName: 'KI-Agent Stufe 1 (Smart Frontdesk)'
+  },
+  tier2: {
+    badge: 'EMPFOHLENE LÖSUNG: STUFE 2 • OPTIMAL FÜR DEN MITTELSTAND',
+    title: 'Wissens- & Büro-Agent (Firmenspeicher & Dokumente)',
+    desc: 'Ihr größter Hebel liegt in der automatisierten Bearbeitung von Dokumenten, E-Mails und dem Durchsuchen Ihrer Firmenakten. Der Agent greift geschützt auf Ihre PDF-, Datei- und Preisdaten zu und bereitet Angebote vor.',
+    timeSaved: 'Ø 14 – 24 Stunden wöchentlich',
+    serviceKey: 'tier2',
+    topicName: 'KI-Agent Stufe 2 (Wissens- & Büro-Agent)'
+  },
+  tier3: {
+    badge: 'EMPFOHLENE LÖSUNG: STUFE 3 • MAXIMALE AUTOMATION',
+    title: 'Autonomer Unternehmens- & Netzwerk-Agent',
+    desc: 'Ihre Anforderungen erfordern eine nahtlose Vernetzung zwischen bestehendem ERP, Handwerker-Software, Dateisystem und Terminkalender für durchgängige Prozesse ohne manuelle Medienbrüche.',
+    timeSaved: 'Ø 20 – 35+ Stunden wöchentlich',
+    serviceKey: 'tier3',
+    topicName: 'KI-Agent Stufe 3 (Vollintegrierter Netzwerk-Agent)'
+  },
+  website: {
+    badge: 'EMPFOHLENE LÖSUNG: WEBAUFTRITT & DIGITALES FUNDAMENT',
+    title: 'Moderner Website-Relaunch mit digitaler Anfragenlogik',
+    desc: 'Ihr Betrieb benötigt vor allem einen zeitgemäßen, mobiloptimierten Webauftritt, der Vertrauen schafft und Kundenanfragen sofort vorqualifiziert. Die perfekte Basis, um später stufenweise KI anzudocken.',
+    timeSaved: 'Ø 10 – 18 Stunden wöchentlich + mehr Neukunden',
+    serviceKey: 'website',
+    topicName: 'Website-Relaunch & Modernisierung'
+  },
+  custom: {
+    badge: 'EMPFOHLENE LÖSUNG: INDIVIDUELLE SPEZIALLÖSUNG',
+    title: 'Maßgeschneiderte KI- & Schnittstellen-Architektur',
+    desc: 'Aufgrund Ihrer speziellen Software-Landschaft oder Arbeitsabläufe konzipieren wir eine punktgenaue KI-Lösung mit maßgeschneiderten Schnittstellen und Workflows.',
+    timeSaved: 'Individuell kalkulierbar',
+    serviceKey: 'custom',
+    topicName: 'Individuelle KI-Speziallösung'
+  }
+};
+
+function selectQaOption(category, value, el) {
+  qaState.answers[category] = value;
+  
+  const parent = el.closest('.qa-options-grid');
+  if (parent) {
+    parent.querySelectorAll('.qa-option-card').forEach((c) => c.classList.remove('qa-active'));
+  }
+  el.classList.add('qa-active');
+
+  setTimeout(() => {
+    if (qaState.currentStep === 1) {
+      goToQaStep(2);
+    } else if (qaState.currentStep === 2) {
+      goToQaStep(3);
+    } else if (qaState.currentStep === 3) {
+      showQaResult();
+    }
+  }, 220);
+}
+
+function goToQaStep(stepNum) {
+  qaState.currentStep = stepNum;
+  for (let i = 1; i <= 3; i++) {
+    const stepEl = document.getElementById(`qa-step-${i}`);
+    const dotEl = document.getElementById(`qa-dot-${i}`);
+    if (stepEl) {
+      if (i === stepNum) {
+        stepEl.classList.remove('hidden');
+        stepEl.classList.add('animate-fade-slide');
+      } else {
+        stepEl.classList.add('hidden');
+      }
+    }
+    if (dotEl) {
+      if (i <= stepNum) {
+        dotEl.classList.add('bg-blue-600', 'text-white');
+        dotEl.classList.remove('bg-slate-200', 'text-slate-600');
+      } else {
+        dotEl.classList.remove('bg-blue-600', 'text-white');
+        dotEl.classList.add('bg-slate-200', 'text-slate-600');
+      }
+    }
+  }
+
+  const resultContainer = document.getElementById('qa-step-result');
+  if (resultContainer) resultContainer.classList.add('hidden');
+}
+
+function showQaResult() {
+  qaState.currentStep = 'result';
+  for (let i = 1; i <= 3; i++) {
+    const stepEl = document.getElementById(`qa-step-${i}`);
+    if (stepEl) stepEl.classList.add('hidden');
+  }
+
+  let determinedKey = 'tier2';
+  const { pain, system, goal } = qaState.answers;
+
+  if (pain === 'web' || goal === 'web') {
+    determinedKey = 'website';
+  } else if (pain === 'phone' || goal === 'phone') {
+    determinedKey = 'tier1';
+  } else if (pain === 'network' || goal === 'network') {
+    determinedKey = 'tier3';
+  } else if (system === 'custom' || pain === 'custom') {
+    determinedKey = 'custom';
+  } else {
+    determinedKey = 'tier2';
+  }
+
+  const res = qaResultsData[determinedKey] || qaResultsData.tier2;
+
+  const resBadge = document.getElementById('qa-result-badge');
+  const resTitle = document.getElementById('qa-result-title');
+  const resDesc = document.getElementById('qa-result-desc');
+  const resSaved = document.getElementById('qa-result-savings');
+  const resJumpBtn = document.getElementById('qa-result-jump-btn');
+  const resContactBtn = document.getElementById('qa-result-contact-btn');
+
+  if (resBadge) resBadge.textContent = res.badge;
+  if (resTitle) resTitle.textContent = res.title;
+  if (resDesc) resDesc.textContent = res.desc;
+  if (resSaved) resSaved.textContent = res.timeSaved;
+
+  if (resJumpBtn) {
+    resJumpBtn.onclick = () => {
+      switchServiceView(res.serviceKey, true);
+    };
+  }
+
+  if (resContactBtn) {
+    resContactBtn.onclick = () => {
+      scrollToContactWithTopic(res.topicName);
+    };
+  }
+
+  const resultContainer = document.getElementById('qa-step-result');
+  if (resultContainer) {
+    resultContainer.classList.remove('hidden');
+    resultContainer.classList.add('animate-fade-slide');
+  }
+}
+
+function resetQaGame() {
+  qaState.answers = { pain: null, system: null, goal: null };
+  document.querySelectorAll('.qa-option-card').forEach((c) => c.classList.remove('qa-active'));
+  goToQaStep(1);
+}
+
+/* ==========================================================================
+   Dynamic Service Deep-Dive View Switcher
+   ========================================================================== */
+
+function switchServiceView(serviceKey, scrollIntoView = false) {
+  document.querySelectorAll('[data-service-tab]').forEach((tab) => {
+    const key = tab.getAttribute('data-service-tab');
+    if (key === serviceKey) {
+      tab.classList.add('active-tab');
+    } else {
+      tab.classList.remove('active-tab');
+    }
+  });
+
+  document.querySelectorAll('[data-service-panel]').forEach((panel) => {
+    const key = panel.getAttribute('data-service-panel');
+    if (key === serviceKey) {
+      panel.classList.remove('hidden');
+      panel.classList.add('animate-fade-slide');
+    } else {
+      panel.classList.add('hidden');
+    }
+  });
+
+  if (serviceKey === 'tier1' || serviceKey === 'tier2' || serviceKey === 'tier3' || serviceKey === 'custom') {
+    selectSimulatorTier(serviceKey, 0);
+  }
+
+  if (scrollIntoView) {
+    const container = document.getElementById('services-uebersicht');
+    if (container) {
+      container.scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+  }
+}
+
+
+/* ==========================================================================
    Scroll-Reveal Observer
    ========================================================================== */
 
