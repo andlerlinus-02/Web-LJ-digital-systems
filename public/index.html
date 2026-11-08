@@ -1,0 +1,1066 @@
+<!DOCTYPE html>
+<html lang="de" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>LJ Digital Systems | Moderne Webauftritte & Entlastungs-Systeme für Betriebe</title>
+  <meta name="description" content="Wir bringen inhabergeführte Fachbetriebe und Dienstleister online auf den Stand der Zeit. Strukturierte Anfragen, automatische Angebotsvorbereitung und persönliche Betreuung durch Linus & Jasper." />
+
+  <!-- OpenGraph / Social Link Preview -->
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="LJ Digital Systems | Moderne Webauftritte & digitale Entlastung" />
+  <meta property="og:description" content="Schluss mit Telefonstress bei der Arbeit und Büro-Schichten nach Feierabend. Persönliche Betreuung durch Linus Andler & Jasper Landgraf." />
+  <meta property="og:locale" content="de_DE" />
+
+  <!-- Authentic Handcrafted Favicon (Prussian Navy & Amber) -->
+  <link
+    rel="icon"
+    type="image/svg+xml"
+    href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect x='3' y='3' width='94' height='94' rx='20' fill='%230f172a' stroke='%231e3a8a' stroke-width='2.5'/%3E%3Cpath d='M25 24 H37 V63 H62 V74 H25 V24 Z' fill='%23ffffff'/%3E%3Cpath d='M48 24 H75 V34 H63 V59 C63 67 58 73 50 73 C43 73 38 69.5 36.5 64 L45 59.5 C46 62 47.5 63.5 50 63.5 C52.5 63.5 54 62 54 57 V24 H48 Z' fill='%23b45309'/%3E%3Ccircle cx='69' cy='24' r='3.5' fill='%23d97706'/%3E%3C/svg%3E"
+  />
+
+  <!-- Google Fonts: Plus Jakarta Sans & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Plus Jakarta Sans"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+            mono: ['"JetBrains Mono"', 'monospace'],
+          },
+          colors: {
+            brand: {
+              base: '#f8fafc',
+              navy: '#0f172a',
+              navyLight: '#1e3a8a',
+              amber: '#b45309',
+              amberLight: '#d97706',
+              amberGold: '#f59e0b',
+              border: '#e2e8f0',
+              text: '#0f172a',
+              muted: '#475569',
+              dim: '#64748b'
+            }
+          }
+        }
+      }
+    };
+  </script>
+
+  <style>
+    :root {
+      --bg-base: #f8fafc;
+      --bg-surface: #ffffff;
+      --primary: #0f172a;
+      --primary-blue: #1e3a8a;
+      --accent-amber: #b45309;
+      --accent-amber-glow: rgba(180, 83, 9, 0.2);
+      --border-subtle: #e2e8f0;
+      --text-main: #0f172a;
+      --text-muted: #475569;
+    }
+
+    body {
+      background-color: var(--bg-base);
+      color: var(--text-main);
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* Custom Accent Slider */
+    input[type="range"] {
+      accent-color: #b45309;
+      cursor: pointer;
+    }
+
+    /* Subtle Card Elevation */
+    .card-elevated {
+      background: #ffffff;
+      border: 1px solid #e2e8f0;
+      box-shadow: 0 4px 20px -2px rgba(15, 23, 42, 0.05);
+      transition: all 0.2s ease;
+    }
+
+    .card-elevated:hover {
+      border-color: #cbd5e1;
+      box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
+    }
+  </style>
+  <script>
+    // Sofortiger Fallback-Redirect für alte Anker-Links (#live-simulation -> #betriebs-check)
+    (function() {
+      if (window.location.hash === '#live-simulation') {
+        if (window.history && window.history.replaceState) {
+          window.history.replaceState(null, '', '#betriebs-check');
+        }
+        window.addEventListener('DOMContentLoaded', function() {
+          var el = document.getElementById('betriebs-check');
+          if (el) el.scrollIntoView({ behavior: 'smooth' });
+        });
+      }
+    })();
+  </script>
+</head>
+<body class="bg-slate-50 text-slate-900 antialiased selection:bg-amber-100 selection:text-amber-900 min-h-screen flex flex-col justify-between">
+
+  <!-- =========================================================================
+       1. TOP INFO BAR (Authentic Regional & Contact Details)
+       ========================================================================= -->
+  <div class="bg-slate-900 text-slate-300 py-2.5 px-4 text-xs font-mono border-b border-slate-800">
+    <div class="max-w-6xl mx-auto flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+      <div class="flex items-center gap-2">
+        <span class="inline-block w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+        <span>📍 Region Rhein-Main &amp; Bundesweit</span>
+        <span class="text-slate-600 hidden md:inline">•</span>
+        <span class="hidden md:inline text-slate-400">Direkte Gründerbetreuung: Linus Andler &amp; Jasper Landgraf</span>
+      </div>
+      <div class="flex items-center gap-4">
+        <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-amber-400 transition-colors flex items-center gap-1.5 font-semibold">
+          <span>✉️</span> <span>kontakt@lj-digital-systems.de</span>
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <!-- =========================================================================
+       2. STICKY HEADER & NAVIGATION
+       ========================================================================= -->
+  <header class="bg-white/95 backdrop-blur-md border-b border-slate-200 sticky top-0 z-50">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6 py-3.5 flex items-center justify-between">
+      
+      <!-- Logo -->
+      <a href="#" class="flex items-center gap-3 group">
+        <div class="w-10 h-10 rounded-xl bg-slate-900 border border-slate-700 flex items-center justify-center shadow-sm group-hover:scale-105 transition-transform">
+          <svg class="w-6 h-6" viewBox="0 0 100 100" fill="none">
+            <path d="M25 24 H37 V63 H62 V74 H25 V24 Z" fill="#ffffff"/>
+            <path d="M48 24 H75 V34 H63 V59 C63 67 58 73 50 73 C43 73 38 69.5 36.5 64 L45 59.5 C46 62 47.5 63.5 50 63.5 C52.5 63.5 54 62 54 57 V24 H48 Z" fill="#b45309"/>
+            <circle cx="69" cy="24" r="4" fill="#d97706"/>
+          </svg>
+        </div>
+        <div>
+          <div class="font-extrabold text-base sm:text-lg tracking-tight text-slate-900 flex items-center gap-1.5">
+            <span>LJ Digital Systems</span>
+          </div>
+          <div class="text-[11px] text-slate-500 font-medium">Bodenständige Systeme für Betriebe</div>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="hidden lg:flex items-center gap-7 text-sm font-semibold text-slate-600">
+        <a href="#betriebs-check" class="hover:text-slate-950 transition-colors flex items-center gap-1.5">
+          <span class="text-amber-600 font-bold">⚡</span> <span>60-Sek. Check</span>
+        </a>
+        <a href="#leistungen" class="hover:text-slate-950 transition-colors">3 Bausteine</a>
+        <a href="#team" class="hover:text-slate-950 transition-colors">Über uns</a>
+        <a href="#entlastungs-rechner" class="hover:text-slate-950 transition-colors">Rechner</a>
+        <a href="#ablauf" class="hover:text-slate-950 transition-colors">Ablauf</a>
+      </nav>
+
+      <!-- CTA Button -->
+      <div class="flex items-center gap-3">
+        <a
+          href="#kontakt"
+          class="bg-slate-900 hover:bg-slate-800 text-white text-xs sm:text-sm font-bold py-2.5 px-4 sm:px-5 rounded-xl shadow-sm border border-slate-800 hover:border-slate-700 transition-all flex items-center gap-2"
+        >
+          <span>Unverbindlich anfragen</span>
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <!-- =======================================================================
+         3. EYECATCHER HERO-BEREICH (Echtes Foto, Klarheit & Vertrauen)
+         ======================================================================= -->
+    <section class="relative bg-white border-b border-slate-200 overflow-hidden py-14 sm:py-20 lg:py-24">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+          
+          <!-- Linke Spalte: Kernaussage & Nutzen -->
+          <div class="lg:col-span-7 space-y-6">
+            
+            <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold">
+              <span class="w-2 h-2 rounded-full bg-amber-600"></span>
+              <span>Web &amp; Entlastung für Fachbetriebe &amp; Dienstleister</span>
+            </div>
+
+            <h1 class="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-slate-950 tracking-tight leading-[1.18]">
+              Schluss mit Telefonstress bei der Arbeit und <span class="text-amber-800 underline decoration-amber-300 decoration-4">Büro-Schichten</span> nach Feierabend.
+            </h1>
+
+            <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+              Wir bringen Ihren Betrieb online auf den Stand der Zeit. Mit einer modernen Website und einem digitalen Vorzimmer, das Anfragen automatisch vorfiltert und Angebote vorbereitet – ohne Fachchinesisch, persönlich betreut von Linus &amp; Jasper.
+            </p>
+
+            <!-- Action Buttons -->
+            <div class="pt-2 flex flex-col sm:flex-row items-stretch sm:items-center gap-3.5">
+              <a
+                href="#betriebs-check"
+                class="bg-amber-600 hover:bg-amber-700 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all text-center flex items-center justify-center gap-2 group cursor-pointer"
+              >
+                <span>60-Sekunden Betriebs-Check starten</span>
+                <span class="group-hover:translate-y-0.5 transition-transform">↓</span>
+              </a>
+
+              <a
+                href="#kontakt"
+                class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3.5 px-6 rounded-xl border border-slate-300 transition-all text-center flex items-center justify-center"
+              >
+                <span>Kostenlose Potenzialanalyse</span>
+              </a>
+            </div>
+
+            <!-- 3 Trust Bullets (Bodenständig) -->
+            <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-600">
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-amber-600 font-bold text-sm">✓</span>
+                <span>Feste Gründerbetreuung</span>
+              </div>
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-amber-600 font-bold text-sm">✓</span>
+                <span>Schlüsselfertig eingerichtet</span>
+              </div>
+              <div class="flex items-center gap-2 font-medium">
+                <span class="text-amber-600 font-bold text-sm">✓</span>
+                <span>Spürbare Zeitersparnis</span>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Rechte Spalte: Großformatiges, authentisches Foto (Linus & Jasper im Betrieb) -->
+          <div class="lg:col-span-5">
+            <div class="relative rounded-2xl overflow-hidden border border-slate-300 shadow-xl bg-slate-900 group">
+              <img
+                src="assets/team-lj-digital-systems.jpg"
+                alt="LJ Digital Systems Team - Linus Andler & Jasper Landgraf im Einsatz"
+                loading="eager"
+                width="800"
+                height="600"
+                class="w-full h-[380px] sm:h-[440px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
+              />
+              
+              <!-- Floating Pill Oben -->
+              <div class="absolute top-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md border border-white/15 rounded-xl py-2 px-3.5 text-xs text-slate-200 flex items-center justify-between">
+                <div class="flex items-center gap-2">
+                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                  <span class="font-semibold text-white">Linus &amp; Jasper vor Ort</span>
+                </div>
+                <span class="font-mono text-[11px] text-amber-400 font-bold">100% Persönlich</span>
+              </div>
+
+              <!-- Floating Pill Unten -->
+              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-slate-200 rounded-xl p-3 shadow-lg flex items-center justify-between">
+                <div>
+                  <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider font-mono">Wöchentliche Entlastung</div>
+                  <div class="text-sm font-extrabold text-slate-900 font-mono">~4 bis 8 Std. Feierabend gerettet</div>
+                </div>
+                <div class="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 font-bold text-sm">
+                  ⚡
+                </div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         4. INTERAKTIVES FRAGE- UND ANTWORT-SPIEL (60-Sekunden Betriebs-Check)
+         ======================================================================= -->
+    <section id="betriebs-check" class="py-16 sm:py-20 bg-slate-100/70 border-b border-slate-200">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold mb-3 font-mono">
+            <span>⚡ SCHNELL-CHECK</span>
+          </div>
+          <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-950 tracking-tight">
+            Wo verliert Ihr Betrieb im Alltag die meiste Zeit?
+          </h2>
+          <p class="text-sm sm:text-base text-slate-600 mt-2">
+            Wählen Sie in 3 kurzen Fragen aus, was am besten zu Ihrem Alltag passt. Sie erhalten sofort eine verständliche Empfehlung.
+          </p>
+          
+          <!-- Fortschritts-Indikator -->
+          <div class="flex items-center justify-center gap-2 mt-6">
+            <div id="step-indicator-1" class="w-8 h-2 rounded-full bg-amber-500 transition-all"></div>
+            <div id="step-indicator-2" class="w-4 h-2 rounded-full bg-slate-200 transition-all"></div>
+            <div id="step-indicator-3" class="w-4 h-2 rounded-full bg-slate-200 transition-all"></div>
+          </div>
+        </div>
+
+        <div class="bg-white rounded-2xl border border-slate-200 shadow-lg p-6 sm:p-8">
+          
+          <!-- FRAGE 1 -->
+          <div id="quiz-step-1" class="space-y-4">
+            <div class="text-xs font-mono font-bold uppercase text-amber-700 tracking-wider">Frage 1 von 3</div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Was raubt Ihnen und Ihrem Team aktuell die meisten Nerven?</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+              <button
+                type="button"
+                onclick="selectQuizOption(1, 'phone', this)"
+                class="quiz-option-card p-4 rounded-xl border border-amber-500 bg-amber-50/90 ring-2 ring-amber-400 text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">📞</div>
+                <div class="font-bold text-sm text-slate-900">Dauer-Klingeln beim Kunden</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Telefon läutet ununterbrochen bei Terminen oder auf der Baustelle.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(1, 'inquiries', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">📧</div>
+                <div class="font-bold text-sm text-slate-900">Vage & unvollständige Anfragen</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Kunden schicken halbe E-Mails ohne Maße, Fotos oder Pläne.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(1, 'paperwork', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">🌙</div>
+                <div class="font-bold text-sm text-slate-900">Büro-Schichten am Feierabend</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Preise suchen, Angebote tippen und Zettelwirtschaft bis spät in die Nacht.</div>
+              </button>
+            </div>
+          </div>
+
+          <!-- FRAGE 2 -->
+          <div id="quiz-step-2" class="space-y-4 hidden">
+            <div class="text-xs font-mono font-bold uppercase text-amber-700 tracking-wider">Frage 2 von 3</div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Wie viele Kundenanfragen und Angebote bearbeiten Sie etwa pro Woche?</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+              <button
+                type="button"
+                onclick="selectQuizOption(2, 'small', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">🔨</div>
+                <div class="font-bold text-sm text-slate-900">5 bis 15 Anfragen / Woche</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Kompakter Betrieb, persönliche Betreuung steht im Vordergrund.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(2, 'medium', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">⚙️</div>
+                <div class="font-bold text-sm text-slate-900">15 bis 35 Anfragen / Woche</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Hohes Auftragsvolumen, ständige Abstimmung mit Kunden &amp; Bauherren.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(2, 'large', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">🏢</div>
+                <div class="font-bold text-sm text-slate-900">Über 35 Anfragen / Woche</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Volle Auslastung – Büro und Auftragsannahme kommen kaum hinterher.</div>
+              </button>
+            </div>
+
+            <div class="pt-2 flex justify-start">
+              <button type="button" onclick="goToQuizStep(1)" class="text-xs text-slate-500 hover:text-slate-900 font-semibold flex items-center gap-1">
+                <span>← Zurück zu Frage 1</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- FRAGE 3 -->
+          <div id="quiz-step-3" class="space-y-4 hidden">
+            <div class="text-xs font-mono font-bold uppercase text-amber-700 tracking-wider">Frage 3 von 3</div>
+            <h3 class="text-lg sm:text-xl font-bold text-slate-900">Was wäre aktuell die spürbarste Erleichterung für Ihren Betrieb?</h3>
+            
+            <div class="grid grid-cols-1 sm:grid-cols-3 gap-3.5 pt-2">
+              <button
+                type="button"
+                onclick="selectQuizOption(3, 'filter', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">🎯</div>
+                <div class="font-bold text-sm text-slate-900">Vorqualifizierte Anfragen</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Jeder Interessent liefert vorab Maße, Fotos und genaue Angaben ab.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(3, 'prep', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">⚡</div>
+                <div class="font-bold text-sm text-slate-900">Vorbereitete Angebote</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Angebotsentwürfe nach Ihrer Preisliste fertig – 1 Klick zur Freigabe.</div>
+              </button>
+
+              <button
+                type="button"
+                onclick="selectQuizOption(3, 'website', this)"
+                class="quiz-option-card p-4 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+              >
+                <div class="text-2xl mb-2">🌐</div>
+                <div class="font-bold text-sm text-slate-900">Moderner Webauftritt</div>
+                <div class="text-xs text-slate-600 mt-1 leading-relaxed">Ein Aushängeschild, das sofort Vertrauen schafft und gute Kunden anzieht.</div>
+              </button>
+            </div>
+
+            <div class="pt-2 flex justify-start">
+              <button type="button" onclick="goToQuizStep(2)" class="text-xs text-slate-500 hover:text-slate-900 font-semibold flex items-center gap-1">
+                <span>← Zurück zu Frage 2</span>
+              </button>
+            </div>
+          </div>
+
+          <!-- QUIZ ERGEBNIS-BOX (Dynamisch) -->
+          <div id="quiz-result" class="hidden space-y-6 pt-2">
+            <div class="p-6 rounded-xl bg-amber-50/80 border border-amber-300">
+              <div class="flex flex-col sm:flex-row sm:items-center justify-between gap-3 border-b border-amber-200 pb-4">
+                <div>
+                  <span id="quiz-rec-badge" class="inline-block py-1 px-2.5 rounded-md bg-amber-800 text-white font-mono text-xs font-bold uppercase">
+                    Empfohlene Lösung für Ihren Betrieb
+                  </span>
+                  <h4 id="quiz-rec-title" class="text-xl font-extrabold text-slate-950 mt-2">
+                    Baustein 2: Der Kalkulations- &amp; Angebots-Assistent
+                  </h4>
+                </div>
+                <div class="bg-white py-2 px-3.5 rounded-lg border border-amber-200 text-right">
+                  <div class="text-[11px] font-mono text-slate-500 uppercase font-semibold">Erwartete Zeitersparnis</div>
+                  <div id="quiz-rec-hours" class="text-base font-extrabold text-amber-800 font-mono">6 bis 10 Std. / Woche</div>
+                </div>
+              </div>
+
+              <p id="quiz-rec-desc" class="text-sm text-slate-700 mt-4 leading-relaxed">
+                Statt abends stundenlang an Preislisten zu sitzen, liest das System Ihre Vorlagen und bereitet rechtssichere Angebote vor. Ein Klick auf Ihrem Handy genügt zur Freigabe.
+              </p>
+
+              <div class="mt-6 flex flex-col sm:flex-row items-center gap-3">
+                <button
+                  type="button"
+                  onclick="jumpToRecommendedService()"
+                  class="w-full sm:w-auto bg-slate-900 hover:bg-slate-800 text-white font-bold py-3 px-6 rounded-xl text-xs sm:text-sm shadow-md transition-all flex items-center justify-center gap-2 cursor-pointer"
+                >
+                  <span>Passende Lösung unten ansehen</span>
+                  <span>↓</span>
+                </button>
+                <button
+                  type="button"
+                  onclick="resetQuiz()"
+                  class="text-xs text-slate-500 hover:text-slate-900 font-semibold underline py-2 px-3"
+                >
+                  Check erneut ausfüllen
+                </button>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         5. DIE 3 KLAREN AUSBAUSTUFEN (Verständlich, kein KI-Gehabe)
+         ======================================================================= -->
+    <section id="leistungen" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="max-w-2xl mx-auto text-center mb-12">
+          <div class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-bold mb-3 font-mono">
+            <span>DREI KLARE BAUSTEINE</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            Schritt für Schritt zu spürbarer Entlastung
+          </h2>
+          <p class="text-slate-600 mt-3 text-base">
+            Sie müssen sich nicht mit Programmierung oder IT-Trends beschäftigen. Dafür sind wir da. Wählen Sie den Baustein, der zu Ihrem aktuellen Engpass passt:
+          </p>
+        </div>
+
+        <!-- Tab Leiste -->
+        <div class="flex flex-col sm:flex-row gap-2 max-w-3xl mx-auto mb-10 p-1.5 bg-slate-100 rounded-2xl border border-slate-200">
+          <button
+            id="tab-btn-tier1"
+            type="button"
+            onclick="selectServiceTab('tier1')"
+            class="service-tab-btn flex-1 py-3 px-4 rounded-xl font-bold text-sm bg-slate-900 text-white shadow-md border border-slate-700 transition-all cursor-pointer"
+          >
+            1. Digitales Vorzimmer
+          </button>
+          <button
+            id="tab-btn-tier2"
+            type="button"
+            onclick="selectServiceTab('tier2')"
+            class="service-tab-btn flex-1 py-3 px-4 rounded-xl font-semibold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all cursor-pointer"
+          >
+            2. Angebots-Assistent
+          </button>
+          <button
+            id="tab-btn-tier3"
+            type="button"
+            onclick="selectServiceTab('tier3')"
+            class="service-tab-btn flex-1 py-3 px-4 rounded-xl font-semibold text-sm bg-slate-100 text-slate-700 hover:bg-slate-200 border border-slate-200 transition-all cursor-pointer"
+          >
+            3. Vernetztes System
+          </button>
+        </div>
+
+        <!-- Detail-Karte des aktiven Bausteins -->
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm max-w-5xl mx-auto">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-start">
+            
+            <!-- Linke Spalte: Beschreibung & Kernaussagen -->
+            <div class="lg:col-span-7 space-y-5">
+              <div>
+                <span class="text-xs font-mono font-bold uppercase text-amber-700 tracking-wider">Leistungsumfang</span>
+                <h3 id="service-detail-title" class="text-2xl font-extrabold text-slate-950 mt-1">
+                  Baustein 1: Digitales Vorzimmer &amp; Webauftritt
+                </h3>
+                <p id="service-detail-tagline" class="text-slate-600 text-sm mt-2 font-medium">
+                  Stoppt unvollständige Anfragen und ewiges Hinterhertelefonieren.
+                </p>
+              </div>
+
+              <div class="p-3.5 rounded-xl bg-amber-50/70 border border-amber-200 text-xs text-amber-900">
+                <strong>Ideal für:</strong> <span id="service-detail-ideal">Inhabergeführte Betriebe &amp; Fachhandwerk mit hohem Telefonaufkommen.</span>
+              </div>
+
+              <!-- Highlights Liste -->
+              <ul id="service-detail-list" class="space-y-3 pt-2">
+                <li class="flex items-start gap-3 text-slate-700 text-sm">
+                  <span class="text-amber-600 font-bold mt-0.5">✓</span>
+                  <span>24/7 strukturierte Auftragsannahme über das Smartphone des Kunden</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-700 text-sm">
+                  <span class="text-amber-600 font-bold mt-0.5">✓</span>
+                  <span>Kunde lädt Maße, Fotos, Raumpläne und Dringlichkeit direkt hoch</span>
+                </li>
+                <li class="flex items-start gap-3 text-slate-700 text-sm">
+                  <span class="text-amber-600 font-bold mt-0.5">✓</span>
+                  <span>Sie erhalten eine saubere Projekt-Mappe per E-Mail – kein Rätselraten mehr</span>
+                </li>
+              </ul>
+
+              <div class="pt-4">
+                <a
+                  href="#kontakt"
+                  class="inline-flex items-center gap-2 bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3 px-5 rounded-xl shadow-sm transition-all"
+                >
+                  <span>Diesen Baustein für Ihren Betrieb anfragen</span>
+                  <span>→</span>
+                </a>
+              </div>
+            </div>
+
+            <!-- Rechte Spalte: Vorher vs. Nachher Praxis-Vergleich -->
+            <div class="lg:col-span-5 space-y-4">
+              <div class="text-xs font-mono font-bold uppercase text-slate-500 tracking-wider">Praxis-Vergleich</div>
+              
+              <!-- Ohne LJ -->
+              <div class="p-4 rounded-xl bg-red-50/70 border border-red-200">
+                <div class="text-xs font-bold text-red-800 flex items-center gap-1.5 font-mono mb-1.5">
+                  <span>✕</span> <span>Bisheriger Alltag (Ohne Entlastung):</span>
+                </div>
+                <p id="service-detail-before" class="text-xs text-slate-700 leading-relaxed">
+                  Kunde ruft 3x während der Baustelle an, spricht vage auf die Mailbox: "Brauche mal ein Angebot für neues Bad". Sie müssen abends 20 Minuten hinterhertelefonieren, Maße fehlen komplett.
+                </p>
+              </div>
+
+              <!-- Mit LJ -->
+              <div class="p-4 rounded-xl bg-emerald-50/80 border border-emerald-300 shadow-sm">
+                <div class="text-xs font-bold text-emerald-800 flex items-center gap-1.5 font-mono mb-1.5">
+                  <span>✓</span> <span>Mit LJ Digital Systems:</span>
+                </div>
+                <p id="service-detail-after" class="text-xs text-slate-800 leading-relaxed font-medium">
+                  Kunde öffnet Ihre Website, wählt "Badsanierung", tippt Raumgröße (14m²) ein, lädt 2 Fotos vom Altbestand hoch und wünscht Rückruf am Dienstag 17 Uhr. Sie haben alle Daten auf einen Blick.
+                </p>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         6. TEAM SHOWCASE (Linus Andler & Jasper Landgraf – Persönlich & Vor Ort)
+         ======================================================================= -->
+    <section id="team" class="py-16 sm:py-24 bg-slate-100/60 border-b border-slate-200">
+      <div class="max-w-6xl mx-auto px-4 sm:px-6">
+        
+        <div class="bg-white rounded-3xl border border-slate-200 shadow-xl overflow-hidden">
+          <div class="grid grid-cols-1 lg:grid-cols-12 items-center">
+            
+            <!-- Linke Textspalte -->
+            <div class="lg:col-span-6 p-8 sm:p-12 lg:p-14 space-y-6">
+              
+              <div class="inline-flex items-center gap-2 py-1 px-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold">
+                <span>🤝</span> <span>Handschlagqualität statt anonymer Agenturen</span>
+              </div>
+
+              <h2 class="text-2xl sm:text-3xl lg:text-4xl font-extrabold text-slate-950 tracking-tight leading-tight">
+                Wir sprechen Ihre Sprache. <br>
+                <span class="text-amber-800">Kein IT-Kauderwelsch</span>, sondern echte Entlastung.
+              </h2>
+
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Wir sind kein anonymes Softwarehaus und keine Callcenter-Agentur. Wir wissen, wie ein echter Arbeitstag aussieht: Wenn der Meister auf der Baustelle steht oder beim Kunden berät, kann er nicht gleichzeitig telefonieren und Kalkulationen tippen.
+              </p>
+
+              <p class="text-sm sm:text-base text-slate-600 leading-relaxed">
+                Genau hier springen wir ein. <strong>Linus Andler &amp; Jasper Landgraf</strong> begleiten Ihren Betrieb persönlich – von der ersten Aufnahme Ihrer Wünsche bis zur fertigen Einrichtung. Erreichbar per E-Mail, über unser Anfrageformular oder direkt vor Ort in der Region.
+              </p>
+
+              <!-- 4 Pfeiler -->
+              <div class="grid grid-cols-2 gap-3 pt-2 text-xs font-semibold text-slate-800">
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span>
+                  <span>Feste Gründerbetreuung</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span>
+                  <span>Vor Ort &amp; Digital</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span>
+                  <span>Einrichtung in wenigen Tagen</span>
+                </div>
+                <div class="flex items-center gap-2">
+                  <span class="text-amber-600 font-bold">✓</span>
+                  <span>100% Verlässlichkeit</span>
+                </div>
+              </div>
+
+              <div class="pt-4">
+                <a
+                  href="#kontakt"
+                  class="bg-slate-900 hover:bg-slate-800 text-white font-bold py-3.5 px-6 rounded-xl shadow-md transition-all inline-flex items-center gap-2 text-xs sm:text-sm"
+                >
+                  <span>Gespräch mit Linus &amp; Jasper vereinbaren</span>
+                  <span>→</span>
+                </a>
+              </div>
+
+            </div>
+
+            <!-- Rechte Bildspalte -->
+            <div class="lg:col-span-6 h-full min-h-[380px] sm:min-h-[480px] bg-slate-900 relative">
+              <img
+                src="assets/team-lj-digital-systems.jpg"
+                alt="Linus Andler und Jasper Landgraf von LJ Digital Systems im Betriebseinsatz"
+                loading="lazy"
+                width="800"
+                height="600"
+                class="w-full h-full object-cover object-center absolute inset-0"
+              />
+              <div class="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent lg:hidden"></div>
+              <div class="absolute bottom-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md border border-white/15 rounded-xl p-3 text-xs text-slate-200">
+                <div class="font-bold text-white">Linus Andler &amp; Jasper Landgraf</div>
+                <div class="text-[11px] text-slate-400">Gründer &amp; Systementwickler LJ Digital Systems</div>
+              </div>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         7. ENTLASTUNGS-RECHNER (Transparente Zahlen & 3 Presets)
+         ======================================================================= -->
+    <section id="entlastungs-rechner" class="py-16 sm:py-24 bg-white border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-12">
+          <div class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-slate-100 border border-slate-300 text-slate-800 text-xs font-bold mb-3 font-mono">
+            <span>ENTLASTUNGS-RECHNER</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            Was bringt Ihnen die Entlastung ganz konkret?
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">
+            Berechnen Sie anhand Ihrer wöchentlichen Anfragen und Bürozeiten, wie viele Stunden Feierabend Sie gewinnen.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-2xl p-6 sm:p-10 shadow-sm">
+          <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center">
+            
+            <!-- Linke Spalte: Presets & Schieberegler -->
+            <div class="lg:col-span-7 space-y-6">
+              
+              <!-- 3 Presets Direkt über den Slidern -->
+              <div>
+                <div class="text-xs font-mono font-bold uppercase tracking-wider text-slate-700 mb-2.5 flex items-center gap-1.5">
+                  <span class="text-amber-600">⚡</span> <span>Typisches Profil laden:</span>
+                </div>
+                <div class="grid grid-cols-1 sm:grid-cols-3 gap-2">
+                  <button
+                    type="button"
+                    onclick="applyRoiPreset('handwerk', this)"
+                    class="roi-preset-btn p-3 rounded-xl border border-amber-500 bg-amber-50 ring-2 ring-amber-400 text-left transition-all cursor-pointer"
+                  >
+                    <div class="font-bold text-slate-900 text-xs">Fachhandwerk &amp; Montage</div>
+                    <div class="text-[11px] font-mono text-amber-800 mt-1 font-semibold">30 Anfr. • 14 Std./Wo.</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onclick="applyRoiPreset('planning', this)"
+                    class="roi-preset-btn p-3 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+                  >
+                    <div class="font-bold text-slate-900 text-xs">Planungs- &amp; Ingenieurbüro</div>
+                    <div class="text-[11px] font-mono text-slate-500 mt-1 font-semibold">15 Anfr. • 18 Std./Wo.</div>
+                  </button>
+
+                  <button
+                    type="button"
+                    onclick="applyRoiPreset('expert', this)"
+                    class="roi-preset-btn p-3 rounded-xl border border-slate-200 bg-white text-left transition-all hover:border-slate-400 cursor-pointer"
+                  >
+                    <div class="font-bold text-slate-900 text-xs">Gutachter &amp; Sachverständige</div>
+                    <div class="text-[11px] font-mono text-slate-500 mt-1 font-semibold">20 Anfr. • 12 Std./Wo.</div>
+                  </button>
+                </div>
+              </div>
+
+              <!-- Slider 1: Anfragen pro Woche -->
+              <div class="space-y-2 pt-2">
+                <div class="flex justify-between items-center text-sm font-bold text-slate-900">
+                  <span>Kundenanfragen pro Woche:</span>
+                  <span id="roi-inquiries-val" class="text-amber-800 font-mono text-base font-extrabold">30</span>
+                </div>
+                <input
+                  type="range"
+                  id="roi-inquiries"
+                  min="5"
+                  max="60"
+                  step="1"
+                  value="30"
+                  oninput="updateRoiCalculator()"
+                  class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                />
+                <div class="flex justify-between text-[11px] text-slate-500 font-mono">
+                  <span>5 Anfragen</span>
+                  <span>30 Anfragen</span>
+                  <span>60 Anfragen</span>
+                </div>
+              </div>
+
+              <!-- Slider 2: Büro- und Dokumentenzeit -->
+              <div class="space-y-2 pt-2">
+                <div class="flex justify-between items-center text-sm font-bold text-slate-900">
+                  <span>Büro- &amp; Angebotsstunden pro Woche:</span>
+                  <span id="roi-hours-val" class="text-amber-800 font-mono text-base font-extrabold">14 Std. / Woche</span>
+                </div>
+                <input
+                  type="range"
+                  id="roi-hours"
+                  min="4"
+                  max="30"
+                  step="1"
+                  value="14"
+                  oninput="updateRoiCalculator()"
+                  class="w-full h-2.5 bg-slate-200 rounded-lg appearance-none cursor-pointer"
+                />
+                <div class="flex justify-between text-[11px] text-slate-500 font-mono">
+                  <span>4 Stunden</span>
+                  <span>16 Stunden</span>
+                  <span>30 Stunden</span>
+                </div>
+              </div>
+
+            </div>
+
+            <!-- Rechte Spalte: Berechnetes Ergebnis -->
+            <div class="lg:col-span-5 bg-white border border-slate-200 rounded-xl p-6 shadow-sm space-y-5">
+              <div class="text-xs font-mono font-bold uppercase text-slate-500 tracking-wider">Errechneter Mehrwert</div>
+              
+              <div>
+                <div class="text-xs text-slate-500 font-semibold uppercase">Gewonnene Feierabende</div>
+                <div id="roi-result-hours" class="text-3xl font-extrabold text-amber-800 font-mono mt-1">~8.4 Std.</div>
+                <div class="text-xs text-slate-500 mt-0.5">weniger Büroarbeit jede Woche</div>
+              </div>
+
+              <div class="pt-3 border-t border-slate-100">
+                <div class="text-xs text-slate-500 font-semibold uppercase">Rechnerischer Entlastungswert</div>
+                <div id="roi-result-value" class="text-2xl font-extrabold text-slate-900 font-mono mt-1">~714 €</div>
+                <div class="text-xs text-slate-500 mt-0.5">kalkulatorischer Inhaber-Wert / Woche</div>
+              </div>
+
+              <div class="p-3 rounded-lg bg-slate-50 border border-slate-200 text-xs font-semibold text-slate-700">
+                <span id="roi-result-tier">Empfehlung: Baustein 2 (Kalkulations- &amp; Angebots-Assistent)</span>
+              </div>
+
+              <a
+                href="#kontakt"
+                class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold text-xs sm:text-sm py-3 px-4 rounded-xl shadow-md transition-all flex items-center justify-center gap-2"
+              >
+                <span>Dieses Potenzial nutzen</span>
+                <span>→</span>
+              </a>
+            </div>
+
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         8. 3-SCHRITTE ABLAUF (Unkompliziert & Verlässlich)
+         ======================================================================= -->
+    <section id="ablauf" class="py-16 sm:py-24 bg-slate-100/60 border-b border-slate-200">
+      <div class="max-w-5xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-2xl mx-auto mb-14">
+          <div class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-slate-200 border border-slate-300 text-slate-800 text-xs font-bold mb-3 font-mono">
+            <span>EINFACHER ABLAUF</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            In 3 Schritten zu Ihrem System
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">
+            Keine zeitraubenden Workshops, keine dicken Handbücher. Wir machen es Ihnen so einfach wie möglich:
+          </p>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+          
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-mono font-bold flex items-center justify-center text-sm mb-4">
+              01
+            </div>
+            <h3 class="text-base font-bold text-slate-900">10 Min. Ersteinschätzung</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Kurzer, unkomplizierter Austausch per E-Mail oder vor Ort. Wir hören zu, verstehen Ihren Betrieb und prüfen ohne Fachchinesisch, was für Sie Sinn macht.
+            </p>
+          </div>
+
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="w-10 h-10 rounded-xl bg-amber-600 text-white font-mono font-bold flex items-center justify-center text-sm mb-4">
+              02
+            </div>
+            <h3 class="text-base font-bold text-slate-900">Auftritt unverbindlich prüfen</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Wir werfen einen Blick auf Ihre aktuelle Website und Ihren Anfrage-Ablauf: Was bremst Sie aus? Wo gehen Interessenten verloren?
+            </p>
+          </div>
+
+          <div class="bg-white p-6 sm:p-7 rounded-2xl border border-slate-200 shadow-sm relative">
+            <div class="w-10 h-10 rounded-xl bg-slate-900 text-white font-mono font-bold flex items-center justify-center text-sm mb-4">
+              03
+            </div>
+            <h3 class="text-base font-bold text-slate-900">Schlüsselfertige Einrichtung</h3>
+            <p class="text-xs text-slate-600 mt-2 leading-relaxed">
+              Linus &amp; Jasper richten alles ein. Sie müssen sich nicht in fremde Software einarbeiten und sparen ab Woche 1 wertvolle Zeit.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         9. KUNDENSTIMME / PRAXIS-ZITAT
+         ======================================================================= -->
+    <section class="py-14 bg-slate-900 text-slate-100">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6 text-center">
+        <blockquote class="text-lg sm:text-xl md:text-2xl font-semibold leading-relaxed tracking-tight text-slate-200">
+          „Ich wollte einfach jemanden, der mir zuhört, weiß worauf es auf der Baustelle ankommt und mir die Sache mit der Website und den Kundenanfragen komplett abnimmt. Genau so hat es mit Linus &amp; Jasper funktioniert.“
+        </blockquote>
+        <div class="mt-4 text-xs sm:text-sm font-mono text-amber-400 font-bold">
+          — Thomas K., Inhaber Schreinerei &amp; Innenausbau (48 Jahre)
+        </div>
+      </div>
+    </section>
+
+    <!-- =======================================================================
+         10. KONTAKT- & TERMINANFRAGE (#kontakt)
+         ======================================================================= -->
+    <section id="kontakt" class="py-16 sm:py-24 bg-white">
+      <div class="max-w-4xl mx-auto px-4 sm:px-6">
+        
+        <div class="text-center max-w-xl mx-auto mb-10">
+          <div class="inline-flex items-center gap-1.5 py-1 px-3 rounded-full bg-amber-100 border border-amber-300 text-amber-900 text-xs font-bold mb-3 font-mono">
+            <span>UNVERBINDLICHE ANFRAGE</span>
+          </div>
+          <h2 class="text-3xl sm:text-4xl font-extrabold text-slate-950 tracking-tight">
+            Nehmen wir uns 10 Minuten Zeit für Ihren Betrieb.
+          </h2>
+          <p class="text-slate-600 mt-2 text-sm sm:text-base">
+            Sagen Sie uns kurz, worum es geht. Wir melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.
+          </p>
+        </div>
+
+        <div class="bg-slate-50 border border-slate-200 rounded-3xl p-6 sm:p-10 shadow-lg">
+          
+          <form onsubmit="handleContactSubmit(event)" class="space-y-5">
+            
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contact-name" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                  Ihr Name / Betrieb *
+                </label>
+                <input
+                  type="text"
+                  id="contact-name"
+                  placeholder="z. B. Meisterbetrieb Becker"
+                  required
+                  class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+
+              <div>
+                <label for="contact-branch" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                  Gewerk / Branche
+                </label>
+                <select
+                  id="contact-branch"
+                  class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="Fachhandwerk">Fachhandwerk &amp; Montage</option>
+                  <option value="Planungsbüro">Planungs- &amp; Ingenieurbüro</option>
+                  <option value="Gutachter">Gutachter &amp; Sachverständige</option>
+                  <option value="Spezialdienstleistung">Technischer Dienstleister</option>
+                  <option value="Sonstiges">Sonstiger Fachbetrieb</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="grid grid-cols-1 sm:grid-cols-2 gap-5">
+              <div>
+                <label for="contact-email" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                  Ihre E-Mail-Adresse für unsere Rückmeldung *
+                </label>
+                <input
+                  type="email"
+                  id="contact-email"
+                  placeholder="name@ihr-betrieb.de"
+                  required
+                  class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                />
+              </div>
+
+              <div>
+                <label for="contact-time" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                  Gewünschtes Rückmelde-Zeitfenster
+                </label>
+                <select
+                  id="contact-time"
+                  class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+                >
+                  <option value="Schnellstmöglich per E-Mail">Schnellstmöglich per E-Mail</option>
+                  <option value="Vormittags (08:00 - 12:00 Uhr)">Vormittags (08:00 - 12:00 Uhr)</option>
+                  <option value="Nachmittags (12:00 - 17:00 Uhr)">Nachmittags (12:00 - 17:00 Uhr)</option>
+                  <option value="Feierabend (ab 17:00 Uhr)" selected>Feierabend (ab 17:00 Uhr)</option>
+                </select>
+              </div>
+            </div>
+
+            <div>
+              <label for="contact-note" class="block text-xs font-bold text-slate-800 uppercase tracking-wider mb-1.5">
+                Kurze Notiz: Wo drückt aktuell der Schuh? (Optional)
+              </label>
+              <textarea
+                id="contact-note"
+                rows="3"
+                placeholder="z. B. Telefon klingelt zu oft, Website ist veraltet, Angebote dauern zu lange..."
+                class="w-full py-3 px-4 rounded-xl border border-slate-300 bg-white text-slate-900 text-sm focus:outline-none focus:ring-2 focus:ring-amber-500"
+              ></textarea>
+            </div>
+
+            <div class="pt-2">
+              <button
+                type="submit"
+                id="contact-submit-btn"
+                class="w-full bg-slate-900 hover:bg-slate-800 text-white font-bold py-4 px-6 rounded-xl shadow-md transition-all text-sm flex items-center justify-center gap-2 cursor-pointer"
+              >
+                <span>Unverbindliche Ersteinschätzung anfragen</span>
+                <span>→</span>
+              </button>
+              <div class="text-[11px] text-center text-slate-500 mt-2.5">
+                🔒 Kein Spam, kein Verkaufsdruck. Ihre Daten werden streng vertraulich behandelt.
+              </div>
+            </div>
+
+          </form>
+
+          <!-- Bestätigungs-Meldung -->
+          <div id="contact-feedback-box" class="hidden p-6 sm:p-8 rounded-2xl bg-white border border-emerald-300 text-center shadow-md">
+            <div class="w-12 h-12 rounded-full bg-emerald-100 text-emerald-700 font-bold text-xl flex items-center justify-center mx-auto mb-3">
+              ✓
+            </div>
+            <h4 class="text-xl font-bold text-slate-900">Vielen Dank! Ihre Anfrage ist direkt eingegangen.</h4>
+            <p id="contact-feedback-desc" class="text-sm text-slate-600 mt-2 max-w-lg mx-auto leading-relaxed">
+              Wir haben Ihre Angaben unter <strong class="text-amber-600 font-mono">kontakt@lj-digital-systems.de</strong> erhalten und melden uns verlässlich zum gewünschten Zeitfenster bei Ihnen.
+            </p>
+          </div>
+
+        </div>
+
+      </div>
+    </section>
+  </main>
+
+  <!-- =========================================================================
+       11. FOOTER (Rechtliches & Handwerkliche Transparenz)
+       ========================================================================= -->
+  <footer class="bg-slate-950 text-slate-400 py-12 border-t border-slate-800 text-xs">
+    <div class="max-w-6xl mx-auto px-4 sm:px-6">
+      <div class="flex flex-col md:flex-row items-center justify-between gap-6 text-center md:text-left">
+        
+        <div>
+          <div class="font-bold text-white text-sm flex items-center justify-center md:justify-start gap-2">
+            <span>LJ Digital Systems</span>
+            <span class="text-amber-500 font-mono">•</span>
+            <span class="text-slate-400 font-normal">Linus Andler &amp; Jasper Landgraf</span>
+          </div>
+          <div class="text-slate-500 mt-1">
+            Bodenständige Web- und Entlastungssysteme für Fachbetriebe &amp; Dienstleister.
+          </div>
+        </div>
+
+        <div class="flex items-center gap-6 font-semibold">
+          <a href="mailto:kontakt@lj-digital-systems.de" class="hover:text-white transition-colors">
+            kontakt@lj-digital-systems.de
+          </a>
+          <a href="impressum.html" class="hover:text-white transition-colors underline decoration-slate-600">
+            Impressum
+          </a>
+          <a href="datenschutz.html" class="hover:text-white transition-colors underline decoration-slate-600">
+            Datenschutz
+          </a>
+        </div>
+
+      </div>
+
+      <div class="mt-8 pt-6 border-t border-slate-900 text-[11px] text-slate-600 flex flex-col sm:flex-row items-center justify-between gap-2 text-center sm:text-left">
+        <div>© 2026 LJ Digital Systems. Alle Rechte vorbehalten.</div>
+        <div class="font-mono">Region Rhein-Main &amp; Bundesweit</div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Application Logic -->
+  <script src="app.js"></script>
+</body>
+</html>
