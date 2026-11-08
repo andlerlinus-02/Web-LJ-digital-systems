@@ -92,6 +92,20 @@
       border-color: #cbd5e1;
       box-shadow: 0 10px 30px -4px rgba(15, 23, 42, 0.08);
     }
+      /* Responsive Hero Background */
+    @media (max-width: 768px) {
+      .hero-gradient-overlay {
+        background: linear-gradient(
+          180deg, 
+          rgba(248, 250, 252, 0.97) 0%, 
+          rgba(248, 250, 252, 0.92) 55%, 
+          rgba(248, 250, 252, 0.65) 100%
+        ) !important;
+      }
+      .hero-bg-layer {
+        background-position: 65% center !important;
+      }
+    }
   </style>
   <script>
     // Sofortiger Fallback-Redirect für alte Anker-Links (#live-simulation -> #betriebs-check)
@@ -177,17 +191,45 @@
   </header>
 
   <main>
-    <!-- =======================================================================
-         3. EYECATCHER HERO-BEREICH (Echtes Foto, Klarheit & Vertrauen)
+        <!-- =======================================================================
+         3. EYECATCHER HERO-BEREICH (Transparentes Hintergrund-Image mit Fokus auf Linus & Jasper)
          ======================================================================= -->
-    <section class="relative bg-white border-b border-slate-200 overflow-hidden py-14 sm:py-20 lg:py-24">
-      <div class="max-w-6xl mx-auto px-4 sm:px-6">
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
+    <section class="hero-section relative overflow-hidden bg-slate-100 border-b border-slate-200 min-h-[85vh] lg:min-h-[88vh] flex items-center py-12 sm:py-16 lg:py-20">
+      
+      <!-- 1. Transparentes Hintergrundbild (Fokus auf Linus & Jasper in der Mitte) -->
+      <div 
+        class="hero-bg-layer absolute inset-0 pointer-events-none z-0"
+        style="
+          background-image: url('assets/team-lj-digital-systems.jpg');
+          background-size: cover;
+          background-position: 72% center;
+          opacity: 0.84;
+        "
+      ></div>
+
+      <!-- 2. Sanfter Verlauf: Text links hochgradig lesbar, Linus & Jasper rechts voll sichtbar -->
+      <div 
+        class="hero-gradient-overlay absolute inset-0 pointer-events-none z-10"
+        style="
+          background: linear-gradient(
+            90deg, 
+            rgba(248, 250, 252, 0.98) 0%, 
+            rgba(248, 250, 252, 0.94) 34%, 
+            rgba(248, 250, 252, 0.80) 50%, 
+            rgba(248, 250, 252, 0.20) 72%, 
+            rgba(248, 250, 252, 0.05) 88%, 
+            rgba(248, 250, 252, 0.0) 100%
+          );
+        "
+      ></div>
+
+      <!-- 3. Inhalt: Textbox links, freier Blick auf Linus & Jasper rechts -->
+      <div class="relative z-20 max-w-6xl mx-auto px-4 sm:px-6 w-full">
+        <div class="max-w-xl lg:max-w-[620px]">
           
-          <!-- Linke Spalte: Kernaussage & Nutzen -->
-          <div class="lg:col-span-7 space-y-6">
+          <div class="bg-white/85 backdrop-blur-md p-6 sm:p-9 lg:p-10 rounded-2xl border border-white/90 shadow-[0_12px_40px_-10px_rgba(15,23,42,0.12)] space-y-6">
             
-            <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-lg bg-amber-50 border border-amber-200 text-amber-900 text-xs font-semibold">
+            <div class="inline-flex items-center gap-2 py-1.5 px-3 rounded-lg bg-amber-50/90 border border-amber-200 text-amber-900 text-xs font-semibold">
               <span class="w-2 h-2 rounded-full bg-amber-600"></span>
               <span>Web &amp; Entlastung für Fachbetriebe &amp; Dienstleister</span>
             </div>
@@ -196,7 +238,7 @@
               Schluss mit Telefonstress bei der Arbeit und <span class="text-amber-800 underline decoration-amber-300 decoration-4">Büro-Schichten</span> nach Feierabend.
             </h1>
 
-            <p class="text-base sm:text-lg text-slate-600 leading-relaxed font-normal">
+            <p class="text-base sm:text-lg text-slate-700 leading-relaxed font-normal">
               Wir bringen Ihren Betrieb online auf den Stand der Zeit. Mit einer modernen Website und einem digitalen Vorzimmer, das Anfragen automatisch vorfiltert und Angebote vorbereitet – ohne Fachchinesisch, persönlich betreut von Linus &amp; Jasper.
             </p>
 
@@ -212,14 +254,14 @@
 
               <a
                 href="#kontakt"
-                class="bg-slate-100 hover:bg-slate-200 text-slate-800 font-bold py-3.5 px-6 rounded-xl border border-slate-300 transition-all text-center flex items-center justify-center"
+                class="bg-white hover:bg-slate-100 text-slate-800 font-bold py-3.5 px-6 rounded-xl border border-slate-300 transition-all text-center flex items-center justify-center shadow-sm"
               >
                 <span>Kostenlose Potenzialanalyse</span>
               </a>
             </div>
 
             <!-- 3 Trust Bullets (Bodenständig) -->
-            <div class="pt-4 border-t border-slate-100 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-600">
+            <div class="pt-4 border-t border-slate-200/80 grid grid-cols-1 sm:grid-cols-3 gap-3 text-xs text-slate-700">
               <div class="flex items-center gap-2 font-medium">
                 <span class="text-amber-600 font-bold text-sm">✓</span>
                 <span>Feste Gründerbetreuung</span>
@@ -236,41 +278,14 @@
 
           </div>
 
-          <!-- Rechte Spalte: Großformatiges, authentisches Foto (Linus & Jasper im Betrieb) -->
-          <div class="lg:col-span-5">
-            <div class="relative rounded-2xl overflow-hidden border border-slate-300 shadow-xl bg-slate-900 group">
-              <img
-                src="assets/team-lj-digital-systems.jpg"
-                alt="LJ Digital Systems Team - Linus Andler & Jasper Landgraf im Einsatz"
-                loading="eager"
-                width="800"
-                height="600"
-                class="w-full h-[380px] sm:h-[440px] object-cover object-center group-hover:scale-[1.02] transition-transform duration-500"
-              />
-              
-              <!-- Floating Pill Oben -->
-              <div class="absolute top-4 left-4 right-4 bg-slate-900/90 backdrop-blur-md border border-white/15 rounded-xl py-2 px-3.5 text-xs text-slate-200 flex items-center justify-between">
-                <div class="flex items-center gap-2">
-                  <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
-                  <span class="font-semibold text-white">Linus &amp; Jasper vor Ort</span>
-                </div>
-                <span class="font-mono text-[11px] text-amber-400 font-bold">100% Persönlich</span>
-              </div>
-
-              <!-- Floating Pill Unten -->
-              <div class="absolute bottom-4 left-4 right-4 bg-white/95 backdrop-blur-md border border-slate-200 rounded-xl p-3 shadow-lg flex items-center justify-between">
-                <div>
-                  <div class="text-[11px] font-bold text-slate-500 uppercase tracking-wider font-mono">Wöchentliche Entlastung</div>
-                  <div class="text-sm font-extrabold text-slate-900 font-mono">~4 bis 8 Std. Feierabend gerettet</div>
-                </div>
-                <div class="h-8 w-8 rounded-full bg-amber-100 flex items-center justify-center text-amber-800 font-bold text-sm">
-                  ⚡
-                </div>
-              </div>
-            </div>
-          </div>
-
         </div>
+
+        <!-- Dezente Status-Badge auf Desktop rechts (Linus & Jasper) -->
+        <div class="hidden xl:inline-flex absolute top-4 right-6 items-center gap-2 bg-slate-900/85 backdrop-blur-md border border-white/20 text-white text-xs font-semibold py-2 px-3.5 rounded-xl shadow-lg">
+          <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+          <span>Linus &amp; Jasper im Einsatz vor Ort</span>
+        </div>
+
       </div>
     </section>
 
