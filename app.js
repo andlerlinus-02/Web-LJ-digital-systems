@@ -1,7 +1,7 @@
 /**
  * LJ Digital Systems - Website Application Script
  * Authentic B2B Digital Systems for Owner-Run Businesses & Craftsmen
- * Founders: Linus Andler & Jasper Landgraf
+ * Founders: Linus Andler & Jasper Ger
  * Contact: kontakt@lj-digital-systems.de
  */
 
@@ -380,7 +380,7 @@ async function handleContactSubmit(event) {
     feedbackDesc.innerHTML = `
       Wir haben Ihre Angaben für <strong>${nameVal || 'Ihren Betrieb'}</strong> unter 
       <strong class="text-amber-600 font-mono">kontakt@lj-digital-systems.de</strong> erhalten.<br>
-      Linus Andler oder Jasper Landgraf melden sich verlässlich zum gewünschten Zeitfenster 
+      Linus Andler oder Jasper Ger melden sich verlässlich zum gewünschten Zeitfenster 
       <strong>(${timeVal})</strong> per E-Mail an <strong>${emailVal}</strong> bei Ihnen zurück.
     `;
   }
