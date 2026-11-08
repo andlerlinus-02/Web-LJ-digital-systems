@@ -203,9 +203,9 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
     capList.innerHTML = tier.capabilities
       .map(
         (cap) => `
-        <li class="flex items-start gap-2.5 text-sm text-slate-300 animate-fade-slide">
-          <span class="mt-0.5 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-blue-500/20 text-sky-400">
-            <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+        <li class="flex items-start gap-2.5 text-xs text-slate-300 animate-fade-slide">
+          <span class="mt-0.5 flex h-4 w-4 shrink-0 items-center justify-center rounded-full bg-amber-500/20 text-amber-400">
+            <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
               <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
             </svg>
           </span>
@@ -224,15 +224,15 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
     const isConnected = tier.connectedNodes.includes(nodeId);
     if (isConnected) {
       el.classList.remove('opacity-40', 'border-slate-800', 'bg-slate-900/40');
-      el.classList.add('border-sky-500/50', 'bg-blue-950/30', 'shadow-lg', 'shadow-sky-950/40');
+      el.classList.add('border-amber-600/50', 'bg-slate-900/80', 'shadow-md');
       if (statusEl) {
-        statusEl.innerHTML = `<span class="h-2 w-2 rounded-full bg-emerald-400 pulse-node"></span><span class="text-emerald-400 font-medium">Aktiv verbunden</span>`;
+        statusEl.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-emerald-400 pulse-node"></span><span class="text-emerald-400 font-medium">Aktiv angebunden</span>`;
       }
     } else {
       el.classList.add('opacity-40', 'border-slate-800', 'bg-slate-900/40');
-      el.classList.remove('border-sky-500/50', 'bg-blue-950/30', 'shadow-lg', 'shadow-sky-950/40');
+      el.classList.remove('border-amber-600/50', 'bg-slate-900/80', 'shadow-md');
       if (statusEl) {
-        statusEl.innerHTML = `<span class="h-2 w-2 rounded-full bg-slate-600"></span><span class="text-slate-500">Ab höherer Stufe</span>`;
+        statusEl.innerHTML = `<span class="h-1.5 w-1.5 rounded-full bg-slate-600"></span><span class="text-slate-500">Optional</span>`;
       }
     }
   });
@@ -247,10 +247,10 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
           <button
             type="button"
             onclick="selectSimulatorTier('${tierKey}', ${idx})"
-            class="px-3 py-1.5 rounded-lg text-xs font-medium transition-all ${
+            class="px-2.5 py-1 rounded text-xs font-medium transition-all ${
               idx === scenarioIdx
-                ? 'bg-sky-500/20 text-sky-300 border border-sky-500/40'
-                : 'bg-slate-800/70 text-slate-400 border border-slate-700/60 hover:text-slate-200'
+                ? 'bg-amber-500/20 text-amber-300 border border-amber-500/40'
+                : 'bg-slate-800/80 text-slate-400 border border-slate-700/60 hover:text-slate-200'
             }"
           >
             ${sc.name}
@@ -258,7 +258,7 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
         )
         .join('');
     } else {
-      scenarioSwitcher.innerHTML = `<span class="text-xs text-sky-400 font-medium">${tier.scenarios[0].name}</span>`;
+      scenarioSwitcher.innerHTML = `<span class="text-xs text-amber-400 font-medium">${tier.scenarios[0].name}</span>`;
     }
   }
 
@@ -270,20 +270,20 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
       <div class="flex flex-col gap-3 animate-fade-slide">
         <!-- Trigger / Input -->
         <div class="flex items-start gap-3">
-          <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-xs font-bold text-slate-300">
-            IN
+          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded bg-slate-800 border border-slate-700 text-[10px] font-bold text-slate-300">
+            EIN
           </div>
-          <div class="rounded-2xl rounded-tl-none bg-slate-800/90 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm text-slate-200 max-w-[90%]">
+          <div class="rounded-xl rounded-tl-none bg-slate-800/90 border border-slate-700/80 px-3.5 py-2 text-xs text-slate-200 max-w-[90%]">
             ${scenario.customerMsg}
           </div>
         </div>
 
         <!-- Agent First Action -->
         <div class="flex items-start justify-end gap-3">
-          <div class="rounded-2xl rounded-tr-none bg-gradient-to-br from-blue-600/90 to-indigo-600/90 border border-sky-400/30 px-4 py-2.5 text-xs sm:text-sm text-white max-w-[90%] shadow-md">
-            <div class="flex items-center gap-1.5 text-[11px] font-semibold text-sky-200 mb-1">
-              <span class="h-1.5 w-1.5 rounded-full bg-emerald-300"></span>
-              LJ Agent (${tier.badge.split('•')[0].trim()})
+          <div class="rounded-xl rounded-tr-none bg-[#0f2852] border border-amber-600/30 px-3.5 py-2 text-xs text-white max-w-[90%] shadow-md">
+            <div class="flex items-center gap-1.5 text-[10px] font-semibold text-amber-300 mb-0.5">
+              <span class="h-1.5 w-1.5 rounded-full bg-emerald-400"></span>
+              LJ System (${tier.badge.split('•')[0].trim()})
             </div>
             ${scenario.agentReply}
           </div>
@@ -291,22 +291,22 @@ function selectSimulatorTier(tierKey, scenarioIdx = 0) {
 
         <!-- Follow-up -->
         <div class="flex items-start gap-3">
-          <div class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-slate-800 border border-slate-700 text-xs font-bold text-slate-300">
-            IN
+          <div class="flex h-7 w-7 shrink-0 items-center justify-center rounded bg-slate-800 border border-slate-700 text-[10px] font-bold text-slate-300">
+            EIN
           </div>
-          <div class="rounded-2xl rounded-tl-none bg-slate-800/90 border border-slate-700/80 px-4 py-2.5 text-xs sm:text-sm text-slate-200 max-w-[90%]">
+          <div class="rounded-xl rounded-tl-none bg-slate-800/90 border border-slate-700/80 px-3.5 py-2 text-xs text-slate-200 max-w-[90%]">
             ${scenario.customerFollowup}
           </div>
         </div>
 
         <!-- Agent Final Resolution -->
         <div class="flex items-start justify-end gap-3">
-          <div class="rounded-2xl rounded-tr-none bg-gradient-to-br from-emerald-950/90 to-slate-900/95 border border-emerald-500/40 px-4 py-2.5 text-xs sm:text-sm text-emerald-100 max-w-[90%] shadow-md">
-            <div class="flex items-center gap-1.5 text-[11px] font-semibold text-emerald-400 mb-1">
-              <svg class="h-3.5 w-3.5" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
+          <div class="rounded-xl rounded-tr-none bg-slate-900 border border-emerald-500/40 px-3.5 py-2 text-xs text-emerald-100 max-w-[90%] shadow-md">
+            <div class="flex items-center gap-1.5 text-[10px] font-semibold text-emerald-400 mb-0.5">
+              <svg class="h-3 w-3" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2.5">
                 <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
               </svg>
-              Automatisch ausgeführt
+              Automatisch erledigt
             </div>
             ${scenario.agentFinal}
           </div>
@@ -1010,10 +1010,10 @@ function goToQaStep(stepNum) {
     }
     if (dotEl) {
       if (i <= stepNum) {
-        dotEl.classList.add('bg-blue-600', 'text-white');
+        dotEl.classList.add('bg-[#0f2852]', 'text-white');
         dotEl.classList.remove('bg-slate-200', 'text-slate-600');
       } else {
-        dotEl.classList.remove('bg-blue-600', 'text-white');
+        dotEl.classList.remove('bg-[#0f2852]', 'text-white');
         dotEl.classList.add('bg-slate-200', 'text-slate-600');
       }
     }

@@ -1,14 +1,27 @@
 /* ==========================================================================
-   LJ Digital Systems — High-Trust Tech Stylesheet (Perfected Edition)
+   LJ Digital Systems — Authentic Craftsmanship & Engineering Stylesheet
+   Grounded, high-trust, bespoke development (No generic AI/neon agent tropes)
    ========================================================================== */
 
 :root {
-  --bg-dark: #070b14;
-  --bg-dark-elevated: #0f172a;
+  /* Authentische, handfeste Farbpalette: Deep Prussian Navy & Warm Craft Amber */
+  --bg-dark: #0c1829;
+  --bg-dark-elevated: #132238;
   --bg-light: #f8fafc;
-  --accent-primary: #2563eb;
-  --accent-indigo: #4f46e5;
-  --accent-cyan: #06b6d4;
+  --bg-surface: #ffffff;
+
+  --brand-navy: #0f2852;          /* Fundiertes, verlässliches Preußischblau / Marine */
+  --brand-navy-dark: #091526;
+  --brand-navy-hover: #17386e;
+
+  --brand-amber: #b45309;         /* Warmer, erdiger Bernstein/Bronze-Ton (Handwerk & Persönlichkeit) */
+  --brand-amber-light: #d97706;
+  --brand-amber-bg: #fffbeb;
+
+  --brand-sage: #15803d;          /* Seriöses Tannengrün für Bestätigungen / Häkchen */
+  --brand-slate: #334155;
+  --border-subtle: #e2e8f0;
+  --border-card: #cbd5e1;
 }
 
 html {
@@ -18,7 +31,9 @@ html {
 
 body {
   overflow-x: hidden;
-  selection-background-color: #2563eb;
+  background-color: #f8fafc;
+  color: #0f172a;
+  selection-background-color: #0f2852;
   selection-color: #ffffff;
 }
 
@@ -26,216 +41,82 @@ body {
   font-family: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 }
 
-/* Subtle tech grid background for dark sections */
+/* Subtiler, seriöser Architektur-Rasterhintergrund (keine Neon-Kringel) */
 .bg-tech-grid-dark {
-  background-color: #070b14;
+  background-color: #0c1829;
   background-image: 
-    radial-gradient(at 15% 15%, rgba(37, 99, 235, 0.16) 0px, transparent 45%),
-    radial-gradient(at 85% 25%, rgba(79, 70, 229, 0.14) 0px, transparent 45%),
-    radial-gradient(at 50% 85%, rgba(6, 182, 212, 0.10) 0px, transparent 50%),
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
-  background-size: 100% 100%, 100% 100%, 100% 100%, 48px 48px, 48px 48px;
+    radial-gradient(at 15% 15%, rgba(30, 58, 138, 0.22) 0px, transparent 55%),
+    radial-gradient(at 85% 85%, rgba(180, 83, 9, 0.10) 0px, transparent 50%),
+    linear-gradient(to right, rgba(255, 255, 255, 0.035) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.035) 1px, transparent 1px);
+  background-size: 100% 100%, 100% 100%, 40px 40px, 40px 40px;
 }
 
 .bg-tech-grid-light {
   background-color: #f8fafc;
   background-image:
-    linear-gradient(to right, rgba(15, 23, 42, 0.035) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(15, 23, 42, 0.035) 1px, transparent 1px);
-  background-size: 48px 48px;
+    linear-gradient(to right, rgba(15, 23, 42, 0.03) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(15, 23, 42, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
 }
 
-/* Glassmorphism surfaces */
+/* Glassmorphism surfaces: dezent & warm */
 .glass-dark {
-  background: rgba(15, 23, 42, 0.75);
+  background: rgba(12, 24, 41, 0.88);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
   border: 1px solid rgba(255, 255, 255, 0.09);
 }
 
-.glass-dark-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+.frosted-glass-box {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px) saturate(130%);
+  -webkit-backdrop-filter: blur(12px) saturate(130%);
+  border: 1px solid rgba(226, 232, 240, 0.9);
+  box-shadow: 0 12px 32px -8px rgba(15, 23, 42, 0.06);
+  border-radius: 14px;
 }
 
-.glass-dark-hover:hover {
-  background: rgba(30, 41, 59, 0.85);
-  border-color: rgba(56, 189, 248, 0.35);
-  transform: translateY(-3px);
-  box-shadow: 0 20px 40px -15px rgba(2, 132, 199, 0.2);
+.frosted-glass-dark {
+  background: rgba(15, 28, 48, 0.82);
+  backdrop-filter: blur(16px) saturate(130%);
+  -webkit-backdrop-filter: blur(16px) saturate(130%);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 18px 45px -10px rgba(0, 0, 0, 0.4);
+  border-radius: 16px;
 }
 
-.card-light-hover {
-  transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.card-light-hover:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 20px 35px -10px rgba(15, 23, 42, 0.08);
-}
-
-/* Gradient text */
+/* Subtile, solide Textfarben */
 .text-gradient-tech {
-  background: linear-gradient(135deg, #60a5fa 0%, #38bdf8 45%, #818cf8 100%);
+  background: linear-gradient(135deg, #ffffff 0%, #e2e8f0 60%, #f59e0b 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-.text-gradient-dark {
-  background: linear-gradient(135deg, #1e40af 0%, #2563eb 50%, #4f46e5 100%);
+.text-gradient-navy {
+  background: linear-gradient(135deg, #0f2852 0%, #1e3a8a 65%, #b45309 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
 }
 
-/* Animated pulse ring for active nodes */
+/* Ruhiger, dezenter Status-Puls (Tannengrün statt Neon-Cyan) */
 @keyframes pulse-ring {
   0% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0.6);
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0.45);
   }
   70% {
     transform: scale(1);
-    box-shadow: 0 0 0 10px rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 7px rgba(22, 163, 74, 0);
   }
   100% {
     transform: scale(0.95);
-    box-shadow: 0 0 0 0 rgba(56, 189, 248, 0);
+    box-shadow: 0 0 0 0 rgba(22, 163, 74, 0);
   }
 }
 
 .pulse-node {
-  animation: pulse-ring 2.2s infinite;
-}
-
-/* Smooth fade-in animation for simulation steps */
-@keyframes fadeSlideUp {
-  from {
-    opacity: 0;
-    transform: translateY(8px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-.animate-fade-slide {
-  animation: fadeSlideUp 0.32s cubic-bezier(0.16, 1, 0.3, 1) forwards;
-}
-
-/* Scroll reveal animations */
-.reveal-on-scroll {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity 0.6s cubic-bezier(0.16, 1, 0.3, 1), transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
-}
-
-.reveal-on-scroll.revealed {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* Custom Range Slider for ROI Calculator */
-input[type='range'].lj-slider {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 100%;
-  height: 8px;
-  border-radius: 9999px;
-  background: #1e293b;
-  outline: none;
-  border: 1px solid rgba(255, 255, 255, 0.1);
-}
-
-input[type='range'].lj-slider::-webkit-slider-thumb {
-  -webkit-appearance: none;
-  appearance: none;
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #38bdf8, #2563eb);
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-  transition: transform 0.15s ease;
-}
-
-input[type='range'].lj-slider::-webkit-slider-thumb:hover {
-  transform: scale(1.12);
-}
-
-input[type='range'].lj-slider::-moz-range-thumb {
-  width: 22px;
-  height: 22px;
-  border-radius: 50%;
-  background: linear-gradient(135deg, #38bdf8, #2563eb);
-  cursor: pointer;
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 12px rgba(56, 189, 248, 0.6);
-}
-
-/* Custom scrollbar for terminal & chat widget */
-.custom-scrollbar::-webkit-scrollbar {
-  width: 6px;
-  height: 6px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-track {
-  background: rgba(15, 23, 42, 0.3);
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb {
-  background: rgba(100, 116, 139, 0.4);
-  border-radius: 9999px;
-}
-
-.custom-scrollbar::-webkit-scrollbar-thumb:hover {
-  background: rgba(148, 163, 184, 0.6);
-}
-
-/* Tier button active state */
-.tier-tab-active {
-  background: linear-gradient(135deg, rgba(37, 99, 235, 0.25) 0%, rgba(79, 70, 229, 0.25) 100%);
-  border-color: #38bdf8 !important;
-  box-shadow: 0 0 25px -5px rgba(56, 189, 248, 0.3);
-}
-
-/* Topic chip active state in contact form */
-.topic-chip-active {
-  background-color: #2563eb !important;
-  color: #ffffff !important;
-  border-color: #3b82f6 !important;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.35);
-}
-
-/* Time slot active state */
-.slot-chip-active {
-  background-color: rgba(37, 99, 235, 0.25) !important;
-  border-color: #38bdf8 !important;
-  color: #ffffff !important;
-}
-
-/* ==========================================================================
-   Linus Structural Aesthetics: Frosted Glass, Q&A Game & Service Tabs
-   ========================================================================== */
-
-/* Linus-inspired Frosted Glass Text Container */
-.frosted-glass-box {
-  background: rgba(255, 255, 255, 0.94);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(226, 232, 240, 0.85);
-  box-shadow: 0 16px 40px -10px rgba(15, 23, 42, 0.08);
-  border-radius: 16px;
-}
-
-.frosted-glass-dark {
-  background: rgba(15, 23, 42, 0.78);
-  backdrop-filter: blur(16px) saturate(140%);
-  -webkit-backdrop-filter: blur(16px) saturate(140%);
-  border: 1px solid rgba(255, 255, 255, 0.12);
-  box-shadow: 0 20px 50px -12px rgba(0, 0, 0, 0.5);
-  border-radius: 18px;
+  animation: pulse-ring 2.4s infinite;
 }
 
 /* Q&A Interactive Wizard Options */
@@ -243,85 +124,162 @@ input[type='range'].lj-slider::-moz-range-thumb {
   position: relative;
   background: #ffffff;
   border: 2px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 20px 22px;
+  border-radius: 12px;
+  padding: 18px 20px;
   cursor: pointer;
-  transition: all 0.22s cubic-bezier(0.16, 1, 0.3, 1);
-  box-shadow: 0 2px 4px rgba(15, 23, 42, 0.03);
+  transition: all 0.2s cubic-bezier(0.16, 1, 0.3, 1);
+  box-shadow: 0 1px 3px rgba(15, 23, 42, 0.04);
 }
 
 .qa-option-card:hover {
-  border-color: #3b82f6;
+  border-color: #0f2852;
   transform: translateY(-2px);
-  box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.12);
+  box-shadow: 0 8px 20px -4px rgba(15, 40, 82, 0.1);
 }
 
 .qa-option-card.qa-active {
-  border-color: #2563eb;
-  background: #eff6ff;
-  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.2);
+  border-color: #0f2852;
+  background: #f8fafc;
+  box-shadow: 0 0 0 2px rgba(15, 40, 82, 0.18);
 }
 
-/* Service Nav Tabs */
+/* Service Navigation Tabs */
 .service-tab-btn {
   display: inline-flex;
   align-items: center;
   gap: 8px;
-  padding: 12px 20px;
-  border-radius: 12px;
-  font-size: 0.92rem;
+  padding: 11px 18px;
+  border-radius: 10px;
+  font-size: 0.9rem;
   font-weight: 700;
-  color: #64748b;
+  color: #475569;
   background: #ffffff;
-  border: 1px solid #e2e8f0;
-  transition: all 0.2s ease;
+  border: 1px solid #cbd5e1;
+  transition: all 0.18s ease;
   cursor: pointer;
 }
 
 .service-tab-btn:hover {
-  color: #1e293b;
-  border-color: #cbd5e1;
-  background: #f8fafc;
+  color: #0f172a;
+  border-color: #94a3b8;
+  background: #f1f5f9;
 }
 
 .service-tab-btn.active-tab {
   color: #ffffff;
-  background: linear-gradient(135deg, #1e40af 0%, #2563eb 100%);
-  border-color: #1e40af;
-  box-shadow: 0 4px 14px rgba(37, 99, 235, 0.3);
+  background: #0f2852;
+  border-color: #0f2852;
+  box-shadow: 0 4px 12px rgba(15, 40, 82, 0.22);
 }
 
-/* Numbered Value Boxes (Linus 01, 02, 03 style) */
+/* Numbered Value Boxes (01, 02, 03) */
 .value-box-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 34px 28px;
-  box-shadow: 0 4px 12px rgba(15, 23, 42, 0.04);
-  transition: all 0.25s ease;
+  border-radius: 12px;
+  padding: 30px 24px;
+  box-shadow: 0 2px 6px rgba(15, 23, 42, 0.03);
+  transition: all 0.22s ease;
 }
 
 .value-box-card:hover {
-  transform: translateY(-4px);
-  box-shadow: 0 16px 32px -8px rgba(15, 23, 42, 0.08);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 28px -6px rgba(15, 23, 42, 0.07);
   border-color: #cbd5e1;
 }
 
 .value-box-num {
   font-family: 'JetBrains Mono', monospace;
-  font-size: 1.4rem;
+  font-size: 1.3rem;
   font-weight: 800;
-  color: #2563eb;
-  margin-bottom: 14px;
+  color: #b45309; /* Warmer Bronze/Bernstein-Ton statt grellem Blau */
+  margin-bottom: 12px;
   display: inline-block;
 }
 
-/* Bottom CTA Banner (Linus style) */
+/* Bottom CTA Banner */
 .bottom-banner-card {
   background: #ffffff;
   border: 1px solid #e2e8f0;
-  border-radius: 18px;
-  padding: 44px 40px;
-  box-shadow: 0 12px 36px -8px rgba(15, 23, 42, 0.06);
+  border-radius: 14px;
+  padding: 40px 36px;
+  box-shadow: 0 8px 24px -6px rgba(15, 23, 42, 0.05);
 }
 
+/* Custom Range Slider */
+input[type='range'].lj-slider {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 100%;
+  height: 7px;
+  border-radius: 9999px;
+  background: #e2e8f0;
+  outline: none;
+}
+
+input[type='range'].lj-slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f2852;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 40, 82, 0.35);
+  transition: transform 0.15s ease;
+}
+
+input[type='range'].lj-slider::-webkit-slider-thumb:hover {
+  transform: scale(1.15);
+}
+
+input[type='range'].lj-slider::-moz-range-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  background: #0f2852;
+  cursor: pointer;
+  border: 2px solid #ffffff;
+  box-shadow: 0 2px 6px rgba(15, 40, 82, 0.35);
+}
+
+/* Tier active state */
+.tier-tab-active {
+  background: rgba(15, 40, 82, 0.6) !important;
+  border-color: #d97706 !important;
+  box-shadow: 0 0 16px -4px rgba(217, 119, 6, 0.3);
+}
+
+/* Form Chip States */
+.topic-chip-active {
+  background-color: #0f2852 !important;
+  color: #ffffff !important;
+  border-color: #0f2852 !important;
+  box-shadow: 0 3px 8px rgba(15, 40, 82, 0.25);
+}
+
+.slot-chip-active {
+  background-color: #0f2852 !important;
+  border-color: #0f2852 !important;
+  color: #ffffff !important;
+}
+
+/* Custom Scrollbar */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 5px;
+  height: 5px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.05);
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(100, 116, 139, 0.3);
+  border-radius: 9999px;
+}
+
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: rgba(100, 116, 139, 0.5);
+}
